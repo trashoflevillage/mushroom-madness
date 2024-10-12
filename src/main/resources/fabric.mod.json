@@ -19,7 +19,7 @@
 			"io.github.trashoflevillage.mushroommadness.MushroomMadness"
 		],
 		"client": [
-			"io.github.trashoflevillage.mushroommadness.MushroomMadnessClient"
+			"io.github.trashoflevillage.mushroommadness.client.MushroomMadnessClient"
 		],
 		"fabric-datagen": [
 			"io.github.trashoflevillage.mushroommadness.MushroomMadnessDataGenerator"
@@ -29,11 +29,6 @@
 		]
 	},
 	"mixins": [
-		"mushroommadness.mixins.json",
-		{
-			"config": "mushroommadness.client.mixins.json",
-			"environment": "client"
-		}
 	],
 	"depends": {
 		"fabricloader": ">=0.16.7",

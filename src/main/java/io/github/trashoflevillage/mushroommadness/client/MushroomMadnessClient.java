@@ -1,12 +1,10 @@
-package io.github.trashoflevillage.mushroommadness;
+package io.github.trashoflevillage.mushroommadness.client;
 
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.TexturedRenderLayers;
-import net.minecraft.client.util.SpriteIdentifier;
 
 public class MushroomMadnessClient implements ClientModInitializer {
 	private static final Block[] blocksWithTransparency = new Block[] {

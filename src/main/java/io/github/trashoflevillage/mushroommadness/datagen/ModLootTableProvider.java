@@ -19,5 +19,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.STRIPPED_SPOREWOOD_LOG);
         addDrop(ModBlocks.STRIPPED_SPOREWOOD_WOOD);
         addDrop(ModBlocks.SPOREWOOD_PLANKS);
+        addDrop(ModBlocks.SPOREWOOD_SIGN);
+        addDrop(ModBlocks.SPOREWOOD_HANGING_SIGN);
     }
 }

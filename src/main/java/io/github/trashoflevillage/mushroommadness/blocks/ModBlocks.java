@@ -67,13 +67,13 @@ public class ModBlocks {
                     new TerraformSignBlock(SPOREWOOD_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
     public static final Block SPOREWOOD_WALL_SIGN =
             registerBlock("sporewood_wall_sign",
-                    new TerraformSignBlock(SPOREWOOD_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
+                    new TerraformSignBlock(SPOREWOOD_SIGN_TEXTURE, AbstractBlock.Settings.copy(ModBlocks.SPOREWOOD_SIGN)));
     public static final Block SPOREWOOD_HANGING_SIGN =
             registerBlock("sporewood_hanging_sign",
                     new TerraformHangingSignBlock(SPOREWOOD_HANGING_SIGN_TEXTURE, SPOREWOOD_HANGING_GUI_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
     public static final Block SPOREWOOD_WALL_HANGING_SIGN =
             registerBlock("sporewood_wall_hanging_sign",
-                    new TerraformHangingSignBlock(SPOREWOOD_HANGING_SIGN_TEXTURE, SPOREWOOD_HANGING_GUI_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
+                    new TerraformHangingSignBlock(SPOREWOOD_HANGING_SIGN_TEXTURE, SPOREWOOD_HANGING_GUI_SIGN_TEXTURE, AbstractBlock.Settings.copy(ModBlocks.SPOREWOOD_HANGING_SIGN)));
 
     public static final BlockFamily SPOREWOOD_FAMILY = BlockFamilies.register(ModBlocks.SPOREWOOD_PLANKS)
             .sign(ModBlocks.SPOREWOOD_SIGN, ModBlocks.SPOREWOOD_WALL_SIGN)
