@@ -1,0 +1,19 @@
+{
+  "block.mushroommadness.mycelium_growth": "Mycelium Growth",
+  "block.mushroommadness.spores": "Spores",
+
+  "block.mushroommadness.sporewood_log": "Sporewood Log",
+  "block.mushroommadness.sporewood_wood": "Sporewood Wood",
+  "block.mushroommadness.stripped_sporewood_log": "Stripped Sporewood Log",
+  "block.mushroommadness.stripped_sporewood_wood": "Stripped Sporewood Wood",
+  "block.mushroommadness.sporewood_planks": "Sporewood Planks",
+
+  "block.mushroommadness.sporewood_sign": "Sporewood Sign",
+  "block.mushroommadness.sporewood_wall_sign": "Sporewood Wall Sign",
+
+  "block.mushroommadness.sporewood_hanging_sign": "Sporewood Hanging Sign",
+  "block.mushroommadness.sporewood_wall_hanging_sign": "Sporewood Wall Hanging Sign",
+
+  "item.mushroommadness.sporewood_sign": "Sporewood Sign",
+  "item.mushroommadness.sporewood_hanging_sign": "Sporewood Hanging Sign"
+}

@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:mycelium",
+    "#minecraft:logs",
+    "minecraft:red_mushroom_block",
+    "minecraft:brown_mushroom_block",
+    "minecraft:mushroom_stem"
+  ]
+}

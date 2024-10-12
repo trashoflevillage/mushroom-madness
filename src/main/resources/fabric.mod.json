@@ -1,0 +1,47 @@
+{
+	"schemaVersion": 1,
+	"id": "mushroommadness",
+	"version": "${version}",
+	"name": "Mushroom Madness",
+	"description": "Updates the Mushroom Island to have more content.",
+	"authors": [
+		"trashoflevillage"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/mushroommadness/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.trashoflevillage.mushroommadness.MushroomMadness"
+		],
+		"client": [
+			"io.github.trashoflevillage.mushroommadness.MushroomMadnessClient"
+		],
+		"fabric-datagen": [
+			"io.github.trashoflevillage.mushroommadness.MushroomMadnessDataGenerator"
+		],
+		"terrablender": [
+			"io.github.trashoflevillage.mushroommadness.world.biome.ModTerrablenderAPI"
+		]
+	},
+	"mixins": [
+		"mushroommadness.mixins.json",
+		{
+			"config": "mushroommadness.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.7",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

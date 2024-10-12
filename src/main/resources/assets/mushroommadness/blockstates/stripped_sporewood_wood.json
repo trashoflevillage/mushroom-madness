@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "mushroommadness:block/stripped_sporewood_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "mushroommadness:block/stripped_sporewood_wood"
+    },
+    "axis=z": {
+      "model": "mushroommadness:block/stripped_sporewood_wood",
+      "x": 90
+    }
+  }
+}

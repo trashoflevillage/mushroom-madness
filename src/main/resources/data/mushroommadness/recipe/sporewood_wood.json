@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "mushroommadness:sporewood_log"
+    }
+  },
+  "result": {
+    "id": "mushroommadness:sporewood_wood",
+    "count": 3
+  }
+}

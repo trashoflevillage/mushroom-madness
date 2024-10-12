@@ -1,0 +1,488 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores"
+      },
+      "when": {
+        "north": "true",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores"
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "true",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "true",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true",
+        "texture": 0
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 0
+      }
+    },
+
+
+
+
+
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1"
+      },
+      "when": {
+        "north": "true",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1"
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "true",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "true",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true",
+        "texture": 1
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores1",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 1
+      }
+    },
+
+
+
+
+
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2"
+      },
+      "when": {
+        "north": "true",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2"
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "true",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "true",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true",
+        "texture": 2
+      }
+    },
+    {
+      "apply": {
+        "model": "mushroommadness:block/spores2",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "texture": 2
+      }
+    }
+  ]
+}

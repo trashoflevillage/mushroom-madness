@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mushroommadness:block/sporewood_log",
+    "side": "mushroommadness:block/sporewood_log"
+  }
+}
