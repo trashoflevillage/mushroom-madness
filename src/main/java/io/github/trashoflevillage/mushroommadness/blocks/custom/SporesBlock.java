@@ -1,6 +1,7 @@
 package io.github.trashoflevillage.mushroommadness.blocks.custom;
 
 import com.mojang.serialization.MapCodec;
+import io.github.trashoflevillage.mushroommadness.util.ModTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.fluid.FluidState;
@@ -22,6 +23,7 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, Waterloggable {
@@ -90,6 +92,18 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
         return (Boolean)state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
+    private ArrayList<BlockState> getAttachedBlockStates(WorldAccess world, BlockState state, BlockPos pos) {
+        ArrayList<BlockState> output = new ArrayList<>();
+        for (Direction i : DIRECTIONS) {
+            BooleanProperty p = MultifaceGrowthBlock.getProperty(i);
+            if (state.get(p).booleanValue()) { // Block is placed on this directional face.
+                BlockPos restingPos = pos.add(i.getVector()); // The position that the blockstate is sitting on.
+                output.add(world.getBlockState(restingPos));
+            }
+        }
+        return output;
+    }
+
     class SporesGrower extends LichenGrower {
         private GrowChecker growChecker;
 
@@ -105,7 +119,7 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
 
         @Override
         public Optional<GrowPos> place(WorldAccess world, GrowPos pos, boolean markForPostProcessing) {
-            boolean o;
+            boolean o = true;
             BlockState state = world.getBlockState(pos.pos());
             BlockState blockState = growChecker.getStateWithDirection(state, world, pos.pos(), pos.face());
             if (blockState != null) {
@@ -113,7 +127,16 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
                     world.getChunk(pos.pos()).markBlockForPostProcessing(pos.pos());
                 }
 
-                o = world.setBlockState(pos.pos(), blockState.with(TEXTURE, world.getRandom().nextBetween(0, 2)), 2);
+                ArrayList<BlockState> attached = getAttachedBlockStates(world, blockState, pos.pos());
+                for (BlockState i : attached) {
+                    if (!i.isIn(ModTags.Blocks.SPORES_SPREADABLE)) {
+                        o = false;
+                        break;
+                    }
+                }
+
+                if (o != false)
+                    o = world.setBlockState(pos.pos(), blockState.with(TEXTURE, world.getRandom().nextBetween(0, 2)), 2);
             } else {
                 o = false;
             }
