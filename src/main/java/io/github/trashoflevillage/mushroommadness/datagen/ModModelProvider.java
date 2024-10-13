@@ -23,11 +23,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_SPOREWOOD_LOG).log(ModBlocks.STRIPPED_SPOREWOOD_LOG).wood(ModBlocks.STRIPPED_SPOREWOOD_WOOD);
 
         BlockStateModelGenerator.BlockTexturePool sporewoodPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SPOREWOOD_PLANKS);
+
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_SPOREWOOD_LOG, ModBlocks.SPOREWOOD_HANGING_SIGN, ModBlocks.SPOREWOOD_WALL_HANGING_SIGN);
+
         sporewoodPool.family(ModBlocks.SPOREWOOD_FAMILY);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.SPOREWOOD_HANGING_SIGN, Models.GENERATED);
     }
 }
