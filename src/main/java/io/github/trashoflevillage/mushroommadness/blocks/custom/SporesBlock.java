@@ -90,11 +90,11 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (random.nextFloat() < 0.3 && this.canGrow(world, random, pos, state))
+        if (random.nextFloat() < 0.6 && this.canGrow(world, random, pos, state))
             this.grow(world, random, pos, state);
 
         for (BlockPos i : this.getAttachedBlockPositions(state, pos)) {
-            if (random.nextFloat() < 0.3) attemptConvertBlock(world, pos);
+            if (random.nextFloat() < 0.3) attemptConvertBlock(world, i);
         }
     }
 
