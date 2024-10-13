@@ -109,6 +109,10 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
 
             world.setBlockState(pos, newState.with(PillarBlock.AXIS, world.getBlockState(pos).get(PillarBlock.AXIS)));
         }
+
+        if (state.isIn(BlockTags.LEAVES)) {
+            world.breakBlock(pos, false);
+        }
     }
 
     protected FluidState getFluidState(BlockState state) {
