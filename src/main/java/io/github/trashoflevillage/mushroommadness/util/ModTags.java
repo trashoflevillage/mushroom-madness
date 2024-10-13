@@ -11,6 +11,8 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> SPORES_SPREADABLE =
                 createTag("spores_spreadable");
+        public static final TagKey<Block> SPOREWOOD_LOGS =
+                createTag("sporewood_logs");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MushroomMadness.MOD_ID, name));

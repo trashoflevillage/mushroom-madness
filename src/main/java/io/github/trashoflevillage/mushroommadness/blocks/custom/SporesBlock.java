@@ -1,13 +1,18 @@
 package io.github.trashoflevillage.mushroommadness.blocks.custom;
 
 import com.mojang.serialization.MapCodec;
+import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
+import io.github.trashoflevillage.mushroommadness.util.ManualConventionalTags;
 import io.github.trashoflevillage.mushroommadness.util.ModTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -24,6 +29,7 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Optional;
 
 public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, Waterloggable {
@@ -86,10 +92,39 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (random.nextFloat() < 0.3 && this.canGrow(world, random, pos, state))
             this.grow(world, random, pos, state);
+
+        for (BlockPos i : this.getAttachedBlockPositions(state, pos)) {
+            if (random.nextFloat() < 0.3) attemptConvertBlock(world, pos);
+        }
+    }
+
+    private void attemptConvertBlock(World world, BlockPos pos) {
+        BlockState state = world.getBlockState(pos);
+        if (!state.isIn(ModTags.Blocks.SPOREWOOD_LOGS) && state.isIn(BlockTags.LOGS)) {
+            BlockState newState;
+            if (state.isIn(ManualConventionalTags.Blocks.STRIPPED_WOODS)) newState = ModBlocks.STRIPPED_SPOREWOOD_WOOD.getDefaultState();
+            else if (state.isIn(ManualConventionalTags.Blocks.WOODS)) newState = ModBlocks.SPOREWOOD_WOOD.getDefaultState();
+            else if (state.isIn(ManualConventionalTags.Blocks.STRIPPED_LOGS)) newState = ModBlocks.STRIPPED_SPOREWOOD_LOG.getDefaultState();
+            else newState = ModBlocks.SPOREWOOD_LOG.getDefaultState();
+
+            world.setBlockState(pos, newState.with(PillarBlock.AXIS, world.getBlockState(pos).get(PillarBlock.AXIS)));
+        }
     }
 
     protected FluidState getFluidState(BlockState state) {
         return (Boolean)state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+    }
+
+    private ArrayList<BlockPos> getAttachedBlockPositions(BlockState state, BlockPos pos) {
+        ArrayList<BlockPos> output = new ArrayList<>();
+        for (Direction i : DIRECTIONS) {
+            BooleanProperty p = MultifaceGrowthBlock.getProperty(i);
+            if (state.get(p).booleanValue()) { // Block is placed on this directional face.
+                BlockPos restingPos = pos.add(i.getVector()); // The position that the blockstate is sitting on.
+                output.add(restingPos);
+            }
+        }
+        return output;
     }
 
     private ArrayList<BlockState> getAttachedBlockStates(WorldAccess world, BlockState state, BlockPos pos) {
@@ -127,9 +162,9 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
                     world.getChunk(pos.pos()).markBlockForPostProcessing(pos.pos());
                 }
 
-                ArrayList<BlockState> attached = getAttachedBlockStates(world, blockState, pos.pos());
-                for (BlockState i : attached) {
-                    if (!i.isIn(ModTags.Blocks.SPORES_SPREADABLE)) {
+                ArrayList<BlockPos> attached = getAttachedBlockPositions(blockState, pos.pos());
+                for (BlockPos i : attached) {
+                    if (!world.getBlockState(i).isIn(ModTags.Blocks.SPORES_SPREADABLE)) {
                         o = false;
                         break;
                     }
