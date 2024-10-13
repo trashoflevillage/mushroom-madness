@@ -1,8 +1,8 @@
-// 1.21.1	2024-10-12T22:00:55.2295573	Mushroom Madness/Block Loot Tables
+// 1.21.1	2024-10-13T14:49:52.904359	Mushroom Madness/Block Loot Tables
 97191ebd33a8df2b6ddbfe3c2abba6ee11eba245 data\mushroommadness\loot_table\blocks\sporewood_sign.json
 65cbd908f9287f98e91b6a8c8992c9721d0f3832 data\mushroommadness\loot_table\blocks\stripped_sporewood_log.json
-ff8e914083f7aaf67626215a16c263652e359e43 data\mushroommadness\loot_table\blocks\sporewood_hanging_sign.json
 51dbb7c4f7108349e0b957a61aec610f2741249a data\mushroommadness\loot_table\blocks\stripped_sporewood_wood.json
+ff8e914083f7aaf67626215a16c263652e359e43 data\mushroommadness\loot_table\blocks\sporewood_hanging_sign.json
 b2e8b66132b751ed52b5bc1560ab2a75b4d65db5 data\mushroommadness\loot_table\blocks\sporewood_wood.json
 005b7285c8060c56d6350fdd258cb22ce58392d9 data\mushroommadness\loot_table\blocks\sporewood_log.json
 8809dc7b9b74b6bc4f5fbcce3fee407530a2f1d1 data\mushroommadness\loot_table\blocks\sporewood_planks.json

@@ -1,8 +1,13 @@
 package io.github.trashoflevillage.mushroommadness;
 
+import io.github.trashoflevillage.mushroommadness.world.ModConfiguredFeatures;
+import io.github.trashoflevillage.mushroommadness.world.ModPlacedFeatures;
+import io.github.trashoflevillage.mushroommadness.world.biome.ModBiomes;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import io.github.trashoflevillage.mushroommadness.datagen.*;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 public class MushroomMadnessDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -14,5 +19,13 @@ public class MushroomMadnessDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModWorldGenerator::new);
+	}
+
+	@Override
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::boostrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::boostrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap);
 	}
 }

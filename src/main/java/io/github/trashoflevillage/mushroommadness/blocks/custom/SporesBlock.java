@@ -84,7 +84,7 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
         return blockState.with(TEXTURE, textureState);
     }
 
-    private static int getRandomTextureState(World world) {
+    public static int getRandomTextureState(World world) {
         return world.random.nextBetween(0, 2);
     }
 

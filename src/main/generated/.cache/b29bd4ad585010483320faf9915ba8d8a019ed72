@@ -1,0 +1,6 @@
+// 1.21.1	2024-10-13T14:49:52.915356	Mushroom Madness/World Gen
+6806cd2e3ecaaca6c4771070c55aa36d9d70dd57 data\mushroommadness\worldgen\biome\sporewood_forest.json
+a03a32ba4cc8631d63926a11bcb80aaab179032a data\mushroommadness\worldgen\placed_feature\sporewood_tree.json
+24ba82aaf671bc8ba9b04f0387f6c7ead4f13e98 data\mushroommadness\worldgen\configured_feature\sporewood_tree.json
+29ba169411cd39d484f099b0d8eea831b2e8e7ed data\mushroommadness\worldgen\placed_feature\patch_mycelium_growth.json
+4936f1d91131763d21b40a38a16e27e3f4bf07d9 data\mushroommadness\worldgen\configured_feature\patch_mycelium_growth.json

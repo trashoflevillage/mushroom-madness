@@ -1,6 +1,7 @@
 package io.github.trashoflevillage.mushroommadness.datagen;
 
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
+import io.github.trashoflevillage.mushroommadness.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -20,6 +21,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.STRIPPED_SPOREWOOD_WOOD);
         addDrop(ModBlocks.SPOREWOOD_PLANKS);
         addDrop(ModBlocks.SPOREWOOD_SIGN);
+        addDrop(ModBlocks.SPOREWOOD_WALL_SIGN, ModItems.SPOREWOOD_SIGN);
         addDrop(ModBlocks.SPOREWOOD_HANGING_SIGN);
+        addDrop(ModBlocks.SPOREWOOD_WALL_HANGING_SIGN, ModItems.SPOREWOOD_HANGING_SIGN);
     }
 }
