@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:sporewood_button_from_sporewood_planks"
+        "recipe": "mushroommadness:sporewood_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:sporewood_button_from_sporewood_planks"
+      "mushroommadness:sporewood_button"
     ]
   }
 }

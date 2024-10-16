@@ -5,9 +5,11 @@ import io.github.trashoflevillage.mushroommadness.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -40,6 +42,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.SPOREWOOD_PLANKS), conditionsFromItem(ModBlocks.SPOREWOOD_PLANKS))
                 .offerTo(exporter);
         offerPressurePlateRecipe(exporter, ModBlocks.SPOREWOOD_PRESSURE_PLATE, ModBlocks.SPOREWOOD_PLANKS);
-        offerShapelessRecipe(exporter, ModBlocks.SPOREWOOD_BUTTON, ModBlocks.SPOREWOOD_PLANKS, "wooden_button", 1);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.SPOREWOOD_BUTTON, 1)
+                .input(ModBlocks.SPOREWOOD_PLANKS)
+                .criterion(hasItem(ModBlocks.SPOREWOOD_PLANKS), conditionsFromItem(ModBlocks.SPOREWOOD_PLANKS))
+                .group("wooden_button")
+                .offerTo(exporter);
     }
 }
