@@ -27,6 +27,16 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_SPOREWOOD_LOG, ModBlocks.SPOREWOOD_HANGING_SIGN, ModBlocks.SPOREWOOD_WALL_HANGING_SIGN);
 
         sporewoodPool.family(ModBlocks.SPOREWOOD_FAMILY);
+
+        sporewoodPool.stairs(ModBlocks.SPOREWOOD_STAIRS);
+        sporewoodPool.slab(ModBlocks.SPOREWOOD_SLAB);
+        sporewoodPool.button(ModBlocks.SPOREWOOD_BUTTON);
+        sporewoodPool.pressurePlate(ModBlocks.SPOREWOOD_PRESSURE_PLATE);
+        sporewoodPool.fence(ModBlocks.SPOREWOOD_FENCE);
+        sporewoodPool.fenceGate(ModBlocks.SPOREWOOD_FENCE_GATE);
+
+        blockStateModelGenerator.registerDoor(ModBlocks.SPOREWOOD_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.SPOREWOOD_TRAPDOOR);
     }
 
     @Override

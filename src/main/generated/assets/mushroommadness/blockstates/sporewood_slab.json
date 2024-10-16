@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mushroommadness:block/sporewood_slab"
+    },
+    "type=double": {
+      "model": "mushroommadness:block/sporewood_planks"
+    },
+    "type=top": {
+      "model": "mushroommadness:block/sporewood_slab_top"
+    }
+  }
+}

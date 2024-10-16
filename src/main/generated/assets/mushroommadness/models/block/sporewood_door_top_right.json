@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "mushroommadness:block/sporewood_door_bottom",
+    "top": "mushroommadness:block/sporewood_door_top"
+  }
+}

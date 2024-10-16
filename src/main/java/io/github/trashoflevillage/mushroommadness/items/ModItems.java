@@ -37,7 +37,15 @@ public class ModItems {
                 ModBlocks.SPOREWOOD_WOOD,
                 ModBlocks.STRIPPED_SPOREWOOD_LOG,
                 ModBlocks.STRIPPED_SPOREWOOD_WOOD,
-                ModBlocks.SPOREWOOD_PLANKS);
+                ModBlocks.SPOREWOOD_PLANKS,
+                ModBlocks.SPOREWOOD_STAIRS,
+                ModBlocks.SPOREWOOD_SLAB,
+                ModBlocks.SPOREWOOD_FENCE,
+                ModBlocks.SPOREWOOD_FENCE_GATE,
+                ModBlocks.SPOREWOOD_DOOR,
+                ModBlocks.SPOREWOOD_TRAPDOOR,
+                ModBlocks.SPOREWOOD_PRESSURE_PLATE,
+                ModBlocks.SPOREWOOD_BUTTON);
 
         addItemsToItemGroup(ItemGroups.FUNCTIONAL,
                 ModItems.SPOREWOOD_SIGN,

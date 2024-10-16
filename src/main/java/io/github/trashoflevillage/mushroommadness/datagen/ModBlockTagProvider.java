@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -54,5 +55,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.CRIMSON_HYPHAE)
                 .add(Blocks.WARPED_HYPHAE)
                 .add(ModBlocks.SPOREWOOD_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.FENCES)
+                .add(ModBlocks.SPOREWOOD_FENCE);
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES)
+                .add(ModBlocks.SPOREWOOD_FENCE_GATE);
     }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "mushroommadness:block/sporewood_planks",
+    "side": "mushroommadness:block/sporewood_planks",
+    "top": "mushroommadness:block/sporewood_planks"
+  }
+}

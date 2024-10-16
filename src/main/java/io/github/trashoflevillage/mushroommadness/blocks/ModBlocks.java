@@ -64,6 +64,34 @@ public class ModBlocks {
     public static final Identifier SPOREWOOD_HANGING_SIGN_TEXTURE = Identifier.of(MushroomMadness.MOD_ID, "entity/signs/hanging/sporewood");
     public static final Identifier SPOREWOOD_HANGING_GUI_SIGN_TEXTURE = Identifier.of(MushroomMadness.MOD_ID, "textures/gui/hanging_signs/sporewood");
 
+    public static final Block SPOREWOOD_STAIRS =
+            registerBlock("sporewood_stairs",
+                    new StairsBlock(ModBlocks.SPOREWOOD_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS)));
+    public static final Block SPOREWOOD_SLAB =
+            registerBlock("sporewood_slab",
+                    new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB)));
+
+    public static final Block SPOREWOOD_BUTTON =
+            registerBlock("sporewood_button",
+                    new ButtonBlock(BlockSetType.OAK, 30, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
+    public static final Block SPOREWOOD_PRESSURE_PLATE =
+            registerBlock("sporewood_pressure_plate",
+                    new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+
+    public static final Block SPOREWOOD_FENCE =
+            registerBlock("sporewood_fence",
+                    new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE)));
+    public static final Block SPOREWOOD_FENCE_GATE =
+            registerBlock("sporewood_fence_gate",
+                    new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)));
+
+    public static final Block SPOREWOOD_DOOR =
+            registerBlock("sporewood_door",
+                    new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_DOOR)));
+    public static final Block SPOREWOOD_TRAPDOOR =
+            registerBlock("sporewood_trapdoor",
+                    new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)));
+
     public static final Block SPOREWOOD_SIGN =
             registerBlock("sporewood_sign",
                     new TerraformSignBlock(SPOREWOOD_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));

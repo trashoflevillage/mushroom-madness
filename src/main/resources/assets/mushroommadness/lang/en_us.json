@@ -18,5 +18,17 @@
   "item.mushroommadness.sporewood_hanging_sign": "Sporewood Hanging Sign",
 
   "item.mushroommadness.sporewood_boat": "Sporewood Boat",
-  "item.mushroommadness.sporewood_chest_boat": "Sporewood Chest Boat"
+  "item.mushroommadness.sporewood_chest_boat": "Sporewood Chest Boat",
+
+  "block.mushroommadness.sporewood_stairs": "Sporewood Stairs",
+  "block.mushroommadness.sporewood_slab": "Sporewood Slab",
+
+  "block.mushroommadness.sporewood_button": "Sporewood Button",
+  "block.mushroommadness.sporewood_pressure_plate": "Sporewood Pressure Plate",
+
+  "block.mushroommadness.sporewood_fence": "Sporewood Fence",
+  "block.mushroommadness.sporewood_fence_gate": "Sporewood Fence Gate",
+
+  "block.mushroommadness.sporewood_door": "Sporewood Door",
+  "block.mushroommadness.sporewood_trapdoor": "Sporewood Trapdoor"
 }
