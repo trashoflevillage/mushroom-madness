@@ -1,1 +1,5 @@
-// 1.21.1	2024-10-13T14:49:52.9143555	Mushroom Madness/Recipes
+// 1.21.1	2024-10-15T21:55:46.9602936	Mushroom Madness/Recipes
+cbbd9534a76da27a533b6663cff1edb7d2c3a8b1 data\mushroommadness\advancement\recipes\transportation\sporewood_boat.json
+ff29e89450aa1106e54d97cef46346ae124fcabe data\mushroommadness\recipe\sporewood_chest_boat.json
+92d3fadc29dacddaf1b39c3d4421e675f32171c0 data\mushroommadness\recipe\sporewood_boat.json
+bc2e33b111c05119210a18675232eba74c9c0152 data\mushroommadness\advancement\recipes\transportation\sporewood_chest_boat.json

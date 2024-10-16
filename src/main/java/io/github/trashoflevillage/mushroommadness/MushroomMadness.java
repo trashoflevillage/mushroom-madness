@@ -1,6 +1,7 @@
 package io.github.trashoflevillage.mushroommadness;
 
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
+import io.github.trashoflevillage.mushroommadness.entities.ModBoats;
 import io.github.trashoflevillage.mushroommadness.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -25,14 +26,21 @@ public class MushroomMadness implements ModInitializer {
 
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
+		ModBoats.registerBoats();
 
-		StrippableBlockRegistry.register(ModBlocks.SPOREWOOD_LOG, ModBlocks.STRIPPED_SPOREWOOD_LOG);
-		StrippableBlockRegistry.register(ModBlocks.SPOREWOOD_WOOD, ModBlocks.STRIPPED_SPOREWOOD_WOOD);
+		initSpecialBlockProperties();
+	}
 
+	private static void initSpecialBlockProperties() {
+		// FLAMMABLE
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.SPOREWOOD_LOG, 5, 5);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.SPOREWOOD_WOOD, 5, 5);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_SPOREWOOD_LOG, 5, 5);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_SPOREWOOD_WOOD, 5, 5);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.SPOREWOOD_PLANKS, 5, 20);
+
+		// STRIPPABLE
+		StrippableBlockRegistry.register(ModBlocks.SPOREWOOD_LOG, ModBlocks.STRIPPED_SPOREWOOD_LOG);
+		StrippableBlockRegistry.register(ModBlocks.SPOREWOOD_WOOD, ModBlocks.STRIPPED_SPOREWOOD_WOOD);
 	}
 }

@@ -102,6 +102,21 @@ public class ModBlocks {
                         new Item.Settings()));
     }
 
+    private static Block registerBlock(String name, Block block, Item.Settings itemSettings) {
+        registerBlockItem(name, block, itemSettings);
+        return Registry.register(Registries.BLOCK,
+                Identifier.of(MushroomMadness.MOD_ID, name),
+                block);
+    }
+
+    private static Item registerBlockItem(String name, Block block, Item.Settings settings) {
+        return Registry.register(
+                Registries.ITEM,
+                Identifier.of(MushroomMadness.MOD_ID, name),
+                new BlockItem(block,
+                        settings));
+    }
+
     public static void registerModBlocks() {
         MushroomMadness.LOGGER.info("Registering blocks for " + MushroomMadness.MOD_ID);
     }

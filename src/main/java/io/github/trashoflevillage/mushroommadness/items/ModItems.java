@@ -1,7 +1,9 @@
 package io.github.trashoflevillage.mushroommadness.items;
 
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
+import io.github.trashoflevillage.mushroommadness.entities.ModBoats;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -14,6 +16,9 @@ public class ModItems {
             new SignItem(new Item.Settings().maxCount(16), ModBlocks.SPOREWOOD_SIGN, ModBlocks.SPOREWOOD_WALL_SIGN));
     public static final Item SPOREWOOD_HANGING_SIGN = registerItem("sporewood_hanging_sign",
             new HangingSignItem(ModBlocks.SPOREWOOD_HANGING_SIGN, ModBlocks.SPOREWOOD_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)));
+
+    public static final Item SPOREWOOD_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.SPOREWOOD_BOAT_ID, ModBoats.SPOREWOOD_BOAT_KEY, false);
+    public static final Item SPOREWOOD_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.SPOREWOOD_CHEST_BOAT_ID, ModBoats.SPOREWOOD_BOAT_KEY, true);
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(MushroomMadness.MOD_ID, name), item);
@@ -37,6 +42,10 @@ public class ModItems {
         addItemsToItemGroup(ItemGroups.FUNCTIONAL,
                 ModItems.SPOREWOOD_SIGN,
                 ModItems.SPOREWOOD_HANGING_SIGN);
+
+        addItemsToItemGroup(ItemGroups.TOOLS,
+                ModItems.SPOREWOOD_BOAT,
+                ModItems.SPOREWOOD_CHEST_BOAT);
     }
 
     private static void addItemsToItemGroup(RegistryKey<ItemGroup> group, ItemConvertible... items) {

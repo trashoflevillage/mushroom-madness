@@ -1,6 +1,8 @@
 package io.github.trashoflevillage.mushroommadness.client;
 
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
+import io.github.trashoflevillage.mushroommadness.entities.ModBoats;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.Block;
@@ -15,5 +17,7 @@ public class MushroomMadnessClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		for (Block i : blocksWithTransparency)
 			BlockRenderLayerMap.INSTANCE.putBlock(i, RenderLayer.getCutout());
+
+		TerraformBoatClientHelper.registerModelLayers(ModBoats.SPOREWOOD_BOAT_ID, false);
 	}
 }
