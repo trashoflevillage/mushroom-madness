@@ -13,4 +13,5 @@ public interface TreeDecoratorTypeMixin {
 	static <P extends TreeDecorator> TreeDecoratorType<P> callRegister(String id, MapCodec<P> codec) {
 		throw new IllegalStateException();
 	}
+
 }
