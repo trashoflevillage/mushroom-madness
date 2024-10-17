@@ -1,7 +1,8 @@
-// 1.21.1	2024-10-15T22:54:45.0155192	Mushroom Madness/Block Loot Tables
+// 1.21.1	2024-10-17T00:04:16.1554859	Mushroom Madness/Block Loot Tables
+602850519c2026c0e34ca24b836cf415d9723228 data\mushroommadness\loot_table\blocks\xp_composter.json
 277cbbaade545410e2cd4fea91490f0fb1e96b2a data\mushroommadness\loot_table\blocks\sporewood_stairs.json
-d9f60ba850a96e52b657bd5c995b495a15158684 data\mushroommadness\loot_table\blocks\sporewood_fence_gate.json
 b2e8b66132b751ed52b5bc1560ab2a75b4d65db5 data\mushroommadness\loot_table\blocks\sporewood_wood.json
+d9f60ba850a96e52b657bd5c995b495a15158684 data\mushroommadness\loot_table\blocks\sporewood_fence_gate.json
 f608b38d9d6c55882d4de5c15955a81b6c04c92d data\mushroommadness\loot_table\blocks\sporewood_pressure_plate.json
 97191ebd33a8df2b6ddbfe3c2abba6ee11eba245 data\mushroommadness\loot_table\blocks\sporewood_wall_sign.json
 bac248cb58b3903f7fb7f209dbf917e7b2aaa891 data\mushroommadness\loot_table\blocks\sporewood_trapdoor.json

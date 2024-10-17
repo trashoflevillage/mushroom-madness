@@ -49,7 +49,8 @@ public class ModItems {
 
         addItemsToItemGroup(ItemGroups.FUNCTIONAL,
                 ModItems.SPOREWOOD_SIGN,
-                ModItems.SPOREWOOD_HANGING_SIGN);
+                ModItems.SPOREWOOD_HANGING_SIGN,
+                ModBlocks.XP_COMPOSTER);
 
         addItemsToItemGroup(ItemGroups.TOOLS,
                 ModItems.SPOREWOOD_BOAT,

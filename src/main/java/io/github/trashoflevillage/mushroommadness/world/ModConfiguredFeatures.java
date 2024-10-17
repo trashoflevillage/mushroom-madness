@@ -3,7 +3,6 @@ package io.github.trashoflevillage.mushroommadness.world;
 import com.google.common.collect.ImmutableList;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
-import io.github.trashoflevillage.mushroommadness.world.gen.decorators.SporeDecorator;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -28,7 +27,7 @@ public class ModConfiguredFeatures {
                 new BlobFoliagePlacer(ConstantIntProvider.create(0), ConstantIntProvider.create(0), 0),
 
                 // Tree Decorators WIP
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new SporeDecorator(0.2f, 4))).build());
+                new TwoLayersFeatureSize(1, 0, 2))/*.decorators(ImmutableList.of(new SporeDecorator(0.2f, 4)))*/.build());
 
         register(context, MYCELIUM_GROWTH_PATCH_KEY, Feature.RANDOM_PATCH, createRandomPatchFeatureConfig(BlockStateProvider.of(ModBlocks.MYCELIUM_GROWTH), 32));
     }
