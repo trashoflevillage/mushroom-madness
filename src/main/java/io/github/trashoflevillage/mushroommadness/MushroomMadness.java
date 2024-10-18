@@ -1,7 +1,7 @@
 package io.github.trashoflevillage.mushroommadness;
 
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
-import io.github.trashoflevillage.mushroommadness.entities.ModBoats;
+import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 

@@ -3,7 +3,7 @@ package io.github.trashoflevillage.mushroommadness.items;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
-import io.github.trashoflevillage.mushroommadness.entities.ModBoats;
+import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
