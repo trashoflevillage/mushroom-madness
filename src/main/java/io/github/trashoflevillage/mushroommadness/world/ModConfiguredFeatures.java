@@ -14,6 +14,7 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.treedecorator.CocoaBeansTreeDecorator;
 import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 
 public class ModConfiguredFeatures {
@@ -28,7 +29,7 @@ public class ModConfiguredFeatures {
                 new BlobFoliagePlacer(ConstantIntProvider.create(0), ConstantIntProvider.create(0), 0),
 
                 // Tree Decorators WIP
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new SporeDecorator(0.2f, 4))).build());
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new CocoaBeansTreeDecorator(0.5f))).build());
 
         register(context, MYCELIUM_GROWTH_PATCH_KEY, Feature.RANDOM_PATCH, createRandomPatchFeatureConfig(BlockStateProvider.of(ModBlocks.MYCELIUM_GROWTH), 32));
     }

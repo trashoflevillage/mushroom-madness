@@ -6,6 +6,7 @@ import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock
 import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.CustomShortPlantBlock;
+import io.github.trashoflevillage.mushroommadness.blocks.custom.MycologistTowerGeneratorBlock;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.SporesBlock;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.XPComposterBlock;
 import net.minecraft.block.*;
@@ -114,6 +115,10 @@ public class ModBlocks {
 
     public static final Block XP_COMPOSTER = registerBlock("xp_composter", new XPComposterBlock(
             AbstractBlock.Settings.copy(Blocks.COMPOSTER)
+    ));
+
+    public static final Block MYCOLOGIST_TOWER_GENERATOR = registerBlock("mycologist_tower_generator", new MycologistTowerGeneratorBlock(
+            AbstractBlock.Settings.create().dropsNothing()
     ));
 
     private static Block registerBlock(String name, Block block) {

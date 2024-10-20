@@ -1,0 +1,13 @@
+{
+  "name": "mushroommadness:mycologist_tower_generators",
+  "fallback": "minecraft:empty",
+  "elements": [{
+    "weight": 1,
+    "element": {
+      "location": "mushroommadness:mycologist_tower_generators/mycologist_tower_generator",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  }]
+}

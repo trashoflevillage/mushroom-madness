@@ -1,0 +1,13 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 16468567,
+    "separation": 8,
+    "spacing": 34,
+    "spread_type": "triangular"
+  },
+  "structures": [{
+    "structure": "mushroommadness:mycologist_tower_generator",
+    "weight": 1
+  }]
+}

@@ -3,6 +3,7 @@ package io.github.trashoflevillage.mushroommadness;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.items.ModItems;
+import io.github.trashoflevillage.mushroommadness.world.gen.ModTreeDecorator;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;

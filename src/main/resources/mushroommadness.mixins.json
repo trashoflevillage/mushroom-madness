@@ -3,7 +3,8 @@
 	"package": "io.github.trashoflevillage.mushroommadness.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"TreeDecoratorTypeMixin",
+		"WorldMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
