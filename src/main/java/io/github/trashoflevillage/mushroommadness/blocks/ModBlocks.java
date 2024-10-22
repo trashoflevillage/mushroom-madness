@@ -119,7 +119,7 @@ public class ModBlocks {
 
     public static final Block MYCOLOGIST_TOWER_GENERATOR = registerBlock("mycologist_tower_generator", new MycologistTowerGeneratorBlock(
             AbstractBlock.Settings.create().dropsNothing()
-    ), false);
+    ));
 
     private static Block registerBlock(String name, Block block) {
         return registerBlock(name, block, true);
