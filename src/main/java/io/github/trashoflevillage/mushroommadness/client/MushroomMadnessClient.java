@@ -3,17 +3,17 @@ package io.github.trashoflevillage.mushroommadness.client;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.client.entity.ModModelLayers;
+import io.github.trashoflevillage.mushroommadness.client.entity.MycologistRenderer;
+import io.github.trashoflevillage.mushroommadness.client.entity.models.MycologistEntityModel;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
-import io.github.trashoflevillage.mushroommadness.entity.custom.MushroomZombieEntity;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.entity.model.CowEntityModel;
-import net.minecraft.client.render.entity.model.ZombieEntityModel;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
 
 public class MushroomMadnessClient implements ClientModInitializer {
 	private static final Block[] blocksWithTransparency = new Block[] {
@@ -28,7 +28,7 @@ public class MushroomMadnessClient implements ClientModInitializer {
 
 		TerraformBoatClientHelper.registerModelLayers(ModBoats.SPOREWOOD_BOAT_ID, false);
 
-//		EntityRendererRegistry.register(ModEntities.MUSHROOM_ZOMBIE, MushroomZombieEntity::new);
-//		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.MUSHROOM_ZOMBIE, ZombieEntityModel::);
+		EntityRendererRegistry.register(ModEntities.MYCOLOGIST, MycologistRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.MYCOLOGIST, MycologistEntityModel::getTexturedModelData);
 	}
 }

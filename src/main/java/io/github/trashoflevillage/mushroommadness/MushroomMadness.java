@@ -2,10 +2,13 @@ package io.github.trashoflevillage.mushroommadness;
 
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
+import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
+import io.github.trashoflevillage.mushroommadness.entity.custom.MycologistEntity;
 import io.github.trashoflevillage.mushroommadness.items.ModItems;
 import io.github.trashoflevillage.mushroommadness.world.gen.ModTreeDecorator;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import org.slf4j.Logger;
@@ -28,6 +31,8 @@ public class MushroomMadness implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModBoats.registerBoats();
+
+		FabricDefaultAttributeRegistry.register(ModEntities.MYCOLOGIST, MycologistEntity.createMycologistAttributes());
 
 		initSpecialBlockProperties();
 	}

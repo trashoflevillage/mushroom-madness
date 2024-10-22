@@ -30,5 +30,8 @@
   "block.mushroommadness.sporewood_fence_gate": "Sporewood Fence Gate",
 
   "block.mushroommadness.sporewood_door": "Sporewood Door",
-  "block.mushroommadness.sporewood_trapdoor": "Sporewood Trapdoor"
+  "block.mushroommadness.sporewood_trapdoor": "Sporewood Trapdoor",
+
+  "entity.mushroommadness.mycologist": "Mycologist",
+  "item.mushroommadness.mycologist_spawn_egg": "Mycologist Spawn Egg"
 }
