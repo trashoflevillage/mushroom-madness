@@ -27,9 +27,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class MycologistEntity extends SpellcastingIllagerEntity implements RangedAttackMob {
-
-    public final AnimationState idleAnimationState = new AnimationState();
-
     public MycologistEntity(EntityType<? extends SpellcastingIllagerEntity> entityType, World world) {
         super(entityType, world);
     }
