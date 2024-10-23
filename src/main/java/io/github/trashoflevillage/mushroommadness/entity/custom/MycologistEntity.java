@@ -2,31 +2,39 @@ package io.github.trashoflevillage.mushroommadness.entity.custom;
 
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.RangedAttackMob;
+import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.*;
+import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.MerchantEntity;
+import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.entity.raid.RaiderEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+
 public class MycologistEntity extends SpellcastingIllagerEntity implements RangedAttackMob {
+    @Nullable
+    private CowEntity cowTarget;
+    
     public MycologistEntity(EntityType<? extends SpellcastingIllagerEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -54,6 +62,7 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new SpellcastingIllagerEntity.LookAtTargetGoal());
         this.goalSelector.add(6, new BowAttackGoal<>(this, 0.5, 20, 15.0F));
+        this.goalSelector.add(6, new MycologistEntity.ConvertCowGoal());
         this.goalSelector.add(8, new WanderAroundGoal(this, 0.6));
         this.goalSelector.add(9, new LookAtEntityGoal(this, PlayerEntity.class, 3.0F, 1.0F));
         this.goalSelector.add(10, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
@@ -126,6 +135,88 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
             return IllagerEntity.State.SPELLCASTING;
         } else {
             return this.isAttacking() ? IllagerEntity.State.BOW_AND_ARROW : IllagerEntity.State.CROSSED;
+        }
+    }
+    
+
+    void setCowTarget(@Nullable CowEntity target) {
+        this.cowTarget = target;
+    }
+
+    @Nullable
+    CowEntity getCowTarget() {
+        return this.cowTarget;
+    }
+
+    public class ConvertCowGoal extends SpellcastingIllagerEntity.CastSpellGoal {
+        private final TargetPredicate convertibleCowPredicate = TargetPredicate.createNonAttackable()
+                .setBaseMaxDistance(16.0)
+                .setPredicate(livingEntity -> ((CowEntity)livingEntity).getType() == EntityType.COW);
+
+        @Override
+        public boolean canStart() {
+            if (MycologistEntity.this.getTarget() != null) {
+                return false;
+            } else if (MycologistEntity.this.isSpellcasting()) {
+                return false;
+            } else if (MycologistEntity.this.age < this.startTime) {
+                return false;
+            } else if (!MycologistEntity.this.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
+                return false;
+            } else {
+                List<CowEntity> list = MycologistEntity.this.getWorld()
+                        .getTargets(CowEntity.class, this.convertibleCowPredicate, MycologistEntity.this, MycologistEntity.this.getBoundingBox().expand(16.0, 4.0, 16.0));
+                if (list.isEmpty()) {
+                    return false;
+                } else {
+                    MycologistEntity.this.setCowTarget((CowEntity)list.get(MycologistEntity.this.random.nextInt(list.size())));
+                    return true;
+                }
+            }
+        }
+
+        @Override
+        public boolean shouldContinue() {
+            return MycologistEntity.this.getCowTarget() != null && this.spellCooldown > 0;
+        }
+
+        @Override
+        public void stop() {
+            super.stop();
+            MycologistEntity.this.setCowTarget(null);
+        }
+
+        @Override
+        protected void castSpell() {
+            CowEntity cowEntity = MycologistEntity.this.getCowTarget();
+            if (cowEntity != null && cowEntity.isAlive()) {
+                cowEntity.convertTo(EntityType.MOOSHROOM, true);
+            }
+        }
+
+        @Override
+        protected int getInitialCooldown() {
+            return 40;
+        }
+
+        @Override
+        protected int getSpellTicks() {
+            return 60;
+        }
+
+        @Override
+        protected int startTimeDelay() {
+            return 140;
+        }
+
+        @Override
+        protected SoundEvent getSoundPrepare() {
+            return SoundEvents.ENTITY_EVOKER_PREPARE_WOLOLO;
+        }
+
+        @Override
+        protected SpellcastingIllagerEntity.Spell getSpell() {
+            return SpellcastingIllagerEntity.Spell.WOLOLO;
         }
     }
 }
