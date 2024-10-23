@@ -3,7 +3,7 @@ package io.github.trashoflevillage.mushroommadness.client;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.client.entity.ModModelLayers;
-import io.github.trashoflevillage.mushroommadness.client.entity.MycologistEntityRenderer;
+import io.github.trashoflevillage.mushroommadness.client.entity.renderers.MycologistEntityRenderer;
 import io.github.trashoflevillage.mushroommadness.client.entity.models.MycologistEntityModel;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;

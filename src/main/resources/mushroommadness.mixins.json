@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"TreeDecoratorTypeMixin",
-		"WorldMixin"
+		"WorldMixin",
+		"VillagerHostilesSensorMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

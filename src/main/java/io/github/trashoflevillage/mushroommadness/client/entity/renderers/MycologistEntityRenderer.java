@@ -1,6 +1,7 @@
-package io.github.trashoflevillage.mushroommadness.client.entity;
+package io.github.trashoflevillage.mushroommadness.client.entity.renderers;
 
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
+import io.github.trashoflevillage.mushroommadness.client.entity.ModModelLayers;
 import io.github.trashoflevillage.mushroommadness.client.entity.models.MycologistEntityModel;
 import io.github.trashoflevillage.mushroommadness.entity.custom.MycologistEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -8,10 +9,7 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.feature.HeadFeatureRenderer;
 import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
-import net.minecraft.client.render.entity.model.IllagerEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.mob.IllagerEntity;
-import net.minecraft.entity.mob.IllusionerEntity;
 import net.minecraft.util.Identifier;
 
 public class MycologistEntityRenderer<T extends MycologistEntity> extends MobEntityRenderer<MycologistEntity, MycologistEntityModel<MycologistEntity>> {
@@ -38,6 +36,7 @@ public class MycologistEntityRenderer<T extends MycologistEntity> extends MobEnt
                     }
                 }
         );
+        this.addFeature(new MycologistMushroomFeatureRenderer<>(this, context.getBlockRenderManager()));
     }
 
     @Override
