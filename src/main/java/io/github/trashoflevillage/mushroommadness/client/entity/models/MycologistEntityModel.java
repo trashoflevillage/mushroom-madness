@@ -4,16 +4,16 @@ import io.github.trashoflevillage.mushroommadness.entity.animation.MycologistEnt
 import io.github.trashoflevillage.mushroommadness.entity.custom.MycologistEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.entity.model.CrossbowPosing;
-import net.minecraft.client.render.entity.model.SinglePartEntityModel;
+import net.minecraft.client.render.entity.model.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.mob.IllagerEntity;
+import net.minecraft.util.Arm;
 import net.minecraft.util.math.MathHelper;
 
 // Made with Blockbench 4.11.1
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class MycologistEntityModel<T extends MycologistEntity> extends SinglePartEntityModel<T> {
+public class MycologistEntityModel<T extends MycologistEntity> extends SinglePartEntityModel<T> implements ModelWithArms, ModelWithHead {
 	private final ModelPart body;
 	private final ModelPart head;
 	private final ModelPart nose;
@@ -166,5 +166,19 @@ public class MycologistEntityModel<T extends MycologistEntity> extends SinglePar
 
 		this.head.yaw = headYaw * 0.017453292F;
 		this.head.pitch = headPitch * 0.017453292F;
+	}
+
+	private ModelPart getAttackingArm(Arm arm) {
+		return arm == Arm.LEFT ? this.leftArm : this.rightArm;
+	}
+
+	@Override
+	public void setArmAngle(Arm arm, MatrixStack matrices) {
+		this.getAttackingArm(arm).rotate(matrices);
+	}
+
+	@Override
+	public ModelPart getHead() {
+		return head;
 	}
 }
