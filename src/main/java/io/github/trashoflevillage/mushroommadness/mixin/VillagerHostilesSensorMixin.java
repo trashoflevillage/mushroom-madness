@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(VillagerHostilesSensor.class)
-public abstract class VillagerHostilesSensorMixin extends NearestVisibleLivingEntitySensor {
+public class VillagerHostilesSensorMixin {
     @Shadow @Final @Mutable private static ImmutableMap<EntityType<?>, Float> SQUARED_DISTANCES_FOR_DANGER;
 
     static {
