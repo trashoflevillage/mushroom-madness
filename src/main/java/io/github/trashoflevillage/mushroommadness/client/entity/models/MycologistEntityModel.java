@@ -63,7 +63,7 @@ public class MycologistEntityModel<T extends MycologistEntity> extends SinglePar
 
 		ModelPartData leftArm = body.addChild("leftArm", ModelPartBuilder.create().uv(40, 46).mirrored().cuboid(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(5.0F, 2.0F, 0.0F));
 
-		ModelPartData head2 = head.addChild("head2", ModelPartBuilder.create().uv(32, 7).cuboid(-3.0F, -6.0F, -4.0F, 5.0F, 6.0F, 5.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, -3.0F, 1.0F, 0.1957F, 1.2207F, 0.2051F));
+		ModelPartData head2 = head.addChild("head2", ModelPartBuilder.create().uv(32, 7).cuboid(-3.0F, -6.0F, -4.0F, 5.0F, 6.0F, 5.0F, new Dilation(0.0F)), ModelTransform.of(-1.0F, -3.0F, 0.0F, 0.1957F, 1.2207F, 0.2051F));
 
 		ModelPartData nose2 = head2.addChild("nose2", ModelPartBuilder.create().uv(32, 2).cuboid(-1.0F, 0.0F, -5.0F, 1.0F, 3.0F, 1.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -2.0F, 0.0F));
 
