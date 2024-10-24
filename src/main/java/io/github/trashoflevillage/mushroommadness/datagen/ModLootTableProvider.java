@@ -32,6 +32,5 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.SPOREWOOD_FENCE_GATE);
         addDrop(ModBlocks.SPOREWOOD_DOOR, doorDrops(ModBlocks.SPOREWOOD_DOOR));
         addDrop(ModBlocks.SPOREWOOD_TRAPDOOR);
-        addDrop(ModBlocks.XP_COMPOSTER);
     }
 }

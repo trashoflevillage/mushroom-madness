@@ -7,7 +7,6 @@ import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.CustomShortPlantBlock;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.SporesBlock;
-import io.github.trashoflevillage.mushroommadness.blocks.custom.XPComposterBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.data.family.BlockFamilies;
@@ -110,10 +109,6 @@ public class ModBlocks {
             .group("wooden")
             .unlockCriterionName("has_planks")
             .build();
-
-    public static final Block XP_COMPOSTER = registerBlock("xp_composter", new XPComposterBlock(
-            AbstractBlock.Settings.copy(Blocks.COMPOSTER)
-    ));
 
     private static Block registerBlock(String name, Block block) {
         return registerBlock(name, block, true);
