@@ -1,10 +1,10 @@
 {
-  "biomes": "#mushroommadness:has_structure/mycologist_tower_generator",
+  "biomes": "#mushroommadness:has_structure/mycologist_tower",
   "adapt_noise": false,
   "liquid_settings": "ignore_waterlogging",
   "spawn_overrides": {},
   "type": "minecraft:jigsaw",
-  "start_pool": "mushroommadness:mycologist_tower_generator",
+  "start_pool": "mushroommadness:mycologist_tower",
   "size": 1,
   "step": "surface_structures",
   "start_height": {
