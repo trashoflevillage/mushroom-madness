@@ -7,7 +7,7 @@
     "spread_type": "triangular"
   },
   "structures": [{
-    "structure": "mushroommadness:mycologist_tower_generator",
+    "structure": "mushroommadness:mycologist_tower",
     "weight": 1
   }]
 }
