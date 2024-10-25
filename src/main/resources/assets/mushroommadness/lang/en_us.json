@@ -33,5 +33,7 @@
   "block.mushroommadness.sporewood_trapdoor": "Sporewood Trapdoor",
 
   "entity.mushroommadness.mycologist": "Mycologist",
-  "item.mushroommadness.mycologist_spawn_egg": "Mycologist Spawn Egg"
+  "item.mushroommadness.mycologist_spawn_egg": "Mycologist Spawn Egg",
+
+  "item.mushroommadness.sporewood_disc": "Music Disc"
 }

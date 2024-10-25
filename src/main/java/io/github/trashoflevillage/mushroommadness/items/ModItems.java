@@ -6,11 +6,15 @@ import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.jukebox.JukeboxSong;
+import net.minecraft.block.jukebox.JukeboxSongs;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 public class ModItems {
     public static final Item SPOREWOOD_SIGN = registerItem("sporewood_sign",
@@ -23,6 +27,9 @@ public class ModItems {
 
     public static final Item MYCOLOGIST_SPAWN_EGG = registerItem("mycologist_spawn_egg",
             new SpawnEggItem(ModEntities.MYCOLOGIST, 9804699, 0xA81012, new Item.Settings()));
+
+    public static final Item SPOREWOOD_DISC = registerItem("sporewood_disc",
+            new Item(new Item.Settings().maxCount(1).jukeboxPlayable(JukeboxSongs.BLOCKS).rarity(Rarity.RARE)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(MushroomMadness.MOD_ID, name), item);
@@ -58,7 +65,9 @@ public class ModItems {
 
         addItemsToItemGroup(ItemGroups.TOOLS,
                 ModItems.SPOREWOOD_BOAT,
-                ModItems.SPOREWOOD_CHEST_BOAT);
+                ModItems.SPOREWOOD_CHEST_BOAT,
+                ModItems.SPOREWOOD_DISC
+        );
 
         addItemsToItemGroup(ItemGroups.SPAWN_EGGS,
                 ModItems.MYCOLOGIST_SPAWN_EGG
