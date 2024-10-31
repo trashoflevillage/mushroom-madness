@@ -1,5 +1,7 @@
 package io.github.trashoflevillage.mushroommadness.entity.custom;
 
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.TargetPredicate;
@@ -18,6 +20,9 @@ import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.entity.raid.RaiderEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -29,6 +34,8 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MycologistEntity extends SpellcastingIllagerEntity implements RangedAttackMob {
@@ -60,9 +67,9 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
     protected void initGoals() {
         super.initGoals();
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new SpellcastingIllagerEntity.LookAtTargetGoal());
+        this.goalSelector.add(1, new LookAtTargetGoal());
         this.goalSelector.add(6, new BowAttackGoal<>(this, 0.5, 20, 15.0F));
-        this.goalSelector.add(6, new MycologistEntity.ConvertCowGoal());
+        this.goalSelector.add(6, new ConvertCowGoal());
         this.goalSelector.add(8, new WanderAroundGoal(this, 0.6));
         this.goalSelector.add(9, new LookAtEntityGoal(this, PlayerEntity.class, 3.0F, 1.0F));
         this.goalSelector.add(10, new LookAtEntityGoal(this, MobEntity.class, 8.0F));
@@ -81,7 +88,41 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
 
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
-        this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
+        ItemStack bow = new ItemStack(Items.BOW);
+
+        HashMap<RegistryKey<Enchantment>, Integer> enchants = new HashMap();
+        int enchantCount = this.random.nextInt(3);
+        HashMap<RegistryKey<Enchantment>, Integer> possibleEnchants = new HashMap<>();
+        possibleEnchants.put(Enchantments.POWER, 5);
+        possibleEnchants.put(Enchantments.PUNCH, 2);
+        possibleEnchants.put(Enchantments.FLAME, 1);
+
+        ArrayList<RegistryKey<Enchantment>> enchantList = new ArrayList<>();
+        for (RegistryKey<Enchantment> e : possibleEnchants.keySet()) {
+            enchantList.add(e);
+        }
+
+        for (int i = 0; i <= enchantCount; i++) {
+            boolean validEnchant = false;
+            int value = 0;
+            RegistryKey<Enchantment> enchant = null;
+            while (!validEnchant) {
+                enchant = enchantList.get(random.nextInt(enchantList.size()));
+                if (enchants.containsKey(enchant)) value = enchants.get(enchant);
+                else value = 0;
+                value++;
+                if (possibleEnchants.get(enchant) >= value) validEnchant = true;
+            }
+            enchants.put(enchant, value);
+        }
+
+        for (RegistryKey<Enchantment> e : enchants.keySet()) {
+            bow.addEnchantment(
+                    world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(e).get(), enchants.get(e)
+            );
+        }
+
+        this.equipStack(EquipmentSlot.MAINHAND, bow);
         return super.initialize(world, difficulty, spawnReason, entityData);
     }
 
@@ -130,11 +171,11 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
     }
 
     @Override
-    public IllagerEntity.State getState() {
+    public State getState() {
         if (this.isSpellcasting()) {
-            return IllagerEntity.State.SPELLCASTING;
+            return State.SPELLCASTING;
         } else {
-            return this.isAttacking() ? IllagerEntity.State.BOW_AND_ARROW : IllagerEntity.State.CROSSED;
+            return this.isAttacking() ? State.BOW_AND_ARROW : State.CROSSED;
         }
     }
     
@@ -148,7 +189,7 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
         return this.cowTarget;
     }
 
-    public class ConvertCowGoal extends SpellcastingIllagerEntity.CastSpellGoal {
+    public class ConvertCowGoal extends CastSpellGoal {
         private final TargetPredicate convertibleCowPredicate = TargetPredicate.createNonAttackable()
                 .setBaseMaxDistance(16.0)
                 .setPredicate(livingEntity -> ((CowEntity)livingEntity).getType() == EntityType.COW);
@@ -215,8 +256,8 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
         }
 
         @Override
-        protected SpellcastingIllagerEntity.Spell getSpell() {
-            return SpellcastingIllagerEntity.Spell.WOLOLO;
+        protected Spell getSpell() {
+            return Spell.WOLOLO;
         }
     }
 }
