@@ -20,13 +20,6 @@ public class ModTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> XP_COMPOSTABLE_SMALL =
-                createTag("xp_compostable_small");
-        public static final TagKey<Item> XP_COMPOSTABLE_MEDIUM =
-                createTag("xp_compostable_medium");
-        public static final TagKey<Item> XP_COMPOSTABLE_LARGE =
-                createTag("xp_compostable_large");
-
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(MushroomMadness.MOD_ID, name));
         }

@@ -43,6 +43,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.SPOREWOOD_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.SPOREWOOD_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SPOREWOOD_DISC, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.MYCOLOGIST_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
