@@ -28,8 +28,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(Blocks.AIR),
                 new BlobFoliagePlacer(ConstantIntProvider.create(0), ConstantIntProvider.create(0), 0),
 
-                // Tree Decorators WIP
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new CocoaBeansTreeDecorator(0.5f))).build());
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new SporeDecorator(1f))).build());
 
         register(context, MYCELIUM_GROWTH_PATCH_KEY, Feature.RANDOM_PATCH, createRandomPatchFeatureConfig(BlockStateProvider.of(ModBlocks.MYCELIUM_GROWTH), 32));
     }

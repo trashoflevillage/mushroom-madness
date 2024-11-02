@@ -13,20 +13,11 @@ import net.minecraft.world.gen.treedecorator.TreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 
 public class SporeDecorator extends TreeDecorator {
-    public static final MapCodec<SporeDecorator> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
-                    Codec.floatRange(0.0F, 1.0F).fieldOf("probability").forGetter(p -> p.probability),
-                    Codec.intRange(0, 16).fieldOf("treeHeight").forGetter(p -> p.treeHeight))
-            .apply(instance, SporeDecorator::new));
 
-    private final float probability;
-    private final int treeHeight;
-
-    public SporeDecorator(float f, int treeHeight) {
-        this.probability = f;
-        this.treeHeight = treeHeight;
-    }
-
-    protected TreeDecoratorType<?> getType() { return ModTreeDecorator.SPORES; }
+    public static TreeDecoratorType<SporeDecorator> TYPE;
+    public final float probability; //0.0 -> 1.0        0.00 = 0% , 1.00 = 100%
+    public SporeDecorator(float f){this.probability = f;}
+    public TreeDecoratorType<?> getType() {return TYPE;}
 
     @Override
     public void generate(Generator generator) {

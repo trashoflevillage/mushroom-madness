@@ -31,6 +31,7 @@ public class MushroomMadness implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModBoats.registerBoats();
+		ModTreeDecorator.register();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MYCOLOGIST, MycologistEntity.createMycologistAttributes());
 

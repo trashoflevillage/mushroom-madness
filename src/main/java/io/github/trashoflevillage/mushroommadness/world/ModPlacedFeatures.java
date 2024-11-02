@@ -21,8 +21,8 @@ public class ModPlacedFeatures {
     public static void boostrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-        register(context, SPOREWOOD_TREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SPOREWOOD_TREE_KEY),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(2, 0.1f, 1), Blocks.AIR));
+//        register(context, SPOREWOOD_TREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SPOREWOOD_TREE_KEY),
+//                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(2, 0.1f, 1), Blocks.AIR));
 
         register(context, MYCELIUM_GROWTH_PATCH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MYCELIUM_GROWTH_PATCH_KEY),
                 VegetationPlacedFeatures.modifiers(2));
