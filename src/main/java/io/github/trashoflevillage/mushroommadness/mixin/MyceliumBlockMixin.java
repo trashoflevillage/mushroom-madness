@@ -68,4 +68,9 @@ public abstract class MyceliumBlockMixin implements Fertilizable {
             }
         }
     }
+
+    @Override
+    public Fertilizable.FertilizableType getFertilizableType() {
+        return Fertilizable.FertilizableType.NEIGHBOR_SPREADER;
+    }
 }
