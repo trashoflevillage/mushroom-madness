@@ -17,6 +17,7 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> SPOREWOOD_TREE_PLACED_KEY = registerKey("sporewood_tree");
     public static final RegistryKey<PlacedFeature> MYCELIUM_GROWTH_PATCH_PLACED_KEY = registerKey("patch_mycelium_growth");
+    public static final RegistryKey<PlacedFeature> MYCELIUM_GROWTH_BONEMEAL_KEY = registerKey("mycelium_growth_bonemeal");
 
     public static void boostrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);

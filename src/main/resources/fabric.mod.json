@@ -29,6 +29,7 @@
 		]
 	},
 	"mixins": [
+		"mushroommadness.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.7",
