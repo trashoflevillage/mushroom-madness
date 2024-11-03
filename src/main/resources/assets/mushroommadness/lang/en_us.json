@@ -35,5 +35,9 @@
   "entity.mushroommadness.mycologist": "Mycologist",
   "item.mushroommadness.mycologist_spawn_egg": "Mycologist Spawn Egg",
 
-  "item.mushroommadness.sporewood_disc": "Music Disc"
+  "item.mushroommadness.music_disc_lentinula_edodes": "Music Disc",
+
+  "item.mushroommadness.bottomless_stew": "Bottomless Stew",
+
+  "jukebox_song.mushroommadness.lentinula_edodes": "wrenlow - Lentinula Edodes"
 }

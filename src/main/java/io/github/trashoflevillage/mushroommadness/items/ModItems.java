@@ -5,14 +5,15 @@ import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
+import io.github.trashoflevillage.mushroommadness.items.custom.CustomItem;
+import io.github.trashoflevillage.mushroommadness.sounds.ModSounds;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.jukebox.JukeboxSong;
 import net.minecraft.block.jukebox.JukeboxSongs;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
@@ -27,9 +28,17 @@ public class ModItems {
 
     public static final Item MYCOLOGIST_SPAWN_EGG = registerItem("mycologist_spawn_egg",
             new SpawnEggItem(ModEntities.MYCOLOGIST, 9804699, 0xA81012, new Item.Settings()));
+    
+    public static final Item MUSIC_DISC_LENTINULA_EDODES = registerItem("music_disc_lentinula_edodes",
+            new Item(new Item.Settings().maxCount(1).jukeboxPlayable(ModSounds.of("lentinula_edodes")).rarity(Rarity.RARE)));
 
-    public static final Item SPOREWOOD_DISC = registerItem("sporewood_disc",
-            new Item(new Item.Settings().maxCount(1).jukeboxPlayable(JukeboxSongs.BLOCKS).rarity(Rarity.RARE)));
+    public static final Item BOTTOMLESS_STEW = registerItem("bottomless_stew",
+            new CustomItem(new Item.Settings().maxCount(1).food(
+                    new FoodComponent.Builder().nutrition(6).saturationModifier(0.6F).build()
+            ).rarity(Rarity.RARE))
+                    .setCooldown(600)
+                    .setCooldownApplication(CustomItem.CooldownApplication.FINISH_USING)
+                    .setConsumedOnEat(false));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(MushroomMadness.MOD_ID, name), item);
@@ -66,11 +75,15 @@ public class ModItems {
         addItemsToItemGroup(ItemGroups.TOOLS,
                 ModItems.SPOREWOOD_BOAT,
                 ModItems.SPOREWOOD_CHEST_BOAT,
-                ModItems.SPOREWOOD_DISC
+                ModItems.MUSIC_DISC_LENTINULA_EDODES
         );
 
         addItemsToItemGroup(ItemGroups.SPAWN_EGGS,
                 ModItems.MYCOLOGIST_SPAWN_EGG
+        );
+
+        addItemsToItemGroup(ItemGroups.FOOD_AND_DRINK,
+                ModItems.BOTTOMLESS_STEW
         );
     }
 

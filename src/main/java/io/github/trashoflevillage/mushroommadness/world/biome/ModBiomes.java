@@ -21,7 +21,7 @@ public class ModBiomes {
             Identifier.of(MushroomMadness.MOD_ID, "sporewood_forest"));
 
     public static void boostrap(Registerable<Biome> context) {
-        context.register(SPOREWOOD_FOREST, sporewoodForest(context));
+        //context.register(SPOREWOOD_FOREST, sporewoodForest(context));
     }
 
     public static void globalOverworldGeneration(GenerationSettings.LookupBackedBuilder builder) {

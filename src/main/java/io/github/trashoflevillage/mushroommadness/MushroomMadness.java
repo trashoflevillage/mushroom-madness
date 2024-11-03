@@ -5,6 +5,7 @@ import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
 import io.github.trashoflevillage.mushroommadness.entity.custom.MycologistEntity;
 import io.github.trashoflevillage.mushroommadness.items.ModItems;
+import io.github.trashoflevillage.mushroommadness.sounds.ModSounds;
 import io.github.trashoflevillage.mushroommadness.world.gen.ModTreeDecorator;
 import net.fabricmc.api.ModInitializer;
 
@@ -28,6 +29,7 @@ public class MushroomMadness implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		ModSounds.registerSounds();
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModBoats.registerBoats();

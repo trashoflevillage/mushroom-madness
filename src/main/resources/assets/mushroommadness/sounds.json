@@ -1,0 +1,8 @@
+{
+  "lentinula_edodes": {
+    "category": "minecraft:record",
+    "sounds": [ {
+      "name": "mushroommadness:lentinula_edodes",
+      "stream": true
+    }]}
+}
