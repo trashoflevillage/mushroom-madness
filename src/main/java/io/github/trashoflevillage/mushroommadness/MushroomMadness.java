@@ -4,6 +4,7 @@ import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
 import io.github.trashoflevillage.mushroommadness.entity.custom.MycologistEntity;
+import io.github.trashoflevillage.mushroommadness.items.ModItemGroups;
 import io.github.trashoflevillage.mushroommadness.items.ModItems;
 import io.github.trashoflevillage.mushroommadness.sounds.ModSounds;
 import io.github.trashoflevillage.mushroommadness.world.gen.ModTreeDecorator;
@@ -34,6 +35,7 @@ public class MushroomMadness implements ModInitializer {
 		ModItems.registerModItems();
 		ModBoats.registerBoats();
 		ModTreeDecorator.register();
+		ModItemGroups.registerItemGroups();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MYCOLOGIST, MycologistEntity.createMycologistAttributes());
 

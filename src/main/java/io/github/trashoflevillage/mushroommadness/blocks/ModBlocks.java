@@ -7,6 +7,7 @@ import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.CustomShortPlantBlock;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.SporesBlock;
+import io.github.trashoflevillage.mushroommadness.items.ModItemGroups;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.data.family.BlockFamilies;

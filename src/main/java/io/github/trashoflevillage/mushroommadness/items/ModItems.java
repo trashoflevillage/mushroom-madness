@@ -17,6 +17,8 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
+import java.util.ArrayList;
+
 public class ModItems {
     public static final Item SPOREWOOD_SIGN = registerItem("sporewood_sign",
             new SignItem(new Item.Settings().maxCount(16), ModBlocks.SPOREWOOD_SIGN, ModBlocks.SPOREWOOD_WALL_SIGN));
@@ -46,50 +48,5 @@ public class ModItems {
     
     public static void registerModItems() {
         MushroomMadness.LOGGER.info("Registering items for " + MushroomMadness.MOD_ID + ".");
-
-        addItemsToItemGroup(ItemGroups.NATURAL,
-                ModBlocks.MYCELIUM_GROWTH,
-                ModBlocks.SPORES,
-                ModBlocks.SPOREWOOD_LOG);
-
-        addItemsToItemGroup(ItemGroups.BUILDING_BLOCKS,
-                ModBlocks.SPOREWOOD_LOG,
-                ModBlocks.SPOREWOOD_WOOD,
-                ModBlocks.STRIPPED_SPOREWOOD_LOG,
-                ModBlocks.STRIPPED_SPOREWOOD_WOOD,
-                ModBlocks.SPOREWOOD_PLANKS,
-                ModBlocks.SPOREWOOD_STAIRS,
-                ModBlocks.SPOREWOOD_SLAB,
-                ModBlocks.SPOREWOOD_FENCE,
-                ModBlocks.SPOREWOOD_FENCE_GATE,
-                ModBlocks.SPOREWOOD_DOOR,
-                ModBlocks.SPOREWOOD_TRAPDOOR,
-                ModBlocks.SPOREWOOD_PRESSURE_PLATE,
-                ModBlocks.SPOREWOOD_BUTTON);
-
-        addItemsToItemGroup(ItemGroups.FUNCTIONAL,
-                ModItems.SPOREWOOD_SIGN,
-                ModItems.SPOREWOOD_HANGING_SIGN
-        );
-
-        addItemsToItemGroup(ItemGroups.TOOLS,
-                ModItems.SPOREWOOD_BOAT,
-                ModItems.SPOREWOOD_CHEST_BOAT,
-                ModItems.MUSIC_DISC_LENTINULA_EDODES
-        );
-
-        addItemsToItemGroup(ItemGroups.SPAWN_EGGS,
-                ModItems.MYCOLOGIST_SPAWN_EGG
-        );
-
-        addItemsToItemGroup(ItemGroups.FOOD_AND_DRINK,
-                ModItems.BOTTOMLESS_STEW
-        );
-    }
-
-    private static void addItemsToItemGroup(RegistryKey<ItemGroup> group, ItemConvertible... items) {
-        ItemGroupEvents.modifyEntriesEvent(group).register(content -> {
-            for (ItemConvertible i : items) content.add(i);
-        });
     }
 }
