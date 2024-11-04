@@ -41,5 +41,7 @@
 
   "jukebox_song.mushroommadness.lentinula_edodes": "wrenlow - Lentinula Edodes",
 
-  "itemgroup.mushroommadness": "Mushroom Madness"
+  "itemgroup.mushroommadness": "Mushroom Madness",
+
+  "block.mushroommadness.glowcap": "Glowcap"
 }

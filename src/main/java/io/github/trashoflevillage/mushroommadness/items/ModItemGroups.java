@@ -40,6 +40,7 @@ public class ModItemGroups {
                             entries.add(ModItems.MUSIC_DISC_LENTINULA_EDODES);
                             entries.add(ModItems.MYCOLOGIST_SPAWN_EGG);
                             entries.add(ModItems.BOTTOMLESS_STEW);
+                            entries.add(ModBlocks.GLOWCAP);
                     }))
                     .build()
     );
@@ -48,7 +49,8 @@ public class ModItemGroups {
         addItemsToItemGroup(ItemGroups.NATURAL,
                 ModBlocks.MYCELIUM_GROWTH,
                 ModBlocks.SPORES,
-                ModBlocks.SPOREWOOD_LOG
+                ModBlocks.SPOREWOOD_LOG,
+                ModBlocks.GLOWCAP
         );
 
         addItemsToItemGroup(ItemGroups.BUILDING_BLOCKS,

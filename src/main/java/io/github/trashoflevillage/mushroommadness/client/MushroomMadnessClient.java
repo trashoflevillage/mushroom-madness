@@ -17,7 +17,8 @@ import net.minecraft.client.render.RenderLayer;
 public class MushroomMadnessClient implements ClientModInitializer {
 	private static final Block[] blocksWithTransparency = new Block[] {
 			ModBlocks.MYCELIUM_GROWTH, ModBlocks.SPORES,
-			ModBlocks.SPOREWOOD_DOOR, ModBlocks.SPOREWOOD_TRAPDOOR
+			ModBlocks.SPOREWOOD_DOOR, ModBlocks.SPOREWOOD_TRAPDOOR,
+			ModBlocks.GLOWCAP
 	};
 
 	@Override

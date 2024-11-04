@@ -6,6 +6,7 @@ import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock
 import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.CustomShortPlantBlock;
+import io.github.trashoflevillage.mushroommadness.blocks.custom.GlowcapBlock;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.SporesBlock;
 import io.github.trashoflevillage.mushroommadness.items.ModItemGroups;
 import net.minecraft.block.*;
@@ -17,7 +18,11 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
+
+import java.util.function.ToIntFunction;
 
 public class ModBlocks {
     public static final Block MYCELIUM_GROWTH =
@@ -111,6 +116,21 @@ public class ModBlocks {
             .unlockCriterionName("has_planks")
             .build();
 
+    public static final Block GLOWCAP =
+            registerBlock("glowcap",
+                    new GlowcapBlock(
+                            TreeConfiguredFeatures.HUGE_RED_MUSHROOM,
+                            AbstractBlock.Settings.create().mapColor(MapColor.PALE_YELLOW)
+                                    .noCollision()
+                                    .ticksRandomly()
+                                    .breakInstantly()
+                                    .sounds(BlockSoundGroup.GRASS)
+                                    .postProcess(Blocks::always)
+                                    .pistonBehavior(PistonBehavior.DESTROY)
+                                    .emissiveLighting(Blocks::always)
+                                    .luminance(createLightLevelFromLitBlockState(10, 4))
+                    ));
+
     private static Block registerBlock(String name, Block block) {
         return registerBlock(name, block, true);
     }
@@ -147,5 +167,15 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         MushroomMadness.LOGGER.info("Registering blocks for " + MushroomMadness.MOD_ID);
+    }
+
+    public static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {
+        return createLightLevelFromLitBlockState(litLevel, 0);
+    }
+
+    public static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel, int unlitLevel) {
+        return (state) -> {
+            return (Boolean)state.get(Properties.LIT) ? litLevel : unlitLevel;
+        };
     }
 }
