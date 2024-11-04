@@ -13,5 +13,6 @@ public class ModTerrablenderAPI implements TerraBlenderApi {
         Regions.register(new ModOverworldRegion(Identifier.of(MushroomMadness.MOD_ID, "overworld"), 2));
 
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MushroomMadness.MOD_ID, ModMaterialRules.makeRules());
+
     }
 }

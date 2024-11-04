@@ -1,5 +1,6 @@
 package io.github.trashoflevillage.mushroommadness.blocks.custom;
 
+import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.particles.ModParticles;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -15,6 +16,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Property;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
@@ -22,6 +24,8 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
 
 public class GlowcapBlock extends MushroomPlantBlock  {
+    public static final Identifier COLLIDE_WITH_GLOWCAP_PACKET_ID =
+            Identifier.of(MushroomMadness.MOD_ID, "glowcap_collision");
     private long lastActivated = 0;
     public static final BooleanProperty LIT;
 

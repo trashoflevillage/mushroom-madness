@@ -18,6 +18,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> SPOREWOOD_TREE_PLACED_KEY = registerKey("sporewood_tree");
     public static final RegistryKey<PlacedFeature> MYCELIUM_GROWTH_PATCH_PLACED_KEY = registerKey("patch_mycelium_growth");
     public static final RegistryKey<PlacedFeature> MYCELIUM_GROWTH_BONEMEAL_KEY = registerKey("mycelium_growth_bonemeal");
+    public static final RegistryKey<PlacedFeature> GLOWCAP_PATCH_PLACED_KEY = registerKey("patch_glowcap");
 
     public static void boostrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -26,6 +27,9 @@ public class ModPlacedFeatures {
 //                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(2, 0.1f, 1), Blocks.AIR));
 
         register(context, MYCELIUM_GROWTH_PATCH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MYCELIUM_GROWTH_PATCH_KEY),
+                VegetationPlacedFeatures.modifiers(2));
+
+        register(context, GLOWCAP_PATCH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GLOWCAP_PATCH_KEY),
                 VegetationPlacedFeatures.modifiers(2));
     }
 

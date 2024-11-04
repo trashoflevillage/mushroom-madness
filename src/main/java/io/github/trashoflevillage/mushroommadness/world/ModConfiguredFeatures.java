@@ -20,6 +20,7 @@ import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> SPOREWOOD_TREE_KEY = registerKey("sporewood_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MYCELIUM_GROWTH_PATCH_KEY = registerKey("patch_mycelium_growth");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> GLOWCAP_PATCH_KEY = registerKey("patch_glowcap");
 
     public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, SPOREWOOD_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
@@ -30,7 +31,19 @@ public class ModConfiguredFeatures {
 
                 new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new SporeDecorator(1f))).build());
 
-        register(context, MYCELIUM_GROWTH_PATCH_KEY, Feature.RANDOM_PATCH, createRandomPatchFeatureConfig(BlockStateProvider.of(ModBlocks.MYCELIUM_GROWTH), 32));
+        register(
+                context,
+                MYCELIUM_GROWTH_PATCH_KEY,
+                Feature.RANDOM_PATCH,
+                createRandomPatchFeatureConfig(BlockStateProvider.of(ModBlocks.MYCELIUM_GROWTH),32)
+        );
+
+        register(
+                context,
+                GLOWCAP_PATCH_KEY,
+                Feature.RANDOM_PATCH,
+                createRandomPatchFeatureConfig(BlockStateProvider.of(ModBlocks.GLOWCAP),32)
+        );
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
