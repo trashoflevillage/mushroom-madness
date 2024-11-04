@@ -41,6 +41,8 @@ public class ModItemGroups {
                             entries.add(ModItems.MYCOLOGIST_SPAWN_EGG);
                             entries.add(ModItems.BOTTOMLESS_STEW);
                             entries.add(ModBlocks.GLOWCAP);
+                            entries.add(ModBlocks.WAXED_GLOWCAP);
+                            entries.add(ModBlocks.WAXED_LIT_GLOWCAP);
                     }))
                     .build()
     );
@@ -50,7 +52,9 @@ public class ModItemGroups {
                 ModBlocks.MYCELIUM_GROWTH,
                 ModBlocks.SPORES,
                 ModBlocks.SPOREWOOD_LOG,
-                ModBlocks.GLOWCAP
+                ModBlocks.GLOWCAP,
+                ModBlocks.WAXED_GLOWCAP,
+                ModBlocks.WAXED_LIT_GLOWCAP
         );
 
         addItemsToItemGroup(ItemGroups.BUILDING_BLOCKS,

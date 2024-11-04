@@ -43,5 +43,7 @@
 
   "itemgroup.mushroommadness": "Mushroom Madness",
 
-  "block.mushroommadness.glowcap": "Glowcap"
+  "block.mushroommadness.glowcap": "Glowcap",
+  "block.mushroommadness.waxed_glowcap": "Waxed Glowcap",
+  "block.mushroommadness.waxed_lit_glowcap": "Waxed Lit Glowcap"
 }

@@ -8,6 +8,7 @@ import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.CustomShortPlantBlock;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.GlowcapBlock;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.SporesBlock;
+import io.github.trashoflevillage.mushroommadness.blocks.custom.WaxedGlowcapBlock;
 import io.github.trashoflevillage.mushroommadness.items.ModItemGroups;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -129,6 +130,40 @@ public class ModBlocks {
                                     .pistonBehavior(PistonBehavior.DESTROY)
                                     .emissiveLighting(Blocks::always)
                                     .luminance(createLightLevelFromLitBlockState(10, 4))
+                    ));
+
+    public static final Block WAXED_GLOWCAP =
+            registerBlock("waxed_glowcap",
+                    new WaxedGlowcapBlock(
+                            TreeConfiguredFeatures.HUGE_RED_MUSHROOM,
+                            AbstractBlock.Settings.create().mapColor(MapColor.PALE_YELLOW)
+                                    .noCollision()
+                                    .ticksRandomly()
+                                    .breakInstantly()
+                                    .sounds(BlockSoundGroup.GRASS)
+                                    .postProcess(Blocks::always)
+                                    .pistonBehavior(PistonBehavior.DESTROY)
+                                    .emissiveLighting(Blocks::always)
+                                    .luminance((state) -> {
+                                        return 4;
+                                    }), false
+                    ));
+
+    public static final Block WAXED_LIT_GLOWCAP =
+            registerBlock("waxed_lit_glowcap",
+                    new WaxedGlowcapBlock(
+                            TreeConfiguredFeatures.HUGE_RED_MUSHROOM,
+                            AbstractBlock.Settings.create().mapColor(MapColor.PALE_YELLOW)
+                                    .noCollision()
+                                    .ticksRandomly()
+                                    .breakInstantly()
+                                    .sounds(BlockSoundGroup.GRASS)
+                                    .postProcess(Blocks::always)
+                                    .pistonBehavior(PistonBehavior.DESTROY)
+                                    .emissiveLighting(Blocks::always)
+                                    .luminance((state) -> {
+                                        return 10;
+                                    }), true
                     ));
 
     private static Block registerBlock(String name, Block block) {

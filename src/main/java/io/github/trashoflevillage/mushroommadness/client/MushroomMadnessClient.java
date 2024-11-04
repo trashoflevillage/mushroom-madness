@@ -21,7 +21,7 @@ public class MushroomMadnessClient implements ClientModInitializer {
 	private static final Block[] blocksWithTransparency = new Block[] {
 			ModBlocks.MYCELIUM_GROWTH, ModBlocks.SPORES,
 			ModBlocks.SPOREWOOD_DOOR, ModBlocks.SPOREWOOD_TRAPDOOR,
-			ModBlocks.GLOWCAP
+			ModBlocks.GLOWCAP, ModBlocks.WAXED_GLOWCAP, ModBlocks.WAXED_LIT_GLOWCAP
 	};
 
 	@Override
