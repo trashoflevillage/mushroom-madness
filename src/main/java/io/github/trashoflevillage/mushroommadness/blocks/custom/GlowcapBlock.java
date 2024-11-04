@@ -1,6 +1,7 @@
 package io.github.trashoflevillage.mushroommadness.blocks.custom;
 
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
+import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.particles.ModParticles;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -92,6 +93,24 @@ public class GlowcapBlock extends MushroomPlantBlock  {
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (world.getTime() - lastActivated > 600) deactivate(state, pos, world);
+    }
+
+    @Override
+    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (stack.isOf(Items.HONEYCOMB)) {
+            waxBlock(stack, state, world, pos, player, hand);
+            return ItemActionResult.SUCCESS;
+        }
+        return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
+    }
+
+    private void waxBlock(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand) {
+        stack.decrementUnlessCreative(1, player);
+        player.setStackInHand(hand, stack);
+
+        if (!state.get(LIT)) world.setBlockState(pos, ModBlocks.WAXED_GLOWCAP.getDefaultState());
+        else world.setBlockState(pos, ModBlocks.WAXED_LIT_GLOWCAP.getDefaultState());
+
     }
 
     static {
