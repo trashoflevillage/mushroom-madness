@@ -7,11 +7,14 @@ import io.github.trashoflevillage.mushroommadness.client.entity.renderers.Mycolo
 import io.github.trashoflevillage.mushroommadness.client.entity.models.MycologistEntityModel;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
+import io.github.trashoflevillage.mushroommadness.particles.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.client.particle.EndRodParticle;
 import net.minecraft.client.render.RenderLayer;
 
 public class MushroomMadnessClient implements ClientModInitializer {
@@ -30,5 +33,14 @@ public class MushroomMadnessClient implements ClientModInitializer {
 
 		EntityRendererRegistry.register(ModEntities.MYCOLOGIST, MycologistEntityRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.MYCOLOGIST, MycologistEntityModel::getTexturedModelData);
+
+		registerParticles();
+	}
+
+	private void registerParticles() {
+		ParticleFactoryRegistry.getInstance().register(
+				ModParticles.GLOWCAP_SPORE,
+				EndRodParticle.Factory::new
+		);
 	}
 }
