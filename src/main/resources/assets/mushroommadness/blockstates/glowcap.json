@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "mushroommadness:block/glowcap"
+    },
+    "lit=true": {
+      "model": "mushroommadness:block/glowcap_lit"
+    }
+  }
+}
