@@ -21,7 +21,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import java.util.List;
 import java.util.Optional;
 
-@Debug(export = true)
 @Mixin(MyceliumBlock.class)
 public abstract class MyceliumBlockMixin implements Fertilizable {
     @Override
