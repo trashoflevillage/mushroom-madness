@@ -7,6 +7,7 @@ import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.*;
 import io.github.trashoflevillage.mushroommadness.items.ModItemGroups;
+import io.github.trashoflevillage.mushroommadness.world.ModConfiguredFeatures;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.data.family.BlockFamilies;
@@ -117,7 +118,7 @@ public class ModBlocks {
     public static final Block GLOWCAP =
             registerBlock("glowcap",
                     new GlowcapBlock(
-                            TreeConfiguredFeatures.HUGE_RED_MUSHROOM,
+                            ModConfiguredFeatures.HUGE_GLOWCAP_KEY,
                             AbstractBlock.Settings.create().mapColor(MapColor.PALE_YELLOW)
                                     .noCollision()
                                     .ticksRandomly()
@@ -141,7 +142,7 @@ public class ModBlocks {
     public static final Block WAXED_GLOWCAP =
             registerBlock("waxed_glowcap",
                     new WaxedGlowcapBlock(
-                            TreeConfiguredFeatures.HUGE_RED_MUSHROOM,
+                            ModConfiguredFeatures.HUGE_GLOWCAP_KEY,
                             AbstractBlock.Settings.create().mapColor(MapColor.PALE_YELLOW)
                                     .noCollision()
                                     .ticksRandomly()
@@ -158,7 +159,7 @@ public class ModBlocks {
     public static final Block WAXED_LIT_GLOWCAP =
             registerBlock("waxed_lit_glowcap",
                     new WaxedGlowcapBlock(
-                            TreeConfiguredFeatures.HUGE_RED_MUSHROOM,
+                            ModConfiguredFeatures.HUGE_GLOWCAP_KEY,
                             AbstractBlock.Settings.create().mapColor(MapColor.PALE_YELLOW)
                                     .noCollision()
                                     .ticksRandomly()

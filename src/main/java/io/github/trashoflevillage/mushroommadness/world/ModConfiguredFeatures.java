@@ -21,6 +21,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> SPOREWOOD_TREE_KEY = registerKey("sporewood_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MYCELIUM_GROWTH_PATCH_KEY = registerKey("patch_mycelium_growth");
     public static final RegistryKey<ConfiguredFeature<?, ?>> GLOWCAP_PATCH_KEY = registerKey("patch_glowcap");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> HUGE_GLOWCAP_KEY = registerKey("huge_glowcap");
 
     public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, SPOREWOOD_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
