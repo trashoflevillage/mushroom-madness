@@ -5,10 +5,7 @@ import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
-import io.github.trashoflevillage.mushroommadness.blocks.custom.CustomShortPlantBlock;
-import io.github.trashoflevillage.mushroommadness.blocks.custom.GlowcapBlock;
-import io.github.trashoflevillage.mushroommadness.blocks.custom.SporesBlock;
-import io.github.trashoflevillage.mushroommadness.blocks.custom.WaxedGlowcapBlock;
+import io.github.trashoflevillage.mushroommadness.blocks.custom.*;
 import io.github.trashoflevillage.mushroommadness.items.ModItemGroups;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -130,6 +127,15 @@ public class ModBlocks {
                                     .pistonBehavior(PistonBehavior.DESTROY)
                                     .emissiveLighting(Blocks::always)
                                     .luminance(createLightLevelFromLitBlockState(10, 4))
+                    ));
+
+    public static final Block GLOWCAP_MUSHROOM_BLOCK =
+            registerBlock("glowcap_mushroom_block",
+                    new GlowcapMushroomBlock(
+                            AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM_BLOCK)
+                                    .ticksRandomly()
+                                    .emissiveLighting(Blocks::always)
+                                    .luminance(state -> 10)
                     ));
 
     public static final Block WAXED_GLOWCAP =

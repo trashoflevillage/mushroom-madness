@@ -47,5 +47,7 @@
   "block.mushroommadness.waxed_glowcap": "Waxed Glowcap",
   "block.mushroommadness.waxed_lit_glowcap": "Waxed Lit Glowcap",
 
+  "block.mushroommadness.glowcap_mushroom_block": "Glowcap Block",
+
   "sounds.mushroommadness.toggle_glowcap": "Glowcap Toggles"
 }

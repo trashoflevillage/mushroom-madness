@@ -10,12 +10,19 @@ import net.minecraft.util.Identifier;
 
 public class ModParticles {
     public static final SimpleParticleType GLOWCAP_SPORE = FabricParticleTypes.simple();
+    public static final SimpleParticleType GLOWCAP_SPORE_AIR = FabricParticleTypes.simple();
 
     public static void register() {
         Registry.register(
                 Registries.PARTICLE_TYPE,
                 Identifier.of(MushroomMadness.MOD_ID, "glowcap_spore"),
                 GLOWCAP_SPORE
+        );
+
+        Registry.register(
+                Registries.PARTICLE_TYPE,
+                Identifier.of(MushroomMadness.MOD_ID, "glowcap_spore_air"),
+                GLOWCAP_SPORE_AIR
         );
     }
 }

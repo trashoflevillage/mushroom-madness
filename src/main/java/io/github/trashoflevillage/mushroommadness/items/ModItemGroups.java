@@ -43,6 +43,7 @@ public class ModItemGroups {
                             entries.add(ModBlocks.GLOWCAP);
                             entries.add(ModBlocks.WAXED_GLOWCAP);
                             entries.add(ModBlocks.WAXED_LIT_GLOWCAP);
+                            entries.add(ModBlocks.GLOWCAP_MUSHROOM_BLOCK);
                     }))
                     .build()
     );
@@ -54,7 +55,8 @@ public class ModItemGroups {
                 ModBlocks.SPOREWOOD_LOG,
                 ModBlocks.GLOWCAP,
                 ModBlocks.WAXED_GLOWCAP,
-                ModBlocks.WAXED_LIT_GLOWCAP
+                ModBlocks.WAXED_LIT_GLOWCAP,
+                ModBlocks.GLOWCAP_MUSHROOM_BLOCK
         );
 
         addItemsToItemGroup(ItemGroups.BUILDING_BLOCKS,

@@ -8,14 +8,20 @@ import io.github.trashoflevillage.mushroommadness.client.entity.models.Mycologis
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
 import io.github.trashoflevillage.mushroommadness.particles.ModParticles;
+import io.github.trashoflevillage.mushroommadness.particles.custom.GlowcapSporeAirParticle;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.client.particle.EndRodParticle;
+import net.minecraft.client.particle.*;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.particle.SimpleParticleType;
+import net.minecraft.util.math.MathHelper;
 
 public class MushroomMadnessClient implements ClientModInitializer {
 	private static final Block[] blocksWithTransparency = new Block[] {
@@ -41,6 +47,11 @@ public class MushroomMadnessClient implements ClientModInitializer {
 		ParticleFactoryRegistry.getInstance().register(
 				ModParticles.GLOWCAP_SPORE,
 				EndRodParticle.Factory::new
+		);
+
+		ParticleFactoryRegistry.getInstance().register(
+				ModParticles.GLOWCAP_SPORE_AIR,
+				GlowcapSporeAirParticle.GlowcapSporeAirFactory::new
 		);
 	}
 }
