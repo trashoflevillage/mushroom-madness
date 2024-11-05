@@ -113,7 +113,7 @@ public class GlowcapBlock extends MushroomPlantBlock  {
 
         if (!state.get(LIT)) world.setBlockState(pos, ModBlocks.WAXED_GLOWCAP.getDefaultState());
         else world.setBlockState(pos, ModBlocks.WAXED_LIT_GLOWCAP.getDefaultState());
-
+        world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_HONEYCOMB_WAX_ON, SoundCategory.BLOCKS, 0.5f, 1f, true);
     }
 
     static {

@@ -38,12 +38,12 @@ public class ModConfiguredFeatures {
                 createRandomPatchFeatureConfig(BlockStateProvider.of(ModBlocks.MYCELIUM_GROWTH),32)
         );
 
-        register(
-                context,
-                GLOWCAP_PATCH_KEY,
-                Feature.RANDOM_PATCH,
-                createRandomPatchFeatureConfig(BlockStateProvider.of(ModBlocks.GLOWCAP),32)
-        );
+//        register(
+//                context,
+//                GLOWCAP_PATCH_KEY,
+//                Feature.RANDOM_PATCH,
+//                createRandomPatchFeatureConfig(BlockStateProvider.of(ModBlocks.GLOWCAP),32)
+//        );
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -19,9 +19,12 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 public class ModBiomes {
     public static final RegistryKey<Biome> SPOREWOOD_FOREST = RegistryKey.of(RegistryKeys.BIOME,
             Identifier.of(MushroomMadness.MOD_ID, "sporewood_forest"));
+//    public static final RegistryKey<Biome> GLOWCAP_CAVES = RegistryKey.of(RegistryKeys.BIOME,
+//            Identifier.of(MushroomMadness.MOD_ID, "glowcap_caves"));
 
     public static void boostrap(Registerable<Biome> context) {
         //context.register(SPOREWOOD_FOREST, sporewoodForest(context));
+        //context.register(GLOWCAP_CAVES, glowcapCaves(context));
     }
 
     public static void globalOverworldGeneration(GenerationSettings.LookupBackedBuilder builder) {
@@ -31,6 +34,40 @@ public class ModBiomes {
         DefaultBiomeFeatures.addMineables(builder);
         DefaultBiomeFeatures.addSprings(builder);
         DefaultBiomeFeatures.addFrozenTopLayer(builder);
+    }
+
+    public static Biome glowcapCaves(Registerable<Biome> context) {
+        SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
+
+        GenerationSettings.LookupBackedBuilder biomeBuilder =
+                new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
+                        context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
+
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.GLOWCAP_PATCH_PLACED_KEY);
+
+        globalOverworldGeneration(biomeBuilder);
+        DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
+
+        DefaultBiomeFeatures.addMushroomFieldsFeatures(biomeBuilder);
+
+        DefaultBiomeFeatures.addCaveMobs(spawnBuilder);
+
+        float temp = 1.0f;
+        return new Biome.Builder()
+                .precipitation(true)
+                .downfall(0.9f)
+                .temperature(temp)
+                .generationSettings(biomeBuilder.build())
+                .spawnSettings(spawnBuilder.build())
+                .effects((new BiomeEffects.Builder())
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .grassColor(0x55c93f)
+                        .skyColor(OverworldBiomeCreator.getSkyColor(temp))
+                        .foliageColor(0x2bbb0f)
+                        .build())
+                .build();
     }
 
     public static Biome sporewoodForest(Registerable<Biome> context) {

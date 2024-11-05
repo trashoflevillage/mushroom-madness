@@ -65,6 +65,7 @@
     ],
     [
       "mushroommadness:patch_mycelium_growth",
+      "mushroommadness:patch_glowcap",
       "minecraft:glow_lichen",
       "mushroommadness:sporewood_tree",
       "minecraft:mushroom_island_vegetation",

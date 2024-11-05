@@ -29,8 +29,8 @@ public class ModPlacedFeatures {
         register(context, MYCELIUM_GROWTH_PATCH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MYCELIUM_GROWTH_PATCH_KEY),
                 VegetationPlacedFeatures.modifiers(2));
 
-        register(context, GLOWCAP_PATCH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GLOWCAP_PATCH_KEY),
-                VegetationPlacedFeatures.modifiers(2));
+//        register(context, GLOWCAP_PATCH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GLOWCAP_PATCH_KEY),
+//                VegetationPlacedFeatures.modifiers(2));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
