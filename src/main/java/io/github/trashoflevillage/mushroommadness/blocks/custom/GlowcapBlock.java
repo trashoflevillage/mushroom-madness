@@ -3,6 +3,7 @@ package io.github.trashoflevillage.mushroommadness.blocks.custom;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.particles.ModParticles;
+import io.github.trashoflevillage.mushroommadness.sounds.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.MushroomPlantBlock;
@@ -53,6 +54,7 @@ public class GlowcapBlock extends MushroomPlantBlock  {
         lastActivated = world.getTime();
 
         if (!state.get(LIT)) {
+            world.playSoundAtBlockCenter(pos, ModSounds.TOGGLE_GLOWCAP, SoundCategory.BLOCKS, 1f, 1f, true);
             world.setBlockState(pos, state.with(LIT, true));
             Random rng = world.getRandom();
             for (int i = 0; i < 4; i++) {
@@ -79,6 +81,7 @@ public class GlowcapBlock extends MushroomPlantBlock  {
 
     private void deactivate(BlockState state, BlockPos pos, ServerWorld world) {
         world.setBlockState(pos, state.with(LIT, false));
+        world.playSoundAtBlockCenter(pos, ModSounds.TOGGLE_GLOWCAP, SoundCategory.BLOCKS, 1f, 1f, true);
     }
 
     @Nullable
@@ -92,7 +95,7 @@ public class GlowcapBlock extends MushroomPlantBlock  {
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (world.getTime() - lastActivated > 600) deactivate(state, pos, world);
+        if (state.get(LIT) && world.getTime() - lastActivated > 600) deactivate(state, pos, world);
     }
 
     @Override

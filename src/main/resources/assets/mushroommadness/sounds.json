@@ -4,5 +4,14 @@
     "sounds": [ {
       "name": "mushroommadness:lentinula_edodes",
       "stream": true
-    }]}
+    }]},
+  "toggle_glowcap": {
+    "subtitle": "sounds.mushroommadness.toggle_glowcap",
+    "sounds": [
+      "mushroommadness:toggle_glowcap_0",
+      "mushroommadness:toggle_glowcap_1",
+      "mushroommadness:toggle_glowcap_2",
+      "mushroommadness:toggle_glowcap_3"
+    ]
+  }
 }

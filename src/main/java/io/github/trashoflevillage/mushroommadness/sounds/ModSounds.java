@@ -10,6 +10,8 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 public class ModSounds {
+    public static final SoundEvent TOGGLE_GLOWCAP = registerSoundEvent("toggle_glowcap");
+
     public static RegistryKey<JukeboxSong> of(String id) {
         return RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(MushroomMadness.MOD_ID, id));
     }
