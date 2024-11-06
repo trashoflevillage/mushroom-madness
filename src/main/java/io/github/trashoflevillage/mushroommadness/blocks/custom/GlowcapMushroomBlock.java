@@ -23,7 +23,7 @@ public class GlowcapMushroomBlock extends MushroomBlock {
 
         mutable.set(i + MathHelper.nextInt(random, -10, 10), j - random.nextInt(10), k + MathHelper.nextInt(random, -10, 10));
         BlockState blockState = world.getBlockState(mutable);
-        if (random.nextBoolean() && !blockState.isFullCube(world, mutable)) {
+        if (random.nextBetween(1, 10) == 1 && !blockState.isFullCube(world, mutable)) {
             world.addParticle(
                     ModParticles.GLOWCAP_SPORE_AIR,
                     (double)mutable.getX() + random.nextDouble(),
