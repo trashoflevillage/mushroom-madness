@@ -81,7 +81,7 @@ public class GlowcapBlock extends MushroomPlantBlock  {
 
     private void deactivate(BlockState state, BlockPos pos, ServerWorld world) {
         world.setBlockState(pos, state.with(LIT, false));
-        world.playSoundAtBlockCenter(pos, ModSounds.TOGGLE_GLOWCAP, SoundCategory.BLOCKS, 1f, 1f, true);
+        world.playSoundAtBlockCenter(pos, ModSounds.TOGGLE_GLOWCAP, SoundCategory.BLOCKS, 0.5f, 1f, true);
     }
 
     @Nullable
@@ -113,7 +113,7 @@ public class GlowcapBlock extends MushroomPlantBlock  {
 
         if (!state.get(LIT)) world.setBlockState(pos, ModBlocks.WAXED_GLOWCAP.getDefaultState());
         else world.setBlockState(pos, ModBlocks.WAXED_LIT_GLOWCAP.getDefaultState());
-        world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_HONEYCOMB_WAX_ON, SoundCategory.BLOCKS, 0.5f, 1f, true);
+        world.playSoundAtBlockCenter(pos, SoundEvents.ITEM_HONEYCOMB_WAX_ON, SoundCategory.BLOCKS, 1f, 1f, true);
     }
 
     static {
