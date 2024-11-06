@@ -49,5 +49,14 @@
 
   "block.mushroommadness.glowcap_mushroom_block": "Glowcap Block",
 
-  "sounds.mushroommadness.toggle_glowcap": "Glowcap Toggles"
+  "sounds.mushroommadness.toggle_glowcap": "Glowcap Toggles",
+
+  "item.minecraft.potion.effect.glowing": "Potion of Glowing",
+  "item.minecraft.splash_potion.effect.glowing": "Splash Potion of Glowing",
+  "item.minecraft.lingering_potion.effect.glowing": "Lingering Potion of Glowing",
+  "item.minecraft.tipped_arrow.effect.glowing": "Arrow of Glowing",
+  "item.minecraft.potion.effect.glowing_extended": "Potion of Glowing",
+  "item.minecraft.splash_potion.effect.glowing_extended": "Splash Potion of Glowing",
+  "item.minecraft.lingering_potion.effect.glowing_extended": "Lingering Potion of Glowing",
+  "item.minecraft.tipped_arrow.effect.glowing_extended": "Arrow of Glowing"
 }

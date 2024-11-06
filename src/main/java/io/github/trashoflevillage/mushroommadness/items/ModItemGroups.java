@@ -93,6 +93,10 @@ public class ModItemGroups {
         addItemsToItemGroup(ItemGroups.FOOD_AND_DRINK,
                 ModItems.BOTTOMLESS_STEW
         );
+
+        addItemsToItemGroup(ItemGroups.INGREDIENTS,
+                ModBlocks.GLOWCAP
+        );
     }
 
     private static void addItemsToItemGroup(RegistryKey<ItemGroup> group, ItemConvertible... items) {
