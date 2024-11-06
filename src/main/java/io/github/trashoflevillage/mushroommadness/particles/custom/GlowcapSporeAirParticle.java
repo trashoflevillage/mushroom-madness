@@ -8,22 +8,11 @@ import net.minecraft.particle.SimpleParticleType;
 import net.minecraft.util.math.MathHelper;
 
 public class GlowcapSporeAirParticle extends SpriteBillboardParticle {
-    GlowcapSporeAirParticle(ClientWorld world, SpriteProvider spriteProvider, double x, double y, double z) {
-        super(world, x, y - 0.125, z);
-        this.setBoundingBoxSpacing(0.01F, 0.01F);
-        this.setSprite(spriteProvider);
-        this.scale = this.scale * (this.random.nextFloat() * 0.6F + 0.2F);
-        this.maxAge = (int)(16.0 / (Math.random() * 0.8 + 0.2));
-        this.collidesWithWorld = false;
-        this.velocityMultiplier = 1.0F;
-        this.gravityStrength = 0.0F;
-    }
-
     GlowcapSporeAirParticle(ClientWorld world, SpriteProvider spriteProvider, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
         super(world, x, y - 0.125, z, velocityX, velocityY, velocityZ);
         this.setBoundingBoxSpacing(0.01F, 0.01F);
         this.setSprite(spriteProvider);
-        this.scale = this.scale * (this.random.nextFloat() * 0.6F + 0.6F);
+        this.scale = this.scale * (this.random.nextFloat() * 0.4F + 0.6F);
         this.maxAge = (int)(16.0 / (Math.random() * 0.8 + 0.2));
         this.collidesWithWorld = false;
         this.velocityMultiplier = 1.0F;
