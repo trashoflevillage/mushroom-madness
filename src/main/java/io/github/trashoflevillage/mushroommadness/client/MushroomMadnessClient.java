@@ -25,9 +25,9 @@ import net.minecraft.util.math.MathHelper;
 
 public class MushroomMadnessClient implements ClientModInitializer {
 	private static final Block[] blocksWithTransparency = new Block[] {
-			ModBlocks.MYCELIUM_GROWTH, ModBlocks.SPORES,
+			ModBlocks.MYCELIUM_GROWTH, ModBlocks.SPORES, ModBlocks.DEAD_SPORES,
 			ModBlocks.SPOREWOOD_DOOR, ModBlocks.SPOREWOOD_TRAPDOOR,
-			ModBlocks.GLOWCAP, ModBlocks.WAXED_GLOWCAP, ModBlocks.WAXED_LIT_GLOWCAP
+			ModBlocks.GLOWCAP, ModBlocks.WAXED_GLOWCAP, ModBlocks.WAXED_LIT_GLOWCAP,
 	};
 
 	@Override
