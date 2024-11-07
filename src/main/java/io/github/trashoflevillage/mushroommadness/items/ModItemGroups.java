@@ -20,6 +20,7 @@ public class ModItemGroups {
                     .entries(((displayContext, entries) -> {
                             entries.add(ModBlocks.MYCELIUM_GROWTH);
                             entries.add(ModBlocks.SPORES);
+                            entries.add(ModBlocks.DEAD_SPORES);
                             entries.add(ModBlocks.SPOREWOOD_LOG);
                             entries.add(ModBlocks.SPOREWOOD_WOOD);
                             entries.add(ModBlocks.STRIPPED_SPOREWOOD_LOG);
@@ -52,6 +53,7 @@ public class ModItemGroups {
         addItemsToItemGroup(ItemGroups.NATURAL,
                 ModBlocks.MYCELIUM_GROWTH,
                 ModBlocks.SPORES,
+                ModBlocks.DEAD_SPORES,
                 ModBlocks.SPOREWOOD_LOG,
                 ModBlocks.GLOWCAP,
                 ModBlocks.WAXED_GLOWCAP,
@@ -76,6 +78,7 @@ public class ModItemGroups {
         );
 
         addItemsToItemGroup(ItemGroups.FUNCTIONAL,
+                ModBlocks.SPORES,
                 ModItems.SPOREWOOD_SIGN,
                 ModItems.SPOREWOOD_HANGING_SIGN
         );

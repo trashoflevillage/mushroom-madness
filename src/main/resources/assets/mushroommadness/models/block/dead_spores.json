@@ -1,8 +1,8 @@
 {
   "ambientocclusion": false,
   "textures": {
-    "particle": "mushroommadness:block/spores",
-    "vine": "mushroommadness:block/spores1"
+    "particle": "mushroommadness:block/dead_spores",
+    "vine": "mushroommadness:block/dead_spores"
   },
   "elements": [
     {

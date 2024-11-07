@@ -46,7 +46,21 @@ public class ModBlocks {
                             .sounds(BlockSoundGroup.WEEPING_VINES)
                             .burnable()
                             .pistonBehavior(PistonBehavior.DESTROY)
-                            .ticksRandomly()));
+                            .ticksRandomly()
+                    ));
+
+    public static final Block DEAD_SPORES =
+            registerBlock("dead_spores",
+                    new SporesBlock(AbstractBlock.Settings.create()
+                            .mapColor(MapColor.GRAY)
+                            .replaceable()
+                            .noCollision()
+                            .breakInstantly()
+                            .sounds(BlockSoundGroup.WEEPING_VINES)
+                            .burnable()
+                            .pistonBehavior(PistonBehavior.DESTROY),
+                            false
+                    ));
 
     public static final Block SPOREWOOD_LOG =
             registerBlock("sporewood_log",

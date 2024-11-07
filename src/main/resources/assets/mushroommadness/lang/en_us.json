@@ -1,6 +1,7 @@
 {
   "block.mushroommadness.mycelium_growth": "Mycelium Growth",
-  "block.mushroommadness.spores": "Spores",
+  "block.mushroommadness.spores": "Fungal Clump",
+  "block.mushroommadness.dead_spores": "Dead Fungal Clump",
 
   "block.mushroommadness.sporewood_log": "Sporewood Log",
   "block.mushroommadness.sporewood_wood": "Sporewood Wood",

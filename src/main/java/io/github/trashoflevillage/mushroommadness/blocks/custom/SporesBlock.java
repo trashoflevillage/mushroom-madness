@@ -29,19 +29,27 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Optional;
 
 public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, Waterloggable {
-    public static final IntProperty TEXTURE = IntProperty.of("texture", 0, 2);
     private static final BooleanProperty WATERLOGGED;
     private final SporesGrower grower = new SporesGrower(this);
+    private final boolean canSpread;
 
     public SporesBlock(Settings settings) {
         super(settings);
 
-        setDefaultState(getDefaultState().with(TEXTURE, 0));
         setDefaultState((BlockState)this.getDefaultState().with(WATERLOGGED, false));
+        canSpread = true;
+    }
+
+    public SporesBlock(Settings settings, boolean canSpread) {
+        super(settings);
+
+        setDefaultState((BlockState)this.getDefaultState().with(WATERLOGGED, false));
+        this.canSpread = canSpread;
     }
 
     @Override
@@ -61,7 +69,7 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
     }
 
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return true;
+        return canSpread;
     }
 
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
@@ -71,31 +79,32 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         super.appendProperties(builder);
-        builder.add(TEXTURE);
         builder.add(WATERLOGGED);
-    }
-
-    @Nullable
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        int textureState = getRandomTextureState(ctx.getWorld());
-        BlockState blockState = super.getPlacementState(ctx);
-        if (blockState == null) return null;
-        return blockState.with(TEXTURE, textureState);
-    }
-
-    public static int getRandomTextureState(World world) {
-        return world.random.nextBetween(0, 2);
     }
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (random.nextFloat() < 0.6 && this.canGrow(world, random, pos, state))
+        if (!canSpread) return;
+
+        if (random.nextFloat() < 0.6 && this.canGrow(world, random, pos, state)) {
             this.grow(world, random, pos, state);
+            if (random.nextFloat() < 0.2)
+                this.die(state, world, pos);
+        }
 
         for (BlockPos i : this.getAttachedBlockPositions(state, pos)) {
             if (random.nextFloat() < 0.3) attemptConvertBlock(world, i);
         }
+    }
+
+    private void die(BlockState state, ServerWorld world, BlockPos pos) {
+        Collection<Property<?>> properties = state.getProperties();
+        BlockState newState = ModBlocks.DEAD_SPORES.getDefaultState();
+
+        for (Property i : properties)
+            newState = newState.with(i, state.get(i));
+
+        world.setBlockState(pos, newState);
     }
 
     private void attemptConvertBlock(World world, BlockPos pos) {
@@ -175,7 +184,7 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
                 }
 
                 if (o != false)
-                    o = world.setBlockState(pos.pos(), blockState.with(TEXTURE, world.getRandom().nextBetween(0, 2)), 2);
+                    o = world.setBlockState(pos.pos(), blockState, 2);
             } else {
                 o = false;
             }
@@ -183,6 +192,7 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
             return o ? Optional.of(pos) : Optional.empty();
         }
     }
+
 
     static {
         WATERLOGGED = Properties.WATERLOGGED;
