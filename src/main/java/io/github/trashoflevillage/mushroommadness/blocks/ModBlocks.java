@@ -12,12 +12,15 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.HoneycombItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
 
 import java.util.function.ToIntFunction;
 
@@ -185,6 +188,22 @@ public class ModBlocks {
                                     }), true
                     ));
 
+    public static final Block WAXED_BROWN_MUSHROOM =
+            registerBlock("waxed_brown_mushroom",
+                    new WaxedMushroomBlock(
+                            TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM,
+                            AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM)
+                    )
+                );
+
+    public static final Block WAXED_RED_MUSHROOM =
+            registerBlock("waxed_red_mushroom",
+                    new WaxedMushroomBlock(
+                            TreeConfiguredFeatures.HUGE_RED_MUSHROOM,
+                            AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM)
+                    )
+            );
+
     public static final Block BROWN_SHELF_MUSHROOM =
             registerBlock("brown_shelf_mushroom",
                     new MushroomShelfBlock(AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM_BLOCK)
@@ -248,6 +267,13 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         MushroomMadness.LOGGER.info("Registering blocks for " + MushroomMadness.MOD_ID);
+
+        addWaxingRecipe(Blocks.BROWN_MUSHROOM, ModBlocks.WAXED_BROWN_MUSHROOM);
+        addWaxingRecipe(Blocks.RED_MUSHROOM, ModBlocks.WAXED_RED_MUSHROOM);
+    }
+
+    private static void addWaxingRecipe(Block from, Block to) {
+        HoneycombItem.UNWAXED_TO_WAXED_BLOCKS.get().put(from, to);
     }
 
     public static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {

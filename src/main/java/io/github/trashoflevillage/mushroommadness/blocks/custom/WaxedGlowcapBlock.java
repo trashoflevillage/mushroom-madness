@@ -21,9 +21,7 @@ import net.minecraft.world.WorldView;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
 
-public class WaxedGlowcapBlock extends MushroomPlantBlock  {
-    public static final Identifier COLLIDE_WITH_GLOWCAP_PACKET_ID =
-            Identifier.of(MushroomMadness.MOD_ID, "glowcap_collision");
+public class WaxedGlowcapBlock extends WaxedMushroomBlock  {
     public final boolean LIT;
 
     public WaxedGlowcapBlock(RegistryKey<ConfiguredFeature<?, ?>> featureKey, Settings settings, boolean lit) {
@@ -45,12 +43,5 @@ public class WaxedGlowcapBlock extends MushroomPlantBlock  {
                 rng.nextBetween(5, 10) * 0.01f,
                 0
         );
-    }
-
-    @Override
-    protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        BlockPos blockPos = pos.down();
-        BlockState blockState = world.getBlockState(blockPos);
-        return this.canPlantOnTop(blockState, world, blockPos);
     }
 }

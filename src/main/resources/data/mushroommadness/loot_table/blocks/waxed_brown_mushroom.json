@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "mushroommadness:waxed_glowcap"
+          "name": "mushroommadness:waxed_brown_mushroom"
         }
       ],
       "conditions": [
@@ -17,5 +17,5 @@
       ]
     }
   ],
-  "random_sequence": "mushroommadness:blocks/waxed_glowcap"
+  "random_sequence": "mushroommadness:blocks/waxed_brown_mushroom"
 }

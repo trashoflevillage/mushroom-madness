@@ -41,6 +41,8 @@ public class ModItemGroups {
                             entries.add(ModItems.MUSIC_DISC_LENTINULA_EDODES);
                             entries.add(ModItems.MYCOLOGIST_SPAWN_EGG);
                             entries.add(ModItems.BOTTOMLESS_STEW);
+                            entries.add(ModBlocks.WAXED_BROWN_MUSHROOM);
+                            entries.add(ModBlocks.WAXED_RED_MUSHROOM);
                             entries.add(ModBlocks.GLOWCAP);
                             entries.add(ModBlocks.WAXED_GLOWCAP);
                             entries.add(ModBlocks.WAXED_LIT_GLOWCAP);
@@ -59,6 +61,8 @@ public class ModItemGroups {
                 ModBlocks.DEAD_SPORES,
                 ModBlocks.SPOREWOOD_LOG,
                 ModBlocks.GLOWCAP,
+                ModBlocks.WAXED_BROWN_MUSHROOM,
+                ModBlocks.WAXED_RED_MUSHROOM,
                 ModBlocks.WAXED_GLOWCAP,
                 ModBlocks.WAXED_LIT_GLOWCAP,
                 ModBlocks.GLOWCAP_MUSHROOM_BLOCK,
@@ -80,7 +84,11 @@ public class ModItemGroups {
                 ModBlocks.SPOREWOOD_DOOR,
                 ModBlocks.SPOREWOOD_TRAPDOOR,
                 ModBlocks.SPOREWOOD_PRESSURE_PLATE,
-                ModBlocks.SPOREWOOD_BUTTON
+                ModBlocks.SPOREWOOD_BUTTON,
+                ModBlocks.WAXED_BROWN_MUSHROOM,
+                ModBlocks.WAXED_RED_MUSHROOM,
+                ModBlocks.WAXED_GLOWCAP,
+                ModBlocks.WAXED_LIT_GLOWCAP
         );
 
         addItemsToItemGroup(ItemGroups.FUNCTIONAL,
