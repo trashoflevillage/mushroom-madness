@@ -3,6 +3,8 @@ package io.github.trashoflevillage.mushroommadness.world;
 import com.google.common.collect.ImmutableList;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
+import io.github.trashoflevillage.mushroommadness.world.gen.decorators.BrownShelfMushroomDecorator;
+import io.github.trashoflevillage.mushroommadness.world.gen.decorators.RedShelfMushroomDecorator;
 import io.github.trashoflevillage.mushroommadness.world.gen.decorators.SporeDecorator;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
@@ -30,7 +32,12 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(Blocks.AIR),
                 new BlobFoliagePlacer(ConstantIntProvider.create(0), ConstantIntProvider.create(0), 0),
 
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new SporeDecorator(0.5f))).build());
+                new TwoLayersFeatureSize(1, 0, 2))
+                .decorators(ImmutableList.of(
+                        new BrownShelfMushroomDecorator(0.1f),
+                        new RedShelfMushroomDecorator(0.1f),
+                        new SporeDecorator(0.5f)
+                )).build());
 
         register(
                 context,

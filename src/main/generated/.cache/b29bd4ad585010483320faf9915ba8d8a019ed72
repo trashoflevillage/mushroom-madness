@@ -1,6 +1,4 @@
-// 1.21.1	2024-11-04T22:05:18.5885548	Mushroom Madness/World Gen
-c0ad9e70666f43022e462a06e40b992f47320884 data\mushroommadness\worldgen\configured_feature\patch_glowcap.json
-5016cdb64a30afea9a0e7d2e234c6ca9a724513b data\mushroommadness\worldgen\configured_feature\sporewood_tree.json
-cd1ccf4aa244b4afab813c95e0f740a3beea1f35 data\mushroommadness\worldgen\placed_feature\patch_glowcap.json
-29ba169411cd39d484f099b0d8eea831b2e8e7ed data\mushroommadness\worldgen\placed_feature\patch_mycelium_growth.json
+// 1.21.1	2024-11-07T11:50:06.8513612	Mushroom Madness/World Gen
 4936f1d91131763d21b40a38a16e27e3f4bf07d9 data\mushroommadness\worldgen\configured_feature\patch_mycelium_growth.json
+29ba169411cd39d484f099b0d8eea831b2e8e7ed data\mushroommadness\worldgen\placed_feature\patch_mycelium_growth.json
+b61b5328a6b9d8aa08c7eb4a5dee5f10150aae95 data\mushroommadness\worldgen\configured_feature\sporewood_tree.json

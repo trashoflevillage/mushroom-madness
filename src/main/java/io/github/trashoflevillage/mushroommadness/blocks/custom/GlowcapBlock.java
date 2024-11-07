@@ -4,10 +4,7 @@ import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.particles.ModParticles;
 import io.github.trashoflevillage.mushroommadness.sounds.ModSounds;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.MushroomPlantBlock;
-import net.minecraft.block.RedstoneTorchBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
@@ -118,6 +115,31 @@ public class GlowcapBlock extends MushroomPlantBlock  {
         world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, state));
         world.syncWorldEvent(player, WorldEvents.BLOCK_WAXED, pos, 0);
     }
+
+//    @Override
+//    public boolean trySpawningBigMushroom(ServerWorld world, BlockPos pos, BlockState state, Random random) {
+//        if (super.trySpawningBigMushroom(world, pos, state, random)) {
+//            Direction[] horizontalDirections = new Direction[] {
+//                    Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST
+//            };
+//            BlockPos currentPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
+//            while (world.getBlockState(currentPos).isOf(Blocks.MUSHROOM_STEM)) {
+//                for (Direction d : horizontalDirections) {
+//                    if (random.nextFloat() <= 1f/3) {
+//                        world.setBlockState(
+//                                currentPos.offset(d, 1),
+//                                ModBlocks.GLOWCAP_SHELF_MUSHROOM.getDefaultState()
+//                                        .with(MushroomShelfBlock.FACING, d)
+//                                        .with(MushroomShelfBlock.COUNT, random.nextBetween(1, 3))
+//                        );
+//                    }
+//                }
+//                currentPos = currentPos.add(0, 1, 0);
+//            }
+//            return true;
+//        }
+//        return false;
+//    }
 
     static {
         LIT = RedstoneTorchBlock.LIT;

@@ -3,8 +3,16 @@
   "config": {
     "decorators": [
       {
+        "type": "mushroommadness:brown_shelf_mushroom",
+        "probability": 0.1
+      },
+      {
+        "type": "mushroommadness:red_shelf_mushroom",
+        "probability": 0.1
+      },
+      {
         "type": "mushroommadness:spores",
-        "probability": 1.0
+        "probability": 1
       }
     ],
     "dirt_provider": {
