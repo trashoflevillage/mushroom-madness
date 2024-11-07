@@ -86,7 +86,7 @@ public class GlowcapBlock extends MushroomPlantBlock  {
 
     @Nullable
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return (BlockState)this.getDefaultState().with(LIT, ctx.getWorld().isReceivingRedstonePower(ctx.getBlockPos()));
+        return (BlockState)this.getDefaultState().with(LIT, false);
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
