@@ -26,16 +26,16 @@ public class SporeDecorator extends TreeDecorator {
             generator.getLogPositions().forEach(pos -> {
                 BlockPos blockPos;
                 if (random.nextInt(3) > 0 && generator.isAir(blockPos = pos.west())) {
-                    generator.replace(blockPos, ModBlocks.SPORES.getDefaultState().with(SporesBlock.getProperty(Direction.EAST), true));
+                    generator.replace(blockPos, ModBlocks.DEAD_SPORES.getDefaultState().with(SporesBlock.getProperty(Direction.EAST), true));
                 }
                 if (random.nextInt(3) > 0 && generator.isAir(blockPos = pos.east())) {
-                    generator.replace(blockPos, ModBlocks.SPORES.getDefaultState().with(SporesBlock.getProperty(Direction.WEST), true));
+                    generator.replace(blockPos, ModBlocks.DEAD_SPORES.getDefaultState().with(SporesBlock.getProperty(Direction.WEST), true));
                 }
                 if (random.nextInt(3) > 0 && generator.isAir(blockPos = pos.north())) {
-                    generator.replace(blockPos, ModBlocks.SPORES.getDefaultState().with(SporesBlock.getProperty(Direction.SOUTH), true));
+                    generator.replace(blockPos, ModBlocks.DEAD_SPORES.getDefaultState().with(SporesBlock.getProperty(Direction.SOUTH), true));
                 }
                 if (random.nextInt(3) > 0 && generator.isAir(blockPos = pos.south())) {
-                    generator.replace(blockPos, ModBlocks.SPORES.getDefaultState().with(SporesBlock.getProperty(Direction.NORTH), true));
+                    generator.replace(blockPos, ModBlocks.DEAD_SPORES.getDefaultState().with(SporesBlock.getProperty(Direction.NORTH), true));
                 }
             });
         }

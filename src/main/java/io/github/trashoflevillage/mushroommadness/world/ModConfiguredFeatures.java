@@ -30,7 +30,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(Blocks.AIR),
                 new BlobFoliagePlacer(ConstantIntProvider.create(0), ConstantIntProvider.create(0), 0),
 
-                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new SporeDecorator(1f))).build());
+                new TwoLayersFeatureSize(1, 0, 2)).decorators(ImmutableList.of(new SporeDecorator(0.5f))).build());
 
         register(
                 context,
