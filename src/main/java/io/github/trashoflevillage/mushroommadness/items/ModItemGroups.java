@@ -68,7 +68,8 @@ public class ModItemGroups {
                 ModBlocks.GLOWCAP_MUSHROOM_BLOCK,
                 ModBlocks.BROWN_SHELF_MUSHROOM,
                 ModBlocks.RED_SHELF_MUSHROOM,
-                ModBlocks.GLOWCAP_SHELF_MUSHROOM
+                ModBlocks.GLOWCAP_SHELF_MUSHROOM,
+                ModBlocks.GLOWCAP_ROOTS
         );
 
         addItemsToItemGroup(ItemGroups.BUILDING_BLOCKS,

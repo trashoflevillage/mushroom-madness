@@ -231,6 +231,16 @@ public class ModBlocks {
                     )
             );
 
+    public static final Block GLOWCAP_ROOTS = registerBlock("glowcap_roots",
+            new GlowcapRootsBlock(
+                    AbstractBlock.Settings.copy(Blocks.HANGING_ROOTS)
+                            .luminance((state) -> {
+                                return 7;
+                            })
+                            .ticksRandomly()
+            )
+    );
+
     private static Block registerBlock(String name, Block block) {
         return registerBlock(name, block, true);
     }

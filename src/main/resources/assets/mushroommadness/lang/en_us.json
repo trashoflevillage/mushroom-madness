@@ -66,5 +66,7 @@
 
   "block.mushroommadness.brown_shelf_mushroom": "Brown Mushroom Shelf",
   "block.mushroommadness.red_shelf_mushroom": "Red Mushroom Shelf",
-  "block.mushroommadness.glowcap_shelf_mushroom": "Glowcap Shelf"
+  "block.mushroommadness.glowcap_shelf_mushroom": "Glowcap Shelf",
+
+  "block.mushroommadness.glowcap_roots": "Glowcap Roots"
 }
