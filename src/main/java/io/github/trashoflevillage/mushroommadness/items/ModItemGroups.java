@@ -45,6 +45,9 @@ public class ModItemGroups {
                             entries.add(ModBlocks.WAXED_GLOWCAP);
                             entries.add(ModBlocks.WAXED_LIT_GLOWCAP);
                             entries.add(ModBlocks.GLOWCAP_MUSHROOM_BLOCK);
+                            entries.add(ModBlocks.BROWN_SHELF_MUSHROOM);
+                            entries.add(ModBlocks.RED_SHELF_MUSHROOM);
+                            entries.add(ModBlocks.GLOWCAP_SHELF_MUSHROOM);
                     }))
                     .build()
     );
@@ -58,7 +61,10 @@ public class ModItemGroups {
                 ModBlocks.GLOWCAP,
                 ModBlocks.WAXED_GLOWCAP,
                 ModBlocks.WAXED_LIT_GLOWCAP,
-                ModBlocks.GLOWCAP_MUSHROOM_BLOCK
+                ModBlocks.GLOWCAP_MUSHROOM_BLOCK,
+                ModBlocks.BROWN_SHELF_MUSHROOM,
+                ModBlocks.RED_SHELF_MUSHROOM,
+                ModBlocks.GLOWCAP_SHELF_MUSHROOM
         );
 
         addItemsToItemGroup(ItemGroups.BUILDING_BLOCKS,

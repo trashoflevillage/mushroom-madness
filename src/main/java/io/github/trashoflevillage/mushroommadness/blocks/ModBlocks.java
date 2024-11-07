@@ -187,6 +187,33 @@ public class ModBlocks {
                                     }), true
                     ));
 
+    public static final Block BROWN_SHELF_MUSHROOM =
+            registerBlock("brown_shelf_mushroom",
+                    new ShelfMushroomBlock(AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM_BLOCK)
+                            .mapColor(MapColor.BROWN)
+                            .breakInstantly()
+                            .pistonBehavior(PistonBehavior.DESTROY)
+                    )
+            );
+
+    public static final Block RED_SHELF_MUSHROOM =
+            registerBlock("red_shelf_mushroom",
+                    new ShelfMushroomBlock(AbstractBlock.Settings.copy(BROWN_SHELF_MUSHROOM)
+                            .mapColor(MapColor.RED)
+                    )
+            );
+
+    public static final Block GLOWCAP_SHELF_MUSHROOM =
+            registerBlock("glowcap_shelf_mushroom",
+                    new ShelfMushroomBlock(AbstractBlock.Settings.copy(BROWN_SHELF_MUSHROOM)
+                            .emissiveLighting(Blocks::always)
+                            .luminance((state) -> {
+                                return 10;
+                            })
+                            .mapColor(MapColor.PALE_YELLOW)
+                    )
+            );
+
     private static Block registerBlock(String name, Block block) {
         return registerBlock(name, block, true);
     }
