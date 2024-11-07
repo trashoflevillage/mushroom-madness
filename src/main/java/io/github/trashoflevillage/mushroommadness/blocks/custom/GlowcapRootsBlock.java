@@ -20,7 +20,7 @@ public class GlowcapRootsBlock extends HangingRootsBlock {
         world.addParticle(
                 ModParticles.GLOWCAP_SPORE,
                 pos.getX() + (rng.nextBetween(0, 20) * 0.05f),
-                pos.getY() + (rng.nextBetween(0, 20) * 0.05f),
+                pos.getY() + (rng.nextBetween(10, 20) * 0.05f),
                 pos.getZ() + (rng.nextBetween(0, 20) * 0.05f),
                 0,
                 rng.nextBetween(5, 10) * -0.01f,
