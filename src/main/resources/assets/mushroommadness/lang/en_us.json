@@ -59,5 +59,9 @@
   "item.minecraft.potion.effect.glowing_extended": "Potion of Glowing",
   "item.minecraft.splash_potion.effect.glowing_extended": "Splash Potion of Glowing",
   "item.minecraft.lingering_potion.effect.glowing_extended": "Lingering Potion of Glowing",
-  "item.minecraft.tipped_arrow.effect.glowing_extended": "Arrow of Glowing"
+  "item.minecraft.tipped_arrow.effect.glowing_extended": "Arrow of Glowing",
+
+  "block.mushroommadness.brown_shelf_mushroom": "Brown Mushroom Shelf",
+  "block.mushroommadness.red_shelf_mushroom": "Red Mushroom Shelf",
+  "block.mushroommadness.glowcap_shelf_mushroom": "Glowcap Shelf"
 }

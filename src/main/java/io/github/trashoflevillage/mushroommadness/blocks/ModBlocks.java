@@ -6,7 +6,6 @@ import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock
 import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.custom.*;
-import io.github.trashoflevillage.mushroommadness.items.ModItemGroups;
 import io.github.trashoflevillage.mushroommadness.world.ModConfiguredFeatures;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -19,7 +18,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
 
 import java.util.function.ToIntFunction;
 
@@ -189,7 +187,7 @@ public class ModBlocks {
 
     public static final Block BROWN_SHELF_MUSHROOM =
             registerBlock("brown_shelf_mushroom",
-                    new ShelfMushroomBlock(AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM_BLOCK)
+                    new MushroomShelfBlock(AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM_BLOCK)
                             .mapColor(MapColor.BROWN)
                             .breakInstantly()
                             .pistonBehavior(PistonBehavior.DESTROY)
@@ -198,14 +196,14 @@ public class ModBlocks {
 
     public static final Block RED_SHELF_MUSHROOM =
             registerBlock("red_shelf_mushroom",
-                    new ShelfMushroomBlock(AbstractBlock.Settings.copy(BROWN_SHELF_MUSHROOM)
+                    new MushroomShelfBlock(AbstractBlock.Settings.copy(BROWN_SHELF_MUSHROOM)
                             .mapColor(MapColor.RED)
                     )
             );
 
     public static final Block GLOWCAP_SHELF_MUSHROOM =
             registerBlock("glowcap_shelf_mushroom",
-                    new ShelfMushroomBlock(AbstractBlock.Settings.copy(BROWN_SHELF_MUSHROOM)
+                    new MushroomShelfBlock(AbstractBlock.Settings.copy(BROWN_SHELF_MUSHROOM)
                             .emissiveLighting(Blocks::always)
                             .luminance((state) -> {
                                 return 10;

@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Stream;
 
-public class ShelfMushroomBlock extends Block {
+public class MushroomShelfBlock extends Block {
     private static int MAX_SHELF_SHROOMS = 3;
 
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
@@ -78,7 +78,7 @@ public class ShelfMushroomBlock extends Block {
                     Block.createCuboidShape(10, 10, 2, 16, 11, 8)
             ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
 
-    public ShelfMushroomBlock(Settings settings) {
+    public MushroomShelfBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(COUNT, Integer.valueOf(1)).with(WATERLOGGED, Boolean.valueOf(false)));
     }
@@ -147,5 +147,11 @@ public class ShelfMushroomBlock extends Block {
     @Override
     protected FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+    }
+
+    @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        if (state.get(COUNT) == 1) return super.getCollisionShape(state, world, pos, context);
+        return Block.createCuboidShape(0, 0, 0, 0, 0, 0);
     }
 }
