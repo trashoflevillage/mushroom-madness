@@ -176,4 +176,21 @@ public class MushroomShelfBlock extends Block implements Fertilizable {
         if (newCount > MAX_SHELF_SHROOMS) newCount = MAX_SHELF_SHROOMS;
         world.setBlockState(pos, state.with(COUNT, newCount));
     }
+
+    private BlockPos getAttachedPos(BlockState state, BlockPos pos) {
+        return pos.offset(state.get(FACING), 1);
+    }
+
+    @Override
+    protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        return world.getBlockState(getAttachedPos(state, pos)).isSideSolidFullSquare(world, pos, state.get(FACING).getOpposite());
+    }
+
+    @Override
+    protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+        super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
+        if (!world.getBlockState(getAttachedPos(state, pos)).isSideSolidFullSquare(world, pos, state.get(FACING).getOpposite())) {
+            world.breakBlock(pos, true);
+        }
+    }
 }
