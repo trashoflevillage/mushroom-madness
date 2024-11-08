@@ -2,35 +2,26 @@ package io.github.trashoflevillage.mushroommadness.blocks.custom;
 
 import com.mojang.serialization.MapCodec;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
-import io.github.trashoflevillage.mushroommadness.util.ManualConventionalTags;
+import io.github.trashoflevillage.mushroommadness.util.ModConventionalTags;
 import io.github.trashoflevillage.mushroommadness.util.ModTags;
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.*;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Optional;
 
 public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, Waterloggable {
@@ -111,9 +102,9 @@ public class SporesBlock extends MultifaceGrowthBlock implements Fertilizable, W
         BlockState state = world.getBlockState(pos);
         if (!state.isIn(ModTags.Blocks.SPOREWOOD_LOGS) && state.isIn(BlockTags.LOGS)) {
             BlockState newState;
-            if (state.isIn(ManualConventionalTags.Blocks.STRIPPED_WOODS)) newState = ModBlocks.STRIPPED_SPOREWOOD_WOOD.getDefaultState();
-            else if (state.isIn(ManualConventionalTags.Blocks.WOODS)) newState = ModBlocks.SPOREWOOD_WOOD.getDefaultState();
-            else if (state.isIn(ManualConventionalTags.Blocks.STRIPPED_LOGS)) newState = ModBlocks.STRIPPED_SPOREWOOD_LOG.getDefaultState();
+            if (state.isIn(ModConventionalTags.Blocks.STRIPPED_WOODS)) newState = ModBlocks.STRIPPED_SPOREWOOD_WOOD.getDefaultState();
+            else if (state.isIn(ModConventionalTags.Blocks.WOODS)) newState = ModBlocks.SPOREWOOD_WOOD.getDefaultState();
+            else if (state.isIn(ModConventionalTags.Blocks.STRIPPED_LOGS)) newState = ModBlocks.STRIPPED_SPOREWOOD_LOG.getDefaultState();
             else newState = ModBlocks.SPOREWOOD_LOG.getDefaultState();
 
             world.setBlockState(pos, newState.with(PillarBlock.AXIS, world.getBlockState(pos).get(PillarBlock.AXIS)));

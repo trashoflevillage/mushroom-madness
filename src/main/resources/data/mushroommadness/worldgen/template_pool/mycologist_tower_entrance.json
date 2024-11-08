@@ -4,7 +4,7 @@
   "elements": [{
     "weight": 1,
     "element": {
-      "location": "mushroommadness:mycologist_towers/mycologist_tower",
+      "location": "mushroommadness:mycologist_tower_entrance",
       "processors": "minecraft:empty",
       "projection": "rigid",
       "element_type": "minecraft:single_pool_element"

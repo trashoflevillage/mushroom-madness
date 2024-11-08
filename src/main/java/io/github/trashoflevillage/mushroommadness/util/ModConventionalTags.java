@@ -6,7 +6,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
-public class ManualConventionalTags {
+public class ModConventionalTags {
     public static class Blocks {
         public static final TagKey<Block> STRIPPED_LOGS =
                 createTag("stripped_logs");

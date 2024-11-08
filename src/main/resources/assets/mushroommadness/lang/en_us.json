@@ -68,5 +68,7 @@
   "block.mushroommadness.red_shelf_mushroom": "Red Mushroom Shelf",
   "block.mushroommadness.glowcap_shelf_mushroom": "Glowcap Shelf",
 
-  "block.mushroommadness.glowcap_roots": "Glowcap Roots"
+  "block.mushroommadness.glowcap_roots": "Glowcap Roots",
+
+  "filled_map.mycologist_tower": "Mycologist Explorer Map"
 }
