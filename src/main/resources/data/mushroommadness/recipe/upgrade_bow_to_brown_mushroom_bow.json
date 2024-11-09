@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "mushroommadness:fungal_upgrade_smithing_template"
+  },
+  "base": {
+    "item": "minecraft:bow"
+  },
+  "addition": {
+    "item": "minecraft:brown_mushroom"
+  },
+  "result": {
+    "id": "mushroommadness:brown_mushroom_bow"
+  }
+}
