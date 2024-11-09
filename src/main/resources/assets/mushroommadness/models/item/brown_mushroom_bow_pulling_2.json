@@ -1,0 +1,6 @@
+{
+    "parent": "mushroommadness:item/brown_mushroom_bow",
+    "textures": {
+        "layer0": "mushroommadness:item/brown_mushroom_bow_pulling_2"
+    }
+}

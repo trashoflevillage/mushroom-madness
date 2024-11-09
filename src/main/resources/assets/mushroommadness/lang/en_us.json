@@ -70,5 +70,11 @@
 
   "block.mushroommadness.glowcap_roots": "Glowcap Roots",
 
-  "filled_map.mycologist_tower": "Mycologist Explorer Map"
+  "filled_map.mycologist_tower": "Mycologist Explorer Map",
+
+  "item.mushroommadness.red_mushroom_bow": "Red Fungal Bow",
+  "item.mushroommadness.brown_mushroom_bow": "Brown Fungal Bow",
+  "item.mushroommadness.glowcap_mushroom_bow": "Glowcap Fungal Bow",
+
+  "item.mushroommadness.fungal_upgrade_smithing_template": "Smithing Template"
 }

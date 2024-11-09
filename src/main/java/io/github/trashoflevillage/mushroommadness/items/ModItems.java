@@ -6,18 +6,15 @@ import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
 import io.github.trashoflevillage.mushroommadness.items.custom.CustomItem;
+import io.github.trashoflevillage.mushroommadness.items.custom.MushroomBowItem;
 import io.github.trashoflevillage.mushroommadness.sounds.ModSounds;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.jukebox.JukeboxSongs;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-
-import java.util.ArrayList;
 
 public class ModItems {
     public static final Item SPOREWOOD_SIGN = registerItem("sporewood_sign",
@@ -41,6 +38,26 @@ public class ModItems {
                     .setCooldown(600)
                     .setCooldownApplication(CustomItem.CooldownApplication.FINISH_USING)
                     .setConsumedOnEat(false));
+
+    public static final Item FUNGAL_UPGRADE_SMITHING_TEMPLATE = registerItem("fungal_upgrade_smithing_template",
+            new Item(new Item.Settings())
+            );
+
+    private static final int MUSHROOM_BOW_DURABILITY = 384;
+
+    public static final Item RED_MUSHROOM_BOW = registerItem("red_mushroom_bow",
+            new MushroomBowItem(new Item.Settings()
+                    .maxCount(1)
+                    .maxDamage(MUSHROOM_BOW_DURABILITY),
+                    StatusEffects.POISON, 100)
+            );
+
+    public static final Item BROWN_MUSHROOM_BOW = registerItem("brown_mushroom_bow",
+            new MushroomBowItem(new Item.Settings()
+                    .maxCount(1)
+                    .maxDamage(MUSHROOM_BOW_DURABILITY),
+                    StatusEffects.WEAKNESS, 100)
+    );
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(MushroomMadness.MOD_ID, name), item);

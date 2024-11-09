@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mushroommadness:item/fungal_upgrade_smithing_template"
+  }
+}

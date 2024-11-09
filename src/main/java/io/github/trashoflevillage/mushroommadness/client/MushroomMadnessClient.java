@@ -43,6 +43,7 @@ public class MushroomMadnessClient implements ClientModInitializer {
 		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.MYCOLOGIST, MycologistEntityModel::getTexturedModelData);
 
 		registerParticles();
+		ModModelProvider.registerBowModels();
 	}
 
 	private void registerParticles() {

@@ -50,6 +50,10 @@ public class ModItemGroups {
                             entries.add(ModBlocks.BROWN_SHELF_MUSHROOM);
                             entries.add(ModBlocks.RED_SHELF_MUSHROOM);
                             entries.add(ModBlocks.GLOWCAP_SHELF_MUSHROOM);
+                            entries.add(ModBlocks.GLOWCAP_ROOTS);
+                            entries.add(ModItems.RED_MUSHROOM_BOW);
+                            entries.add(ModItems.BROWN_MUSHROOM_BOW);
+                            entries.add(ModItems.FUNGAL_UPGRADE_SMITHING_TEMPLATE);
                     }))
                     .build()
     );
@@ -113,7 +117,13 @@ public class ModItemGroups {
         );
 
         addItemsToItemGroup(ItemGroups.INGREDIENTS,
-                ModBlocks.GLOWCAP
+                ModBlocks.GLOWCAP,
+                ModItems.FUNGAL_UPGRADE_SMITHING_TEMPLATE
+        );
+
+        addItemsToItemGroup(ItemGroups.COMBAT,
+                ModItems.RED_MUSHROOM_BOW,
+                ModItems.BROWN_MUSHROOM_BOW
         );
     }
 
