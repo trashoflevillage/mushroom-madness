@@ -76,5 +76,10 @@
   "item.mushroommadness.brown_mushroom_bow": "Brown Fungal Bow",
   "item.mushroommadness.glowcap_mushroom_bow": "Glowcap Fungal Bow",
 
-  "item.mushroommadness.fungal_upgrade_smithing_template": "Smithing Template"
+  "item.mushroommadness.fungal_upgrade_smithing_template": "Smithing Template",
+  "item.mushroommadness.fungal_upgrade_smithing_template.additions_slot_description": "Add Mushroom",
+  "item.mushroommadness.fungal_upgrade_smithing_template.applies_to": "§9Bow",
+  "item.mushroommadness.fungal_upgrade_smithing_template.base_slot_description": "Add Bow",
+  "item.mushroommadness.fungal_upgrade_smithing_template.ingredients": "§9Mushroom",
+  "upgrade.mushroommadness.fungal_upgrade": "§7Fungal Upgrade"
 }

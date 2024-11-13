@@ -9,12 +9,18 @@ import io.github.trashoflevillage.mushroommadness.items.custom.CustomItem;
 import io.github.trashoflevillage.mushroommadness.items.custom.MushroomBowItem;
 import io.github.trashoflevillage.mushroommadness.sounds.ModSounds;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModItems {
     public static final Item SPOREWOOD_SIGN = registerItem("sporewood_sign",
@@ -40,8 +46,16 @@ public class ModItems {
                     .setConsumedOnEat(false));
 
     public static final Item FUNGAL_UPGRADE_SMITHING_TEMPLATE = registerItem("fungal_upgrade_smithing_template",
-            new Item(new Item.Settings())
-            );
+            new SmithingTemplateItem(
+                Text.translatable("item.mushroommadness.fungal_upgrade_smithing_template.applies_to"),
+                Text.translatable("item.mushroommadness.fungal_upgrade_smithing_template.ingredients"),
+                Text.translatable("upgrade.mushroommadness.fungal_upgrade"),
+                Text.translatable("item.mushroommadness.fungal_upgrade_smithing_template.base_slot_description"),
+                Text.translatable("item.mushroommadness.fungal_upgrade_smithing_template.additions_slot_description"),
+                getFungalUpgradeEmptyBaseSlotTextures(),
+                getFungalUpgradeEmptyAdditionsSlotTextures()
+            )
+    );
 
     private static final int MUSHROOM_BOW_DURABILITY = 384;
 
@@ -49,14 +63,18 @@ public class ModItems {
             new MushroomBowItem(new Item.Settings()
                     .maxCount(1)
                     .maxDamage(MUSHROOM_BOW_DURABILITY),
-                    StatusEffects.POISON, 100)
+                    new RegistryEntry[] {
+                            StatusEffects.POISON
+                    }, 100)
             );
 
     public static final Item BROWN_MUSHROOM_BOW = registerItem("brown_mushroom_bow",
             new MushroomBowItem(new Item.Settings()
                     .maxCount(1)
                     .maxDamage(MUSHROOM_BOW_DURABILITY),
-                    StatusEffects.WEAKNESS, 100)
+                    new RegistryEntry[]{
+                            StatusEffects.WEAKNESS
+                    }, 100)
     );
 
     private static Item registerItem(String name, Item item) {
@@ -65,5 +83,18 @@ public class ModItems {
     
     public static void registerModItems() {
         MushroomMadness.LOGGER.info("Registering items for " + MushroomMadness.MOD_ID + ".");
+    }
+
+    private static List<Identifier> getFungalUpgradeEmptyBaseSlotTextures() {
+        return List.of(
+                Identifier.of(MushroomMadness.MOD_ID, "item/empty_bow_slot")
+        );
+    }
+
+    private static List<Identifier> getFungalUpgradeEmptyAdditionsSlotTextures() {
+        return List.of(
+                Identifier.of(MushroomMadness.MOD_ID, "item/empty_mushroom_slot"),
+                Identifier.of(MushroomMadness.MOD_ID, "item/empty_glowcap_slot")
+        );
     }
 }
