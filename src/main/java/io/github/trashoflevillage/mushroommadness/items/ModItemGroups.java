@@ -53,6 +53,7 @@ public class ModItemGroups {
                             entries.add(ModBlocks.GLOWCAP_ROOTS);
                             entries.add(ModItems.RED_MUSHROOM_BOW);
                             entries.add(ModItems.BROWN_MUSHROOM_BOW);
+                            entries.add(ModItems.GLOWCAP_MUSHROOM_BOW);
                             entries.add(ModItems.FUNGAL_UPGRADE_SMITHING_TEMPLATE);
                     }))
                     .build()
@@ -123,7 +124,8 @@ public class ModItemGroups {
 
         addItemsToItemGroup(ItemGroups.COMBAT,
                 ModItems.RED_MUSHROOM_BOW,
-                ModItems.BROWN_MUSHROOM_BOW
+                ModItems.BROWN_MUSHROOM_BOW,
+                ModItems.GLOWCAP_MUSHROOM_BOW
         );
     }
 

@@ -23,7 +23,7 @@ public abstract class AbstractClientPlayerEntityMixin extends PlayerEntity {
         float f = original;
         ItemStack itemStack = this.getActiveItem();
         if (this.isUsingItem()) {
-            if (itemStack.isOf(ModItems.RED_MUSHROOM_BOW) || itemStack.isOf(ModItems.BROWN_MUSHROOM_BOW)) {
+            if (itemStack.isOf(ModItems.RED_MUSHROOM_BOW) || itemStack.isOf(ModItems.BROWN_MUSHROOM_BOW) || itemStack.isOf(ModItems.GLOWCAP_MUSHROOM_BOW)) {
                 int i = this.getItemUseTime();
                 float g = (float)i / 20.0F;
                 if (g > 1.0F) {

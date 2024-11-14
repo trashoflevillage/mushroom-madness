@@ -77,6 +77,15 @@ public class ModItems {
                     }, 100)
     );
 
+    public static final Item GLOWCAP_MUSHROOM_BOW = registerItem("glowcap_mushroom_bow",
+            new MushroomBowItem(new Item.Settings()
+                    .maxCount(1)
+                    .maxDamage(MUSHROOM_BOW_DURABILITY),
+                    new RegistryEntry[]{
+                            StatusEffects.GLOWING
+                    }, 100)
+    );
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(MushroomMadness.MOD_ID, name), item);
     }
@@ -87,14 +96,14 @@ public class ModItems {
 
     private static List<Identifier> getFungalUpgradeEmptyBaseSlotTextures() {
         return List.of(
-                Identifier.of(MushroomMadness.MOD_ID, "item/empty_bow_slot")
+                Identifier.of(MushroomMadness.MOD_ID, "item/empty_slot_bow")
         );
     }
 
     private static List<Identifier> getFungalUpgradeEmptyAdditionsSlotTextures() {
         return List.of(
-                Identifier.of(MushroomMadness.MOD_ID, "item/empty_mushroom_slot"),
-                Identifier.of(MushroomMadness.MOD_ID, "item/empty_glowcap_slot")
+                Identifier.of(MushroomMadness.MOD_ID, "item/empty_slot_mushroom"),
+                Identifier.of(MushroomMadness.MOD_ID, "item/empty_slot_glowcap")
         );
     }
 }

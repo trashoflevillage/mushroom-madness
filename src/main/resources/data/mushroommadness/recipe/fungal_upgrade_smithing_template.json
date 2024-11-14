@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "#S#",
+    "#C#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "mushroommadness:glowcap_mushroom_block"
+    },
+    "S": {
+      "item": "mushroommadness:fungal_upgrade_smithing_template"
+    }
+  },
+  "result": {
+    "id": "mushroommadness:fungal_upgrade_smithing_template",
+    "count": 2
+  }
+}

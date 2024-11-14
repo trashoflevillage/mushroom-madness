@@ -1,0 +1,6 @@
+{
+    "parent": "mushroommadness:item/glowcap_mushroom_bow",
+    "textures": {
+        "layer0": "mushroommadness:item/glowcap_mushroom_bow_pulling_0"
+    }
+}

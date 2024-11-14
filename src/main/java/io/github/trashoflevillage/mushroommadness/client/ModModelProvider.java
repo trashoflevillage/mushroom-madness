@@ -11,6 +11,7 @@ public class ModModelProvider {
     public static void registerBowModels() {
         registerBowModel(ModItems.RED_MUSHROOM_BOW);
         registerBowModel(ModItems.BROWN_MUSHROOM_BOW);
+        registerBowModel(ModItems.GLOWCAP_MUSHROOM_BOW);
     }
 
     private static void registerBowModel(Item bow) {
