@@ -3,6 +3,7 @@ package io.github.trashoflevillage.mushroommadness.client;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.client.entity.ModModelLayers;
+import io.github.trashoflevillage.mushroommadness.client.entity.renderers.MushroomArrowEntityRenderer;
 import io.github.trashoflevillage.mushroommadness.client.entity.renderers.MycologistEntityRenderer;
 import io.github.trashoflevillage.mushroommadness.client.entity.models.MycologistEntityModel;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
@@ -19,6 +20,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.entity.ArrowEntityRenderer;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.SimpleParticleType;
 import net.minecraft.util.math.MathHelper;
@@ -39,8 +41,7 @@ public class MushroomMadnessClient implements ClientModInitializer {
 
 		TerraformBoatClientHelper.registerModelLayers(ModBoats.SPOREWOOD_BOAT_ID, false);
 
-		EntityRendererRegistry.register(ModEntities.MYCOLOGIST, MycologistEntityRenderer::new);
-		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.MYCOLOGIST, MycologistEntityModel::getTexturedModelData);
+		registerEntityRenderersAndModelLayers();
 
 		registerParticles();
 		ModModelProvider.registerBowModels();
@@ -56,5 +57,12 @@ public class MushroomMadnessClient implements ClientModInitializer {
 				ModParticles.GLOWCAP_SPORE_AIR,
 				GlowcapSporeAirParticle.GlowcapSporeAirFactory::new
 		);
+	}
+
+	private void registerEntityRenderersAndModelLayers() {
+		EntityRendererRegistry.register(ModEntities.MYCOLOGIST, MycologistEntityRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.MYCOLOGIST, MycologistEntityModel::getTexturedModelData);
+
+		EntityRendererRegistry.register(ModEntities.MUSHROOM_ARROW, MushroomArrowEntityRenderer::new);
 	}
 }
