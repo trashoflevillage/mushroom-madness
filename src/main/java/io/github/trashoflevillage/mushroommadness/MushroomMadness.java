@@ -10,6 +10,7 @@ import io.github.trashoflevillage.mushroommadness.items.ModPotions;
 import io.github.trashoflevillage.mushroommadness.particles.ModParticles;
 import io.github.trashoflevillage.mushroommadness.sounds.ModSounds;
 import io.github.trashoflevillage.mushroommadness.util.ModExplorerMaps;
+import io.github.trashoflevillage.mushroommadness.util.ModMapDecorationTypes;
 import io.github.trashoflevillage.mushroommadness.util.ModTrades;
 import io.github.trashoflevillage.mushroommadness.world.gen.ModTreeDecorator;
 import net.fabricmc.api.ModInitializer;
@@ -34,6 +35,7 @@ public class MushroomMadness implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		ModMapDecorationTypes.registerMapDecorations();
 		ModParticles.register();
 		ModSounds.registerSounds();
 		ModBlocks.registerModBlocks();

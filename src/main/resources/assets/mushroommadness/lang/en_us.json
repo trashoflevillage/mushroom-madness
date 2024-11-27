@@ -81,5 +81,7 @@
   "item.mushroommadness.fungal_upgrade_smithing_template.applies_to": "§9Bow",
   "item.mushroommadness.fungal_upgrade_smithing_template.base_slot_description": "Add Bow",
   "item.mushroommadness.fungal_upgrade_smithing_template.ingredients": "§9Mushroom",
-  "upgrade.mushroommadness.fungal_upgrade": "§7Fungal Upgrade"
+  "upgrade.mushroommadness.fungal_upgrade": "§7Fungal Upgrade",
+
+  "biome.mushroommadness.sporewood_forest": "Sporewood Forest"
 }

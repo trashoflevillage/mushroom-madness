@@ -24,7 +24,7 @@ public class ModExplorerMaps {
         ItemStack map = FilledMapItem.createMap(world, pos.getX(), pos.getZ(), (byte) 2, true, true);
         FilledMapItem.fillExplorationMap(world, map);
         MapDecorationsComponent.Decoration decor = new MapDecorationsComponent.Decoration(
-                MapDecorationTypes.BANNER_RED,
+                ModMapDecorationTypes.MYCOLOGIST_TOWER,
                 pos.getX(),
                 pos.getZ(),
                 180f
