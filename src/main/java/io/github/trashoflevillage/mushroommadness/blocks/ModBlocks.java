@@ -144,6 +144,15 @@ public class ModBlocks {
                                     .emissiveLighting(Blocks::always)
                                     .luminance(createLightLevelFromLitBlockState(10, 4))
                     ));
+    public static final Block POTTED_GLOWCAP =
+            registerBlock("potted_glowcap",
+                    new FlowerPotBlock(ModBlocks.GLOWCAP,
+                            AbstractBlock.Settings.copy(Blocks.POTTED_BROWN_MUSHROOM)
+                                .emissiveLighting(Blocks::always)
+                                    .luminance((state) -> {
+                                        return 4;
+                                    })
+                    ));
 
     public static final Block GLOWCAP_MUSHROOM_BLOCK =
             registerBlock("glowcap_mushroom_block",
@@ -170,6 +179,14 @@ public class ModBlocks {
                                         return 4;
                                     }), false
                     ));
+    public static final Block POTTED_WAXED_GLOWCAP =
+            registerBlock("potted_waxed_glowcap",
+                    new FlowerPotBlock(ModBlocks.WAXED_GLOWCAP,
+                            AbstractBlock.Settings.copy(ModBlocks.POTTED_GLOWCAP)
+                                    .luminance((state) -> {
+                                        return 4;
+                                    })
+                    ));
 
     public static final Block WAXED_LIT_GLOWCAP =
             registerBlock("waxed_lit_glowcap",
@@ -186,6 +203,14 @@ public class ModBlocks {
                                     .luminance((state) -> {
                                         return 10;
                                     }), true
+                    ));
+    public static final Block POTTED_WAXED_LIT_GLOWCAP =
+            registerBlock("potted_waxed_lit_glowcap",
+                    new LitGlowcapPotBlock(ModBlocks.WAXED_LIT_GLOWCAP,
+                            AbstractBlock.Settings.copy(ModBlocks.POTTED_GLOWCAP)
+                                    .luminance((state) -> {
+                                        return 10;
+                                    })
                     ));
 
     public static final Block WAXED_BROWN_MUSHROOM =

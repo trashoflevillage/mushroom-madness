@@ -32,11 +32,6 @@ public class MushroomArrowEntity extends ArrowEntity {
         return new MushroomArrowEntity(entityType, world, MushroomArrowType.RED);
     }
 
-    public MushroomArrowEntity(World world, LivingEntity shooter, ItemStack itemStack, ItemStack weaponStack) {
-        super(world, shooter, itemStack, weaponStack);
-        this.setMushroomType(MushroomArrowType.RED);
-    }
-
     public MushroomArrowType getMushroomType() {
         return MushroomArrowType.fromString(this.dataTracker.get(TYPE));
     }
