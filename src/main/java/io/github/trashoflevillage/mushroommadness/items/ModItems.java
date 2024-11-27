@@ -5,6 +5,7 @@ import io.github.trashoflevillage.mushroommadness.MushroomMadness;
 import io.github.trashoflevillage.mushroommadness.blocks.ModBlocks;
 import io.github.trashoflevillage.mushroommadness.entity.ModBoats;
 import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
+import io.github.trashoflevillage.mushroommadness.entity.custom.MushroomArrowEntity;
 import io.github.trashoflevillage.mushroommadness.items.custom.CustomItem;
 import io.github.trashoflevillage.mushroommadness.items.custom.MushroomBowItem;
 import io.github.trashoflevillage.mushroommadness.sounds.ModSounds;
@@ -63,28 +64,22 @@ public class ModItems {
             new MushroomBowItem(new Item.Settings()
                     .maxCount(1)
                     .maxDamage(MUSHROOM_BOW_DURABILITY),
-                    new RegistryEntry[] {
-                            StatusEffects.POISON
-                    }, 100)
-            );
+                    MushroomArrowEntity.MushroomArrowType.RED
+            ));
 
     public static final Item BROWN_MUSHROOM_BOW = registerItem("brown_mushroom_bow",
             new MushroomBowItem(new Item.Settings()
                     .maxCount(1)
                     .maxDamage(MUSHROOM_BOW_DURABILITY),
-                    new RegistryEntry[]{
-                            StatusEffects.WEAKNESS
-                    }, 100)
-    );
+                    MushroomArrowEntity.MushroomArrowType.BROWN
+            ));
 
     public static final Item GLOWCAP_MUSHROOM_BOW = registerItem("glowcap_mushroom_bow",
             new MushroomBowItem(new Item.Settings()
                     .maxCount(1)
                     .maxDamage(MUSHROOM_BOW_DURABILITY),
-                    new RegistryEntry[]{
-                            StatusEffects.GLOWING
-                    }, 100)
-    );
+                    MushroomArrowEntity.MushroomArrowType.GLOWCAP
+            ));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(MushroomMadness.MOD_ID, name), item);
