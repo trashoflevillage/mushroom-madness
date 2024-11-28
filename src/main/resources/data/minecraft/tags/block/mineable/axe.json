@@ -5,7 +5,11 @@
     "mushroommadness:stripped_sporewood_log",
     "mushroommadness:stripped_sporewood_wood",
     "mushroommadness:sporewood_planks",
-    "mushroommadness:glowcap_mushroom_block"
+    "mushroommadness:glowcap_mushroom_block",
+    "mushroommadness:sporewood_stairs",
+    "mushroommadness:sporewood_slab",
+    "mushroommadness:sporewood_door",
+    "mushroommadness:sporewood_trapdoor"
   ],
   "replace": false
 }
