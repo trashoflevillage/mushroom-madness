@@ -1,0 +1,219 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 2,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:red_mushroom",
+              "weight": 2,
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 1,
+                    "max": 5
+                  },
+                  "add": true
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:brown_mushroom",
+              "weight": 3,
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 1,
+                    "max": 5
+                  },
+                  "add": true
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "mushroommadness:glowcap",
+              "weight": 1,
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 1,
+                    "max": 5
+                  },
+                  "add": true
+                }
+              ]
+            }
+          ],
+          "functions": []
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "mushroommadness:fungal_upgrade_smithing_template"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "mushroommadness:bottomless_stew"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "mushroommadness:music_disc_lentinula_edodes"
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mushroom_stew",
+          "functions": [],
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:arrow",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 5,
+                "max": 10
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "mushroommadness:spores",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "name": "minecraft:iron_ingot",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:diamond",
+              "weight": 1,
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 1,
+                    "max": 5
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:gold_ingot",
+              "weight": 5,
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 1,
+                    "max": 5
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:iron_ingot",
+              "weight": 10,
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 1,
+                    "max": 5
+                  },
+                  "add": true
+                }
+              ],
+              "conditions": []
+            }
+          ],
+          "functions": [],
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "functions": []
+}

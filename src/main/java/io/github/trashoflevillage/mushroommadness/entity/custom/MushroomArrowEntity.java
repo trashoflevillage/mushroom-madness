@@ -7,6 +7,7 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.ItemStack;
@@ -38,6 +39,12 @@ public class MushroomArrowEntity extends ArrowEntity {
 
     public void setMushroomType(MushroomArrowType type) {
         this.dataTracker.set(TYPE, type.asString());
+    }
+
+    @Override
+    protected void onHit(LivingEntity target) {
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 999));
+        super.onHit(target);
     }
 
     @Override

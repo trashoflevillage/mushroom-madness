@@ -26,7 +26,7 @@ public class MushroomBowItem extends BowItem {
 
     @Override
     protected ProjectileEntity createArrowEntity(World world, LivingEntity shooter, ItemStack weaponStack, ItemStack projectileStack, boolean critical) {
-        PersistentProjectileEntity persistentProjectileEntity = new MushroomArrowEntity(world, shooter, projectileStack.copyWithCount(1), weaponStack, arrowType);
+        MushroomArrowEntity persistentProjectileEntity = new MushroomArrowEntity(world, shooter, projectileStack.copyWithCount(1), weaponStack, arrowType);
         if (critical) {
             persistentProjectileEntity.setCritical(true);
         }

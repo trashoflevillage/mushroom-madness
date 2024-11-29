@@ -20,10 +20,7 @@ public class ModEntities {
 
     public static final EntityType<MushroomArrowEntity> MUSHROOM_ARROW = Registry.register(
             Registries.ENTITY_TYPE,
-           Identifier.of(MushroomMadness.MOD_ID, "mushroom_arrow"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MISC, MushroomArrowEntity::newRedMushroomArrow)
-                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
-                    .trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
-                    .build() // VERY IMPORTANT DONT DELETE FOR THE LOVE OF GOD PSLSSSSSS
-    );
+            Identifier.of(MushroomMadness.MOD_ID, "mushroom_arrow"),
+            EntityType.Builder.create( MushroomArrowEntity::newRedMushroomArrow, SpawnGroup.MISC)
+                    .dimensions(0.25F, 0.25F).maxTrackingRange(4).trackingTickInterval(10).build());
 }
