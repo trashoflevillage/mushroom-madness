@@ -18,12 +18,12 @@ public class ModTrades {
     }
 
     private static void registerCartographerTrades() {TradeOfferHelper.registerVillagerOffers(VillagerProfession.CARTOGRAPHER, 2, factories -> {
-        factories.add((entity, random) -> new TradeOffer(
-                new TradedItem(Items.EMERALD, 13),
-                Optional.of(new TradedItem(Items.COMPASS)),
-                ModExplorerMaps.getMycologistTowerExplorerMap(entity.getBlockPos(), (ServerWorld)entity.getWorld()),
-                12, 5, 0.02f
-        ));
-    });
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Items.EMERALD, 13),
+                    Optional.of(new TradedItem(Items.COMPASS)),
+                    ModExplorerMaps.getMycologistTowerExplorerMap(entity.getBlockPos(), (ServerWorld)entity.getWorld()),
+                    12, 5, 0.2f
+            ));
+        });
     }
 }
