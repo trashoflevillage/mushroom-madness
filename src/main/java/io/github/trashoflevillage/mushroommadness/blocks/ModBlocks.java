@@ -134,7 +134,8 @@ public class ModBlocks {
             registerBlock("glowcap",
                     new GlowcapBlock(
                             ModConfiguredFeatures.HUGE_GLOWCAP_KEY,
-                            AbstractBlock.Settings.create().mapColor(MapColor.PALE_YELLOW)
+                            AbstractBlock.Settings.create()
+                                    .mapColor(MapColor.PALE_YELLOW)
                                     .noCollision()
                                     .ticksRandomly()
                                     .breakInstantly()
@@ -149,6 +150,7 @@ public class ModBlocks {
                     new FlowerPotBlock(ModBlocks.GLOWCAP,
                             AbstractBlock.Settings.copy(Blocks.POTTED_BROWN_MUSHROOM)
                                 .emissiveLighting(Blocks::always)
+                                .mapColor(MapColor.PALE_YELLOW)
                                     .luminance((state) -> {
                                         return 4;
                                     })
@@ -158,6 +160,7 @@ public class ModBlocks {
             registerBlock("glowcap_mushroom_block",
                     new GlowcapMushroomBlock(
                             AbstractBlock.Settings.copy(Blocks.BROWN_MUSHROOM_BLOCK)
+                                    .mapColor(MapColor.PALE_YELLOW)
                                     .ticksRandomly()
                                     .emissiveLighting(Blocks::always)
                                     .luminance(state -> 10)
@@ -256,15 +259,15 @@ public class ModBlocks {
                     )
             );
 
-    public static final Block GLOWCAP_ROOTS = registerBlock("glowcap_roots",
-            new GlowcapRootsBlock(
-                    AbstractBlock.Settings.copy(Blocks.HANGING_ROOTS)
-                            .luminance((state) -> {
-                                return 7;
-                            })
-                            .ticksRandomly()
-            )
-    );
+//    public static final Block GLOWCAP_ROOTS = registerBlock("glowcap_roots",
+//            new GlowcapRootsBlock(
+//                    AbstractBlock.Settings.copy(Blocks.HANGING_ROOTS)
+//                            .luminance((state) -> {
+//                                return 7;
+//                            })
+//                            .ticksRandomly()
+//            )
+//    );
 
     private static Block registerBlock(String name, Block block) {
         return registerBlock(name, block, true);

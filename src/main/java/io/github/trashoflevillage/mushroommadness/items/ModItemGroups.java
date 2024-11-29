@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ModItemGroups {
     public static final ItemGroup MUSHROOM_MADNESS_GROUP = Registry.register(Registries.ITEM_GROUP, Identifier.of(MushroomMadness.MOD_ID, "mushroommadness"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.mushroommadness"))
-                    .icon(() -> new ItemStack(ModItems.BOTTOMLESS_STEW))
+                    .icon(() -> new ItemStack(ModBlocks.GLOWCAP))
                     .entries(((displayContext, entries) -> {
                             entries.add(ModBlocks.MYCELIUM_GROWTH);
                             entries.add(ModBlocks.SPORES);
@@ -50,7 +50,6 @@ public class ModItemGroups {
                             entries.add(ModBlocks.BROWN_SHELF_MUSHROOM);
                             entries.add(ModBlocks.RED_SHELF_MUSHROOM);
                             entries.add(ModBlocks.GLOWCAP_SHELF_MUSHROOM);
-                            entries.add(ModBlocks.GLOWCAP_ROOTS);
                             entries.add(ModItems.RED_MUSHROOM_BOW);
                             entries.add(ModItems.BROWN_MUSHROOM_BOW);
                             entries.add(ModItems.GLOWCAP_MUSHROOM_BOW);
@@ -73,8 +72,8 @@ public class ModItemGroups {
                 ModBlocks.GLOWCAP_MUSHROOM_BLOCK,
                 ModBlocks.BROWN_SHELF_MUSHROOM,
                 ModBlocks.RED_SHELF_MUSHROOM,
-                ModBlocks.GLOWCAP_SHELF_MUSHROOM,
-                ModBlocks.GLOWCAP_ROOTS
+                ModBlocks.GLOWCAP_SHELF_MUSHROOM
+                //ModBlocks.GLOWCAP_ROOTS
         );
 
         addItemsToItemGroup(ItemGroups.BUILDING_BLOCKS,
