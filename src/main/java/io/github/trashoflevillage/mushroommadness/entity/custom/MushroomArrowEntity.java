@@ -55,6 +55,7 @@ public class MushroomArrowEntity extends PersistentProjectileEntity {
 
     @Override
     protected void onHit(LivingEntity target) {
+        super.onHit(target);
         if (getMushroomType() == MushroomArrowType.RED.getIndex())
             target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 200));
         else if (getMushroomType() == MushroomArrowType.BROWN.getIndex())
