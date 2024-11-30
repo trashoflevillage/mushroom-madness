@@ -83,5 +83,7 @@
   "item.mushroommadness.fungal_upgrade_smithing_template.ingredients": "§9Mushroom",
   "upgrade.mushroommadness.fungal_upgrade": "§7Fungal Upgrade",
 
-  "biome.mushroommadness.sporewood_forest": "Sporewood Forest"
+  "biome.mushroommadness.sporewood_forest": "Sporewood Forest",
+
+  "entity.mushroommadness.mushroom_arrow": "Mushroom Arrow"
 }

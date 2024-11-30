@@ -1,0 +1,89 @@
+{
+  "block.mushroommadness.mycelium_growth": "ɥʇʍoɹ⅁ ɯnᴉꞁǝɔʎW",
+  "block.mushroommadness.spores": "dɯnꞁƆ ꞁɐᵷunℲ",
+  "block.mushroommadness.dead_spores": "dɯnꞁƆ ꞁɐᵷunℲ pɐǝᗡ",
+
+  "block.mushroommadness.sporewood_log": "ᵷoꞀ pooʍǝɹodS",
+  "block.mushroommadness.sporewood_wood": "pooM pooʍǝɹodS",
+  "block.mushroommadness.stripped_sporewood_log": "ᵷoꞀ pooʍǝɹodS pǝddᴉɹʇS",
+  "block.mushroommadness.stripped_sporewood_wood": "pooM pooʍǝɹodS pǝddᴉɹʇS",
+  "block.mushroommadness.sporewood_planks": "sʞuɐꞁԀ pooʍǝɹodS",
+
+  "block.mushroommadness.sporewood_sign": "uᵷᴉS pooʍǝɹodS",
+  "block.mushroommadness.sporewood_wall_sign": "uᵷᴉS ꞁꞁɐM pooʍǝɹodS",
+
+  "block.mushroommadness.sporewood_hanging_sign": "uᵷᴉS ᵷuᴉᵷuɐH pooʍǝɹodS",
+  "block.mushroommadness.sporewood_wall_hanging_sign": "uᵷᴉS ᵷuᴉᵷuɐH ꞁꞁɐM pooʍǝɹodS",
+
+  "item.mushroommadness.sporewood_sign": "uᵷᴉS pooʍǝɹodS",
+  "item.mushroommadness.sporewood_hanging_sign": "uᵷᴉS ᵷuᴉᵷuɐH pooʍǝɹodS",
+
+  "item.mushroommadness.sporewood_boat": "ʇɐoᗺ pooʍǝɹodS",
+  "item.mushroommadness.sporewood_chest_boat": "ʇɐoᗺ ʇsǝɥƆ pooʍǝɹodS",
+
+  "block.mushroommadness.sporewood_stairs": "sɹᴉɐʇS pooʍǝɹodS",
+  "block.mushroommadness.sporewood_slab": "qɐꞁS pooʍǝɹodS",
+
+  "block.mushroommadness.sporewood_button": "uoʇʇnᗺ pooʍǝɹodS",
+  "block.mushroommadness.sporewood_pressure_plate": "ǝʇɐꞁԀ ǝɹnssǝɹԀ pooʍǝɹodS",
+
+  "block.mushroommadness.sporewood_fence": "ǝɔuǝℲ pooʍǝɹodS",
+  "block.mushroommadness.sporewood_fence_gate": "ǝʇɐ⅁ ǝɔuǝℲ pooʍǝɹodS",
+
+  "block.mushroommadness.sporewood_door": "ɹooᗡ pooʍǝɹodS",
+  "block.mushroommadness.sporewood_trapdoor": "ɹoopdɐɹ⟘ pooʍǝɹodS",
+
+  "entity.mushroommadness.mycologist": "ʇsᴉᵷoꞁoɔʎW",
+  "item.mushroommadness.mycologist_spawn_egg": "ᵷᵷƎ uʍɐdS ʇsᴉᵷoꞁoɔʎW",
+
+  "item.mushroommadness.music_disc_lentinula_edodes": "ɔsᴉᗡ ɔᴉsnW",
+
+  "item.mushroommadness.bottomless_stew": "ʍǝʇS ssǝꞁɯoʇʇoᗺ",
+
+  "jukebox_song.mushroommadness.lentinula_edodes": "sǝpopƎ ɐꞁnuᴉʇuǝꞀ - ʍoꞁuǝɹʍ",
+
+  "itemgroup.mushroommadness": "ssǝupɐW ɯooɹɥsnW",
+
+  "block.mushroommadness.glowcap": "dɐɔʍoꞁ⅁",
+  "block.mushroommadness.waxed_glowcap": "dɐɔʍoꞁ⅁ pǝxɐM",
+  "block.mushroommadness.waxed_lit_glowcap": "dɐɔʍoꞁ⅁ ʇᴉꞀ pǝxɐM",
+
+  "block.mushroommadness.waxed_brown_mushroom": "ɯooɹɥsnW uʍoɹᗺ pǝxɐM",
+  "block.mushroommadness.waxed_red_mushroom": "ɯooɹɥsnW pǝᴚ pǝxɐM",
+
+  "block.mushroommadness.glowcap_mushroom_block": "ʞɔoꞁᗺ dɐɔʍoꞁ⅁",
+
+  "sounds.mushroommadness.toggle_glowcap": "sǝꞁᵷᵷo⟘ dɐɔʍoꞁ⅁",
+
+  "item.minecraft.potion.effect.glowing": "ᵷuᴉʍoꞁ⅁ ɟo uoᴉʇoԀ",
+  "item.minecraft.splash_potion.effect.glowing": "ᵷuᴉʍoꞁ⅁ ɟo uoᴉʇoԀ ɥsɐꞁdS",
+  "item.minecraft.lingering_potion.effect.glowing": "ᵷuᴉʍoꞁ⅁ ɟo uoᴉʇoԀ ᵷuᴉɹǝᵷuᴉꞀ",
+  "item.minecraft.tipped_arrow.effect.glowing": "ᵷuᴉʍoꞁ⅁ ɟo ʍoɹɹⱯ",
+  "item.minecraft.potion.effect.glowing_extended": "ᵷuᴉʍoꞁ⅁ ɟo uoᴉʇoԀ",
+  "item.minecraft.splash_potion.effect.glowing_extended": "ᵷuᴉʍoꞁ⅁ ɟo uoᴉʇoԀ ɥsɐꞁdS",
+  "item.minecraft.lingering_potion.effect.glowing_extended": "ᵷuᴉʍoꞁ⅁ ɟo uoᴉʇoԀ ᵷuᴉɹǝᵷuᴉꞀ",
+  "item.minecraft.tipped_arrow.effect.glowing_extended": "ᵷuᴉʍoꞁ⅁ ɟo ʍoɹɹⱯ",
+
+  "block.mushroommadness.brown_shelf_mushroom": "ɟꞁǝɥS ɯooɹɥsnW uʍoɹᗺ",
+  "block.mushroommadness.red_shelf_mushroom": "ɟꞁǝɥS ɯooɹɥsnW pǝᴚ",
+  "block.mushroommadness.glowcap_shelf_mushroom": "ɟꞁǝɥS dɐɔʍoꞁ⅁",
+
+  "block.mushroommadness.glowcap_roots": "sʇooᴚ dɐɔʍoꞁ⅁",
+
+  "filled_map.mycologist_tower": "dɐW ɹǝɹoꞁdxƎ ꞁɐᵷunℲ",
+
+  "item.mushroommadness.red_mushroom_bow": "ʍoᗺ ꞁɐᵷunℲ pǝᴚ",
+  "item.mushroommadness.brown_mushroom_bow": "ʍoᗺ ꞁɐᵷunℲ uʍoɹᗺ",
+  "item.mushroommadness.glowcap_mushroom_bow": "ʍoᗺ ꞁɐᵷunℲ dɐɔʍoꞁ⅁",
+
+  "item.mushroommadness.fungal_upgrade_smithing_template": "ǝʇɐꞁdɯǝ⟘ ᵷuᴉɥʇᴉɯS",
+  "item.mushroommadness.fungal_upgrade_smithing_template.additions_slot_description": "ɯooɹɥsnW ppⱯ",
+  "item.mushroommadness.fungal_upgrade_smithing_template.applies_to": "§6ʍoᗺ",
+  "item.mushroommadness.fungal_upgrade_smithing_template.base_slot_description": "ʍoᗺ ppⱯ",
+  "item.mushroommadness.fungal_upgrade_smithing_template.ingredients": "§6ɯooɹɥsnW",
+  "upgrade.mushroommadness.fungal_upgrade": "ǝpɐɹᵷd∩ ꞁɐᵷunℲㄥ§",
+
+  "biome.mushroommadness.sporewood_forest": "ʇsǝɹoℲ pooʍǝɹodS",
+
+  "entity.mushroommadness.mushroom_arrow": "ʍoɹɹⱯ ɯooɹɥsnW"
+}

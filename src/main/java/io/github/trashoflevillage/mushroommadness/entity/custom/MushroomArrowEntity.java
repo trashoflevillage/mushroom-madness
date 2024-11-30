@@ -1,5 +1,6 @@
 package io.github.trashoflevillage.mushroommadness.entity.custom;
 
+import io.github.trashoflevillage.mushroommadness.entity.ModEntities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -10,80 +11,70 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class MushroomArrowEntity extends ArrowEntity {
-    private static final TrackedData<String> TYPE = DataTracker.registerData(MushroomArrowEntity.class, TrackedDataHandlerRegistry.STRING);
+public class MushroomArrowEntity extends PersistentProjectileEntity {
+    private static final TrackedData<Integer> TYPE = DataTracker.registerData(MushroomArrowEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
-    public MushroomArrowEntity(EntityType<? extends ArrowEntity> entityType, World world, MushroomArrowType type) {
+    public MushroomArrowEntity(EntityType<? extends MushroomArrowEntity> entityType, World world) {
         super(entityType, world);
-        this.setMushroomType(type);
+        this.dataTracker.set(TYPE, 1);
     }
 
-    public MushroomArrowEntity(World world, LivingEntity owner, ItemStack stack, @Nullable ItemStack shotFrom, MushroomArrowType type) {
-        super(world, owner, stack, shotFrom);
-        this.setMushroomType(type);
+    public MushroomArrowEntity(World world, double x, double y, double z, ItemStack stack, @Nullable ItemStack shotFrom, Integer type) {
+        super(ModEntities.MUSHROOM_ARROW, x, y+1.6, z, world, stack, shotFrom);
+        this.dataTracker.set(TYPE, type);
     }
 
-    public static MushroomArrowEntity newRedMushroomArrow(EntityType<? extends ArrowEntity> entityType, World world) {
-        return new MushroomArrowEntity(entityType, world, MushroomArrowType.RED);
+    public MushroomArrowEntity(World world, double x, double y, double z, ItemStack stack, @Nullable ItemStack shotFrom, MushroomArrowType type) {
+        super(ModEntities.MUSHROOM_ARROW, x, y+1.6, z, world, stack, shotFrom);
+        this.dataTracker.set(TYPE, type.index);
     }
 
-    public MushroomArrowType getMushroomType() {
-        return MushroomArrowType.fromString(this.dataTracker.get(TYPE));
-    }
-
-    public void setMushroomType(MushroomArrowType type) {
-        this.dataTracker.set(TYPE, type.asString());
-    }
 
     @Override
-    protected void onHit(LivingEntity target) {
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 999));
-        super.onHit(target);
-    }
-
-    @Override
-    public void writeCustomDataToNbt(NbtCompound nbt) {
-        super.writeCustomDataToNbt(nbt);
-        nbt.putString("Type", this.getMushroomType().asString());
-    }
-
-    @Override
-    public void readCustomDataFromNbt(NbtCompound nbt) {
-        super.readCustomDataFromNbt(nbt);
-        this.setMushroomType((MushroomArrowType.fromString(nbt.getString("Type"))));
+    protected ItemStack getDefaultItemStack() {
+        return Items.ARROW.getDefaultStack();
     }
 
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
-        builder.add(TYPE, MushroomArrowType.RED.asString());
+        builder.add(TYPE, 1);
+    }
+
+    public int getMushroomType() {
+        return this.dataTracker.get(TYPE);
+    }
+
+    @Override
+    protected void onHit(LivingEntity target) {
+        if (getMushroomType() == MushroomArrowType.RED.getIndex())
+            target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 200));
+        else if (getMushroomType() == MushroomArrowType.BROWN.getIndex())
+            target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200));
+        else if (getMushroomType() == MushroomArrowType.GLOWCAP.getIndex())
+            target.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 200));
     }
 
     public enum MushroomArrowType {
-        RED, BROWN, GLOWCAP;
+        RED(1),
+        BROWN(2),
+        GLOWCAP(3);
 
-        public static MushroomArrowType fromString(String str) {
-            switch (str) {
-                case "red": return RED;
-                case "brown": return BROWN;
-                case "glowcap": return GLOWCAP;
-            }
-            return RED;
+        private final int index;
+        MushroomArrowType(int index) {
+            this.index = index;
         }
 
-        public String asString() {
-            switch (this) {
-                case RED: return "red";
-                case BROWN: return "brown";
-                case GLOWCAP: return "glowcap";
-            }
-            return "red";
+        public int getIndex() {
+            return index;
         }
     }
 }

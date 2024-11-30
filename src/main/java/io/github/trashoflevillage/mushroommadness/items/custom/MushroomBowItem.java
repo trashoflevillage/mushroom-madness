@@ -24,13 +24,12 @@ public class MushroomBowItem extends BowItem {
         this.arrowType = arrowType;
     }
 
-    @Override
-    protected ProjectileEntity createArrowEntity(World world, LivingEntity shooter, ItemStack weaponStack, ItemStack projectileStack, boolean critical) {
-        MushroomArrowEntity persistentProjectileEntity = new MushroomArrowEntity(world, shooter, projectileStack.copyWithCount(1), weaponStack, arrowType);
-        if (critical) {
-            persistentProjectileEntity.setCritical(true);
-        }
 
-        return persistentProjectileEntity;
+    protected ProjectileEntity createArrowEntity(World world, LivingEntity shooter, ItemStack weaponStack, ItemStack projectileStack, boolean critical) {
+        MushroomArrowEntity arrowEntity = new MushroomArrowEntity(world, shooter.getX(), shooter.getY(), shooter.getZ(), projectileStack.copyWithCount(1), null, arrowType);
+        arrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED;
+        arrowEntity.setCritical(critical);
+        arrowEntity.setOwner(shooter);
+        return arrowEntity;
     }
 }

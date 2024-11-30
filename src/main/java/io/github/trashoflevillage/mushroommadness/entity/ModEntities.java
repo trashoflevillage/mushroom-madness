@@ -10,6 +10,7 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
 
 public class ModEntities {
     public static final EntityType<MycologistEntity> MYCOLOGIST = Registry.register(Registries.ENTITY_TYPE,
@@ -18,9 +19,7 @@ public class ModEntities {
                     .dimensions(EntityDimensions.fixed(0.6f, 1.95f))
                     .build());
 
-    public static final EntityType<MushroomArrowEntity> MUSHROOM_ARROW = Registry.register(
-            Registries.ENTITY_TYPE,
-            Identifier.of(MushroomMadness.MOD_ID, "mushroom_arrow"),
-            EntityType.Builder.create( MushroomArrowEntity::newRedMushroomArrow, SpawnGroup.MISC)
+    public static final EntityType<MushroomArrowEntity> MUSHROOM_ARROW = Registry.register(Registries.ENTITY_TYPE, Identifier.of(MushroomMadness.MOD_ID, "mushroom_arrow"),
+            EntityType.Builder.create((EntityType<MushroomArrowEntity> entityType, World world) -> new MushroomArrowEntity(entityType, world), SpawnGroup.MISC)
                     .dimensions(0.25F, 0.25F).maxTrackingRange(4).trackingTickInterval(10).build());
 }
