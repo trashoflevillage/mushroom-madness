@@ -1,10 +1,10 @@
 {
-  "name": "mushroommadness:mycologist_towers",
+  "name": "mushroommadness:mycologist_tower/entrances",
   "fallback": "minecraft:empty",
   "elements": [{
     "weight": 1,
     "element": {
-      "location": "mushroommadness:mycologist_tower_entrance",
+      "location": "mushroommadness:mycologist_tower/entrance",
       "processors": "minecraft:empty",
       "projection": "rigid",
       "element_type": "minecraft:single_pool_element"

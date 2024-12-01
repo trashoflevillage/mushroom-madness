@@ -1,5 +1,6 @@
 package io.github.trashoflevillage.mushroommadness.entity.custom;
 
+import io.github.trashoflevillage.mushroommadness.items.ModItems;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.*;
@@ -18,6 +19,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.entity.raid.RaiderEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKey;
@@ -88,39 +90,45 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
 
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
-        ItemStack bow = new ItemStack(Items.BOW);
+        Item[] bowTypes = new Item[] {
+                ModItems.RED_MUSHROOM_BOW,
+                ModItems.BROWN_MUSHROOM_BOW,
+                ModItems.GLOWCAP_MUSHROOM_BOW
+        };
 
-        HashMap<RegistryKey<Enchantment>, Integer> enchants = new HashMap();
-        int enchantCount = this.random.nextInt(3);
-        HashMap<RegistryKey<Enchantment>, Integer> possibleEnchants = new HashMap<>();
-        possibleEnchants.put(Enchantments.POWER, 5);
-        possibleEnchants.put(Enchantments.PUNCH, 2);
-        possibleEnchants.put(Enchantments.FLAME, 1);
+        ItemStack bow = new ItemStack(bowTypes[random.nextBetween(0, 2)]);
 
-        ArrayList<RegistryKey<Enchantment>> enchantList = new ArrayList<>();
-        for (RegistryKey<Enchantment> e : possibleEnchants.keySet()) {
-            enchantList.add(e);
-        }
-
-        for (int i = 0; i <= enchantCount; i++) {
-            boolean validEnchant = false;
-            int value = 0;
-            RegistryKey<Enchantment> enchant = null;
-            while (!validEnchant) {
-                enchant = enchantList.get(random.nextInt(enchantList.size()));
-                if (enchants.containsKey(enchant)) value = enchants.get(enchant);
-                else value = 0;
-                value++;
-                if (possibleEnchants.get(enchant) >= value) validEnchant = true;
-            }
-            enchants.put(enchant, value);
-        }
-
-        for (RegistryKey<Enchantment> e : enchants.keySet()) {
-            bow.addEnchantment(
-                    world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(e).get(), enchants.get(e)
-            );
-        }
+//        HashMap<RegistryKey<Enchantment>, Integer> enchants = new HashMap();
+//        int enchantCount = this.random.nextInt(3);
+//        HashMap<RegistryKey<Enchantment>, Integer> possibleEnchants = new HashMap<>();
+//        possibleEnchants.put(Enchantments.POWER, 5);
+//        possibleEnchants.put(Enchantments.PUNCH, 2);
+//        possibleEnchants.put(Enchantments.FLAME, 1);
+//
+//        ArrayList<RegistryKey<Enchantment>> enchantList = new ArrayList<>();
+//        for (RegistryKey<Enchantment> e : possibleEnchants.keySet()) {
+//            enchantList.add(e);
+//        }
+//
+//        for (int i = 0; i <= enchantCount; i++) {
+//            boolean validEnchant = false;
+//            int value = 0;
+//            RegistryKey<Enchantment> enchant = null;
+//            while (!validEnchant) {
+//                enchant = enchantList.get(random.nextInt(enchantList.size()));
+//                if (enchants.containsKey(enchant)) value = enchants.get(enchant);
+//                else value = 0;
+//                value++;
+//                if (possibleEnchants.get(enchant) >= value) validEnchant = true;
+//            }
+//            enchants.put(enchant, value);
+//        }
+//
+//        for (RegistryKey<Enchantment> e : enchants.keySet()) {
+//            bow.addEnchantment(
+//                    world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(e).get(), enchants.get(e)
+//            );
+//        }
 
         this.equipStack(EquipmentSlot.MAINHAND, bow);
         return super.initialize(world, difficulty, spawnReason, entityData);

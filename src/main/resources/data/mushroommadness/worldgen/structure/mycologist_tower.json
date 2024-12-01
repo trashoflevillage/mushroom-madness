@@ -4,8 +4,8 @@
   "liquid_settings": "ignore_waterlogging",
   "spawn_overrides": {},
   "type": "minecraft:jigsaw",
-  "start_pool": "mushroommadness:mycologist_tower_entrance",
-  "size": 1,
+  "start_pool": "mushroommadness:mycologist_tower/entrances",
+  "size": 20,
   "step": "underground_ores",
   "start_height": {
     "absolute": 0

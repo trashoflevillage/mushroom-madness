@@ -1,0 +1,29 @@
+{
+  "name": "mushroommadness:mycologist_tower/mycologists",
+  "fallback": "minecraft:empty",
+  "elements": [{
+    "weight": 1,
+    "element": {
+      "location": "mushroommadness:mycologist_tower/mycologist_red_bow",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },{
+    "weight": 1,
+    "element": {
+      "location": "mushroommadness:mycologist_tower/mycologist_brown_bow",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },{
+    "weight": 1,
+    "element": {
+      "location": "mushroommadness:mycologist_tower/mycologist_glowcap_bow",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  }]
+}
