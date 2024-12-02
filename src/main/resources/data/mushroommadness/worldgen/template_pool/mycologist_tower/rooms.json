@@ -2,7 +2,7 @@
   "name": "mushroommadness:mycologist_tower/rooms",
   "fallback": "minecraft:empty",
   "elements": [{
-    "weight": 3,
+    "weight": 2,
     "element": {
       "location": "mushroommadness:mycologist_tower/room1",
       "processors": "minecraft:empty",
@@ -10,7 +10,7 @@
       "element_type": "minecraft:single_pool_element"
     }
   },{
-    "weight": 3,
+    "weight": 2,
     "element": {
       "location": "mushroommadness:mycologist_tower/room2",
       "processors": "minecraft:empty",
