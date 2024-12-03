@@ -1,6 +1,7 @@
 package io.github.trashoflevillage.mushroommadness.entity.custom;
 
 import io.github.trashoflevillage.mushroommadness.items.ModItems;
+import io.github.trashoflevillage.mushroommadness.items.custom.MushroomBowItem;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.*;
@@ -37,14 +38,16 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class MycologistEntity extends SpellcastingIllagerEntity implements RangedAttackMob {
     @Nullable
     private CowEntity cowTarget;
+    private static Item[] bowTypes = new Item[] {
+            ModItems.RED_MUSHROOM_BOW,
+            ModItems.BROWN_MUSHROOM_BOW,
+            ModItems.GLOWCAP_MUSHROOM_BOW
+    };
     
     public MycologistEntity(EntityType<? extends SpellcastingIllagerEntity> entityType, World world) {
         super(entityType, world);
@@ -92,45 +95,7 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
 
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
-        Item[] bowTypes = new Item[] {
-                ModItems.RED_MUSHROOM_BOW,
-                ModItems.BROWN_MUSHROOM_BOW,
-                ModItems.GLOWCAP_MUSHROOM_BOW
-        };
-
         ItemStack bow = new ItemStack(bowTypes[random.nextBetween(0, 2)]);
-
-//        HashMap<RegistryKey<Enchantment>, Integer> enchants = new HashMap();
-//        int enchantCount = this.random.nextInt(3);
-//        HashMap<RegistryKey<Enchantment>, Integer> possibleEnchants = new HashMap<>();
-//        possibleEnchants.put(Enchantments.POWER, 5);
-//        possibleEnchants.put(Enchantments.PUNCH, 2);
-//        possibleEnchants.put(Enchantments.FLAME, 1);
-//
-//        ArrayList<RegistryKey<Enchantment>> enchantList = new ArrayList<>();
-//        for (RegistryKey<Enchantment> e : possibleEnchants.keySet()) {
-//            enchantList.add(e);
-//        }
-//
-//        for (int i = 0; i <= enchantCount; i++) {
-//            boolean validEnchant = false;
-//            int value = 0;
-//            RegistryKey<Enchantment> enchant = null;
-//            while (!validEnchant) {
-//                enchant = enchantList.get(random.nextInt(enchantList.size()));
-//                if (enchants.containsKey(enchant)) value = enchants.get(enchant);
-//                else value = 0;
-//                value++;
-//                if (possibleEnchants.get(enchant) >= value) validEnchant = true;
-//            }
-//            enchants.put(enchant, value);
-//        }
-//
-//        for (RegistryKey<Enchantment> e : enchants.keySet()) {
-//            bow.addEnchantment(
-//                    world.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(e).get(), enchants.get(e)
-//            );
-//        }
 
         this.equipStack(EquipmentSlot.MAINHAND, bow);
         return super.initialize(world, difficulty, spawnReason, entityData);
@@ -168,9 +133,9 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
 
     @Override
     public void shootAt(LivingEntity target, float pullProgress) {
-        ItemStack itemStack = this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, ModItems.RED_MUSHROOM_BOW));
+        ItemStack itemStack = this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, this.getHeldBow()));
         ItemStack itemStack2 = this.getProjectileType(itemStack);
-        PersistentProjectileEntity persistentProjectileEntity = ProjectileUtil.createArrowProjectile(this, itemStack2, pullProgress, itemStack);
+        PersistentProjectileEntity persistentProjectileEntity = ((MushroomBowItem)itemStack.getItem()).getArrowEntity(getWorld(), this, itemStack2);
         double d = target.getX() - this.getX();
         double e = target.getBodyY(0.3333333333333333) - persistentProjectileEntity.getY();
         double f = target.getZ() - this.getZ();
@@ -178,6 +143,16 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
         persistentProjectileEntity.setVelocity(d, e + g * 0.2F, f, 1.6F, (float)(14 - this.getWorld().getDifficulty().getId() * 4));
         this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.getWorld().spawnEntity(persistentProjectileEntity);
+    }
+
+    protected boolean isHoldingBow() {
+        return getHeldBow() != null;
+    }
+
+    protected Item getHeldBow() {
+        for (Item i : bowTypes)
+            if (this.isHolding(i)) return i;
+        return null;
     }
 
     @Override
@@ -301,7 +276,13 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
         }
 
         protected boolean isHoldingBow() {
-            return this.actor.isHolding(ModItems.RED_MUSHROOM_BOW);
+            return getHeldBow() != null;
+        }
+
+        protected Item getHeldBow() {
+            for (Item i : bowTypes)
+                if (this.actor.isHolding(i)) return i;
+            return null;
         }
 
         @Override
@@ -395,7 +376,7 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
                         }
                     }
                 } else if (--this.cooldown <= 0 && this.targetSeeingTicker >= -60) {
-                    this.actor.setCurrentHand(ProjectileUtil.getHandPossiblyHolding(this.actor, ModItems.RED_MUSHROOM_BOW));
+                    this.actor.setCurrentHand(ProjectileUtil.getHandPossiblyHolding(this.actor, getHeldBow()));
                 }
             }
         }
