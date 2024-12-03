@@ -1,61 +1,71 @@
 {
   "name": "mushroommadness:mycologist_tower/room_connections",
   "fallback": "minecraft:empty",
-  "elements": [{
-    "weight": 1,
-    "element": {
-      "location": "mushroommadness:mycologist_tower/connection1",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "mushroommadness:mycologist_tower/connection1",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },{
+      "weight": 1,
+      "element": {
+        "location": "mushroommadness:mycologist_tower/connection2",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },{
+      "weight": 1,
+      "element": {
+        "location": "mushroommadness:mycologist_tower/connection3",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },{
+      "weight": 1,
+      "element": {
+        "location": "mushroommadness:mycologist_tower/connection4",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },{
+      "weight": 1,
+      "element": {
+        "location": "mushroommadness:mycologist_tower/connection5",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },{
+      "weight": 1,
+      "element": {
+        "location": "mushroommadness:mycologist_tower/connection6",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },{
+      "weight": 1,
+      "element": {
+        "location": "mushroommadness:mycologist_tower/connection7",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },{
+      "weight": 1,
+      "element": {
+        "location": "mushroommadness:mycologist_tower/connection8",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
     }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "mushroommadness:mycologist_tower/connection2",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "mushroommadness:mycologist_tower/connection3",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "mushroommadness:mycologist_tower/connection4",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "mushroommadness:mycologist_tower/connection5",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "mushroommadness:mycologist_tower/connection6",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "mushroommadness:mycologist_tower/connection7",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  }]
+  ]
 }
