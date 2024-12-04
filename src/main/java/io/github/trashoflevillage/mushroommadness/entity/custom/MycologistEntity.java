@@ -135,7 +135,7 @@ public class MycologistEntity extends SpellcastingIllagerEntity implements Range
     public void shootAt(LivingEntity target, float pullProgress) {
         ItemStack itemStack = this.getStackInHand(ProjectileUtil.getHandPossiblyHolding(this, this.getHeldBow()));
         ItemStack itemStack2 = this.getProjectileType(itemStack);
-        PersistentProjectileEntity persistentProjectileEntity = ((MushroomBowItem)itemStack.getItem()).getArrowEntity(getWorld(), this, itemStack2);
+        PersistentProjectileEntity persistentProjectileEntity = ((MushroomBowItem)itemStack.getItem()).getArrowEntity(getWorld(), this, itemStack2, itemStack);
         double d = target.getX() - this.getX();
         double e = target.getBodyY(0.3333333333333333) - persistentProjectileEntity.getY();
         double f = target.getZ() - this.getZ();

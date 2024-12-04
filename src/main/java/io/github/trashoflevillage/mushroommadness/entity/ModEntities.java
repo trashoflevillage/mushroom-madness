@@ -21,5 +21,5 @@ public class ModEntities {
 
     public static final EntityType<MushroomArrowEntity> MUSHROOM_ARROW = Registry.register(Registries.ENTITY_TYPE, Identifier.of(MushroomMadness.MOD_ID, "mushroom_arrow"),
             EntityType.Builder.create((EntityType<MushroomArrowEntity> entityType, World world) -> new MushroomArrowEntity(entityType, world), SpawnGroup.MISC)
-                    .dimensions(0.25F, 0.25F).maxTrackingRange(4).trackingTickInterval(10).build());
+                    .dimensions(0.5F, 0.5F).maxTrackingRange(4).trackingTickInterval(10).build());
 }

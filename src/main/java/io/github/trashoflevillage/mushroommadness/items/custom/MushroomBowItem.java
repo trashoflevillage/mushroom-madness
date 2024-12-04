@@ -1,6 +1,7 @@
 package io.github.trashoflevillage.mushroommadness.items.custom;
 
 import io.github.trashoflevillage.mushroommadness.entity.custom.MushroomArrowEntity;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
@@ -24,16 +25,16 @@ public class MushroomBowItem extends BowItem {
         this.arrowType = arrowType;
     }
 
-
+    @Override
     protected ProjectileEntity createArrowEntity(World world, LivingEntity shooter, ItemStack weaponStack, ItemStack projectileStack, boolean critical) {
-        MushroomArrowEntity arrowEntity = getArrowEntity(world, shooter, projectileStack);
-        arrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED;
+        MushroomArrowEntity arrowEntity = getArrowEntity(world, shooter, projectileStack, weaponStack);
         arrowEntity.setCritical(critical);
         arrowEntity.setOwner(shooter);
         return arrowEntity;
     }
 
-    public MushroomArrowEntity getArrowEntity(World world, LivingEntity shooter, ItemStack projectileStack) {
-        return new MushroomArrowEntity(world, shooter.getX(), shooter.getY(), shooter.getZ(), projectileStack.copyWithCount(1), null, arrowType);
+    public MushroomArrowEntity getArrowEntity(World world, LivingEntity shooter, ItemStack projectileStack, ItemStack weaponStack) {
+        MushroomArrowEntity arrow = new MushroomArrowEntity(world, shooter.getX(), shooter.getY(), shooter.getZ(), projectileStack.copyWithCount(1), weaponStack, arrowType);
+        return arrow;
     }
 }
