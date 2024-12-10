@@ -85,5 +85,8 @@
 
   "biome.mushroommadness.sporewood_forest": "Sporewood Forest",
 
-  "entity.mushroommadness.mushroom_arrow": "Mushroom Arrow"
+  "entity.mushroommadness.mushroom_arrow": "Mushroom Arrow",
+
+  "mushroommadness.advancements.adventure.find_mycologist_tower.description": "Discover the ominous Mycologist Tower",
+  "mushroommadness.advancements.adventure.find_mycologist_tower.title": "Finding the Fungi"
 }

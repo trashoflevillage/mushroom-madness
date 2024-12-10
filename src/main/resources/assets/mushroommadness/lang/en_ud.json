@@ -85,5 +85,8 @@
 
   "biome.mushroommadness.sporewood_forest": "ʇsǝɹoℲ pooʍǝɹodS",
 
-  "entity.mushroommadness.mushroom_arrow": "ʍoɹɹⱯ ɯooɹɥsnW"
+  "entity.mushroommadness.mushroom_arrow": "ʍoɹɹⱯ ɯooɹɥsnW",
+
+  "mushroommadness.advancements.adventure.find_mycologist_tower.description": "ɹǝʍo⟘ ʇsᴉᵷoꞁoɔʎW snouᴉɯo ǝɥʇ ɹǝʌoɔsᴉᗡ",
+  "mushroommadness.advancements.adventure.find_mycologist_tower.title": "ᴉᵷunℲ ǝɥʇ ᵷuᴉpuᴉℲ"
 }

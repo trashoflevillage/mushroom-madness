@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "find_mycologist_tower": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "mushroommadness:mycologist_tower"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "mushroommadness.advancements.adventure.find_mycologist_tower.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "mushroommadness:bottomless_stew"
+    },
+    "title": {
+      "translate": "mushroommadness.advancements.adventure.find_mycologist_tower.title"
+    },
+    "frame": "challenge"
+  },
+  "requirements": [
+    [
+      "find_mycologist_tower"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

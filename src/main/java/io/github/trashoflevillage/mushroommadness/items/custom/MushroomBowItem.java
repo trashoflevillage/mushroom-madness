@@ -15,7 +15,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 public class MushroomBowItem extends BowItem {
     private final MushroomArrowEntity.MushroomArrowType arrowType;
