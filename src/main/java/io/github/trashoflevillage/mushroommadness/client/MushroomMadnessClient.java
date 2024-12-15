@@ -31,7 +31,6 @@ public class MushroomMadnessClient implements ClientModInitializer {
 			ModBlocks.SPOREWOOD_DOOR, ModBlocks.SPOREWOOD_TRAPDOOR,
 			ModBlocks.GLOWCAP, ModBlocks.WAXED_GLOWCAP, ModBlocks.WAXED_LIT_GLOWCAP,
 			ModBlocks.WAXED_BROWN_MUSHROOM, ModBlocks.WAXED_RED_MUSHROOM,
-			//ModBlocks.GLOWCAP_ROOTS,
 			ModBlocks.POTTED_GLOWCAP, ModBlocks.POTTED_WAXED_GLOWCAP, ModBlocks.POTTED_WAXED_LIT_GLOWCAP
 	};
 

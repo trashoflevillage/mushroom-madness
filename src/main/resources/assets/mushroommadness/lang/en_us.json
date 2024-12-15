@@ -9,14 +9,11 @@
   "block.mushroommadness.stripped_sporewood_wood": "Stripped Sporewood Wood",
   "block.mushroommadness.sporewood_planks": "Sporewood Planks",
 
-  "block.mushroommadness.sporewood_sign": "Sporewood Sign",
+  "block.mushroommadness.sporewood_standing_sign": "Sporewood Sign",
   "block.mushroommadness.sporewood_wall_sign": "Sporewood Wall Sign",
 
-  "block.mushroommadness.sporewood_hanging_sign": "Sporewood Hanging Sign",
+  "block.mushroommadness.sporewood_ceiling_hanging_sign": "Sporewood Hanging Sign",
   "block.mushroommadness.sporewood_wall_hanging_sign": "Sporewood Wall Hanging Sign",
-
-  "item.mushroommadness.sporewood_sign": "Sporewood Sign",
-  "item.mushroommadness.sporewood_hanging_sign": "Sporewood Hanging Sign",
 
   "item.mushroommadness.sporewood_boat": "Sporewood Boat",
   "item.mushroommadness.sporewood_chest_boat": "Sporewood Chest Boat",

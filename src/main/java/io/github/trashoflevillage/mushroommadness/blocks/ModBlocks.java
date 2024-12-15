@@ -112,13 +112,13 @@ public class ModBlocks {
                     new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)));
 
     public static final Block SPOREWOOD_SIGN =
-            registerBlock("sporewood_sign",
+            registerBlock("sporewood_standing_sign",
                     new TerraformSignBlock(SPOREWOOD_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
     public static final Block SPOREWOOD_WALL_SIGN =
             registerBlock("sporewood_wall_sign",
                     new TerraformWallSignBlock(SPOREWOOD_SIGN_TEXTURE, AbstractBlock.Settings.copy(ModBlocks.SPOREWOOD_SIGN)));
     public static final Block SPOREWOOD_HANGING_SIGN =
-            registerBlock("sporewood_hanging_sign",
+            registerBlock("sporewood_ceiling_hanging_sign",
                     new TerraformHangingSignBlock(SPOREWOOD_HANGING_SIGN_TEXTURE, SPOREWOOD_HANGING_GUI_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
     public static final Block SPOREWOOD_WALL_HANGING_SIGN =
             registerBlock("sporewood_wall_hanging_sign",
